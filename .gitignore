@@ -25,3 +25,6 @@ dist-ssr
 
 # optimization file
 .yarn/install-state.gz
+
+# env
+.env
