@@ -74,6 +74,7 @@
 ### 1️⃣ Language 
 - TypeScript v5.3.3
 ### 2️⃣ Framework & Library
+- Node v18.18.0
 - React v18.2.0
 - React Query v5.25.0
 - Axios v1.6.7
@@ -87,8 +88,10 @@
 - Amazon EC2
 ### 6️⃣ Automation & Test Framework
 - GitHub Actions
-- Jest v29.7.0
-### 7️⃣ Collaboration & Project Management Tools
+- Vitest v1.4.0
+### 7️⃣ Mocking Library
+- MSW v2.2.13
+### 8️⃣ Collaboration & Project Management Tools
 - GitHub
 - Jira
 - Confluence
