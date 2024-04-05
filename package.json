@@ -18,6 +18,7 @@
     "sass": "^1.71.1"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.28.11",
     "@tanstack/react-query-devtools": "^5.28.14",
     "@types/node": "^20.12.4",
     "@types/react": "^18.2.56",
