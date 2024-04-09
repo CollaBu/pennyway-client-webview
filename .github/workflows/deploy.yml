@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   deployment:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       # 1. Compare branch 코드 내려 받기
