@@ -1,6 +1,8 @@
 name: Continuous Deployment
 
 on:
+  pull_request:
+    branches: ['feature/PW-249-cicd']
   push:
     branches: ['develop']
   workflow_dispatch:
@@ -37,6 +39,7 @@ jobs:
       - name: Reuse setup action
         uses: ./.github/actions/setup
 
+      # 7. Yarn 빌드 파일 생성
       - name: Yarn build
         run: yarn build
 
