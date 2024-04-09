@@ -6,13 +6,25 @@ on:
 
 jobs:
   lint:
-    uses: ./.github/workflows/reusable-install-dependencies.yml
-    with:
-      task: lint
-      name: eslint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout pull request
+        uses: actions/checkout@v4
+
+      - name: Reuse setup action
+        uses: ./.github/actions/setup
+
+      - name: Test with eslint
+        run: yarn lint
 
   test:
-    uses: ./.github/workflows/reusable-install-dependencies.yml
-    with:
-      task: test
-      name: vitest
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout pull request
+        uses: actions/checkout@v4
+
+      - name: Reuse setup action
+        uses: ./.github/actions/setup
+
+      - name: Test with vitest
+        run: yarn test
