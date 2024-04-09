@@ -79,4 +79,4 @@ jobs:
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker system prune -a -f 
             docker pull pennyway/pennyway-webview
-            docker run -d -p 3000:3000 pennyway/pennyway-webview
+            docker run --name "webview" -d -p 3000:3000 pennyway/pennyway-webview
