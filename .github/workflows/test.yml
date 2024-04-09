@@ -1,8 +1,10 @@
 name: Continuous Integration
 
 on:
+  push:
+    branches: ['feature/PW-249-cicd']
   pull_request:
-    branches: ['main']
+    branches: ['develop']
 
 jobs:
   lint:
