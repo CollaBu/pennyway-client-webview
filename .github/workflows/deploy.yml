@@ -2,7 +2,7 @@ name: Continuous Deployment
 
 on:
   push:
-    branches: ['feature/PW-249-cicd']
+    branches: ['develop']
 
 permissions:
   contents: read
