@@ -77,6 +77,7 @@ jobs:
           working-directory: /home/ubuntu
           command: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+            docker stop webview
             docker system prune -a -f 
             docker pull pennyway/pennyway-webview
             docker run --name "webview" -d -p 3000:3000 pennyway/pennyway-webview
