@@ -2,7 +2,7 @@ name: Continuous Deployment
 
 on:
   pull_request:
-    branches: ['feature/PW-249-cicd']
+    branches: ['develop']
   push:
     branches: ['develop']
   workflow_dispatch:
