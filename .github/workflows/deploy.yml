@@ -2,7 +2,7 @@ name: Continuous Deployment
 
 on:
   push:
-    branches: ['develop']
+    branches: ['main']
   workflow_dispatch:
     inputs:
       logLevel:
