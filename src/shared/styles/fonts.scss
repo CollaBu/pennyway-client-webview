@@ -1,4 +1,4 @@
-@mixin font-style($name, $weight, $size, $spacing, $line-height) {
+@mixin font-style($weight, $size, $spacing, $line-height) {
   font-family: 'Pretendard', sans-serif;
   font-weight: $weight;
   font-size: $size * 1rem;
@@ -7,25 +7,25 @@
 
   @font-face {
     font-family: 'Pretendard';
-    src: url('/assets/font/Pretendard-#{$weight}.woff2') format('woff2'),
-         url('/assets/font/Pretendard-#{$weight}.woff') format('woff');
+    src: url('/assets/font/pretendard-#{$weight}-subset.woff2') format('woff2'),
+         url('/assets/font/pretendard-#{$weight}-subset.woff') format('woff');
     font-weight: $weight;
     font-style: normal;
   }
 }
 
-.h1b { @include font-style('Pretendard', Bold, 1.5, -3%, 130%); }
-.h1s { @include font-style('Pretendard', SemiBold, 1.5, -3%, 130%); }
-.h2s { @include font-style('Pretendard', SemiBold, 1.25, -3%, 130%); }
-.h3s { @include font-style('Pretendard', SemiBold, 1, -3%, 140%); }
-.h4s { @include font-style('Pretendard', SemiBold, 0.875, -3%, 130%); }
-.h4m { @include font-style('Pretendard', Medium, 0.875, -3%, 130%); }
+.h1b { @include font-style(bold, 1.5, -3%, 130%); }
+.h1s { @include font-style(semibold, 1.5, -3%, 130%); }
+.h2s { @include font-style(semibold, 1.25, -3%, 130%); }
+.h3s { @include font-style(semibold, 1, -3%, 140%); }
+.h4s { @include font-style(semibold, 0.875, -3%, 130%); }
+.h4m { @include font-style(medium, 0.875, -3%, 130%); }
 
-.b1m { @include font-style('Pretendard', Medium, 0.75, -3%, 130%); }
-.b1s { @include font-style('Pretendard', SemiBold, 0.75, -3%, 130%); }
-.b1r { @include font-style('Pretendard', regular, 0.75, -3%, 140%); }
-.b2m { @include font-style('Pretendard', Medium, 0.6875, -3%, 130%); }
-.b2s { @include font-style('Pretendard', SemiBold, 0.6875, -3%, 130%); }
-.b2r { @include font-style('Pretendard', regular, 0.6875, -3%, 130%); }
-.b3m { @include font-style('Pretendard', Medium, 0.5625, -3%, 130%); }
-.b4m { @include font-style('Pretendard', Medium, 0.5, -3%, 130%); }
+.b1m { @include font-style(medium, 0.75, -3%, 130%); }
+.b1s { @include font-style(semibold, 0.75, -3%, 130%); }
+.b1r { @include font-style(regular, 0.75, -3%, 140%); }
+.b2m { @include font-style(medium, 0.6875, -3%, 130%); }
+.b2s { @include font-style(semibold, 0.6875, -3%, 130%); }
+.b2r { @include font-style(regular, 0.6875, -3%, 130%); }
+.b3m { @include font-style(medium, 0.5625, -3%, 130%); }
+.b4m { @include font-style(medium, 0.5, -3%, 130%); }
