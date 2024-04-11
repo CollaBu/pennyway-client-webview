@@ -69,7 +69,7 @@
 
 ## 📌 Architecture
 
-### FSD Architecture
+### 1️⃣ FSD Architecture
 
 > 💡 FSD Architecture를 커스텀하여 사용합니다.
 
@@ -78,6 +78,13 @@
   <img src="https://github.com/Legitgoons/Legitgoons/assets/101088491/99d1490e-7066-41cf-8f8a-70326627ea1f" width="600">
 </div>
 <br/>
+
+### 2️⃣ CI/CD Pipeline
+
+<div align="center">
+    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/27904f85-6bdf-49ec-a08d-54821827f6fe" alt="ci pipeline" width="600" />
+    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/37d03add-2956-466e-a100-549168860cad" alt="cd pipeline" width="600" />
+</div>
 
 ## 📗 Tech Stack
 
