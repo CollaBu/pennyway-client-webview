@@ -1,0 +1,31 @@
+@mixin font-style($weight, $size, $line-height) {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: $weight;
+  font-size: $size * 1rem;
+  letter-spacing: -3%;
+  line-height: $line-height;
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/assets/font/pretendard-#{$weight}-subset.woff2') format('woff2'),
+         url('/assets/font/pretendard-#{$weight}-subset.woff') format('woff');
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+.h1bold { @include font-style(bold, 1.5, 130%); }
+.h1semi { @include font-style(semibold, 1.5, 130%); }
+.h2semi { @include font-style(semibold, 1.25, 130%); }
+.h3semi { @include font-style(semibold, 1, 140%); }
+.h4semi { @include font-style(semibold, 0.875, 130%); }
+.h4md { @include font-style(medium, 0.875, 130%); }
+
+.b1md { @include font-style(medium, 0.75, 130%); }
+.b1semi { @include font-style(semibold, 0.75, 130%); }
+.b1reg { @include font-style(regular, 0.75, 140%); }
+.b2md { @include font-style(medium, 0.6875, 130%); }
+.b2semi { @include font-style(semibold, 0.6875, 130%); }
+.b2reg { @include font-style(regular, 0.6875, 130%); }
+.b3md { @include font-style(medium, 0.5625, 130%); }
+.b4md { @include font-style(medium, 0.5, 130%); }
