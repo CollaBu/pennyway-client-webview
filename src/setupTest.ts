@@ -7,8 +7,9 @@ expect.extend(matchers);
 
 // 테스트용 Mocking 서버 설정
 import { setupServer } from 'msw/node';
+import { likeHandlers } from './app/mocks/handler/like';
 
-export const server = setupServer();
+export const server = setupServer(...likeHandlers);
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 afterAll(() => server.close());
