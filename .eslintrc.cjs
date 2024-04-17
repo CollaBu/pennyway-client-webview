@@ -26,6 +26,14 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'no-var': 'error',
+    'no-multiple-empty-lines': 'error',
+    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+    eqeqeq: 'error',
+    'dot-notation': 'error',
+    'no-unused-vars': 'error',
+    'react/jsx-no-useless-fragment': 'error',
+    'react/react-in-jsx-scope': 'off',
     'import/order': [
       'error',
       {
