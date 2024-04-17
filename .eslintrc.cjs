@@ -12,7 +12,13 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@tanstack/query', 'fsd-import', 'import'],
+  plugins: [
+    'react-refresh',
+    '@tanstack/query',
+    'fsd-import',
+    'import',
+    'react',
+  ],
   settings: {
     'import/resolver': {
       alias: {
