@@ -12,7 +12,7 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@tanstack/query'],
+  plugins: ['react-refresh', '@tanstack/query', 'fsd-import'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
