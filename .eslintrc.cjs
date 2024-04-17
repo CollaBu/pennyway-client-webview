@@ -12,11 +12,47 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@tanstack/query', 'fsd-import'],
+  plugins: ['react-refresh', '@tanstack/query', 'fsd-import', 'import'],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', '@public', './src']],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      },
+    },
+  },
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+    ],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'react-router-dom',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**/*',
+            group: 'parent',
+            position: 'before',
+          },
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
     ],
   },
   globals: {
