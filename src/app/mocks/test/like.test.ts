@@ -15,7 +15,7 @@ describe('좋아요가 되어있지 않은 상태에서', () => {
     const { totalCount: prevTotalCount } = await getFeedById(feedId);
 
     // 좋아요 클릭
-    await axios.post(`/feeds/${feedId}/likes`);
+    await axios.put(`/feeds/${feedId}/likes`);
 
     // 업데이트 된 좋아요의 상태
     const { totalCount, isLike } = await getFeedById(feedId);
@@ -44,7 +44,7 @@ describe('좋아요가 되어있는 상태에서', () => {
     const { totalCount: prevTotalCount, isLike: prevIsLike } =
       await getFeedById(feedId);
 
-    await axios.post(`/feeds/${feedId}/likes`);
+    await axios.put(`/feeds/${feedId}/likes`);
 
     const { totalCount, isLike } = await getFeedById(feedId);
 

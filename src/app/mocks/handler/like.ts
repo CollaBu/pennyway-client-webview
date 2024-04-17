@@ -22,7 +22,7 @@ export const likeHandlers = [
   }),
 
   // 2️⃣ 피드 좋아요
-  http.post('/feeds/:feed_id/likes', ({ params }) => {
+  http.put('/feeds/:feed_id/likes', ({ params }) => {
     const { feed_id } = params;
 
     if (isNaN(Number(feed_id))) {

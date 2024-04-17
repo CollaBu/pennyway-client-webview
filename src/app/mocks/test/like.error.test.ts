@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const testCases = [
   ['GET', '피드 좋아요 조회 API'],
-  ['POST', '피드 좋아요 API'],
+  ['PUT', '피드 좋아요 API'],
   ['DELETE', '피드 좋아요 취소 API'],
 ];
 
