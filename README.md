@@ -73,9 +73,9 @@
 
 > 💡 FSD Architecture를 커스텀하여 사용합니다.
 
-- widgets, features, entities 3단계를 통합해 components단계로 설정하였습니다.
+- widgets, features, entities 3단계를 통합해 features단계로 설정하였습니다.
 <div align="center">
-  <img src="https://github.com/Legitgoons/Legitgoons/assets/101088491/99d1490e-7066-41cf-8f8a-70326627ea1f" width="600">
+  <img src="https://github.com/CollaBu/pennyway-client-webview/assets/101088491/9f247ff1-9fe3-4d84-98e5-de1ebfa70180" width="600">
 </div>
 <br/>
 
