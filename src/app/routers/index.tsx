@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
+
 import RootLayout from '../layout/RootLayout.tsx';
 
 const root: RouteObject[] = [
