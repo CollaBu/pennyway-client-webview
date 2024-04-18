@@ -40,6 +40,9 @@ module.exports = {
     'no-unused-vars': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/react-in-jsx-scope': 'off',
+    'fsd-import/fsd-relative-path': 'error',
+    'fsd-import/public-api-imports': 'error',
+    'fsd-import/layer-imports': 'error',
     'import/order': [
       'error',
       {
