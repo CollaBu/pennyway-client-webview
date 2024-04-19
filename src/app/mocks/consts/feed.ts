@@ -18,7 +18,7 @@ interface Feed {
   likeCount: number;
   commentCount: number;
 
-  isLike: boolean;
+  isLiked: boolean;
   isBookmark: boolean;
 
   createdAt: string;
@@ -46,7 +46,7 @@ export const feeds: Feeds = {
     likeCount: likes[1].totalCount,
     commentCount: comments[1].length,
 
-    isLike: likes[1].isLike,
+    isLiked: likes[1].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 12:00:00',
@@ -75,7 +75,7 @@ export const feeds: Feeds = {
     likeCount: likes[2].totalCount,
     commentCount: comments[2].length,
 
-    isLike: likes[2].isLike,
+    isLiked: likes[2].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 12:10:00',
@@ -96,7 +96,7 @@ export const feeds: Feeds = {
     likeCount: likes[3].totalCount,
     commentCount: comments[3].length,
 
-    isLike: likes[3].isLike,
+    isLiked: likes[3].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 12:20:00',
@@ -121,7 +121,7 @@ export const feeds: Feeds = {
     likeCount: likes[4].totalCount,
     commentCount: comments[4].length,
 
-    isLike: likes[4].isLike,
+    isLiked: likes[4].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 12:30:00',
@@ -150,7 +150,7 @@ export const feeds: Feeds = {
     likeCount: likes[5].totalCount,
     commentCount: comments[5].length,
 
-    isLike: likes[5].isLike,
+    isLiked: likes[5].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 12:40:00',
@@ -179,7 +179,7 @@ export const feeds: Feeds = {
     likeCount: likes[6].totalCount,
     commentCount: comments[6].length,
 
-    isLike: likes[6].isLike,
+    isLiked: likes[6].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 12:50:00',
@@ -204,7 +204,7 @@ export const feeds: Feeds = {
     likeCount: likes[7].totalCount,
     commentCount: comments[7].length,
 
-    isLike: likes[7].isLike,
+    isLiked: likes[7].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 13:00:00',
@@ -225,7 +225,7 @@ export const feeds: Feeds = {
     likeCount: likes[8].totalCount,
     commentCount: comments[8].length,
 
-    isLike: likes[8].isLike,
+    isLiked: likes[8].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 13:10:00',
@@ -250,7 +250,7 @@ export const feeds: Feeds = {
     likeCount: likes[9].totalCount,
     commentCount: comments[9].length,
 
-    isLike: likes[9].isLike,
+    isLiked: likes[9].isLiked,
     isBookmark: false,
 
     createdAt: '2024-04-16 13:20:00',

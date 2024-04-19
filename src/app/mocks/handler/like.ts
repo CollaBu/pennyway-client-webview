@@ -40,12 +40,12 @@ export const likeHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    if (!likeInfo.isLike) {
-      likeInfo.isLike = true;
+    if (!likeInfo.isLiked) {
+      likeInfo.isLiked = true;
       likeInfo.totalCount += 1;
     }
 
-    return createHttpSuccessResponse({});
+    return createHttpSuccessResponse({ isLiked: true });
   }),
 
   // 3️⃣ 피드 좋아요 취소
@@ -63,11 +63,11 @@ export const likeHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    if (likeInfo.isLike) {
-      likeInfo.isLike = false;
+    if (likeInfo.isLiked) {
+      likeInfo.isLiked = false;
       likeInfo.totalCount -= 1;
     }
 
-    return createHttpSuccessResponse({});
+    return createHttpSuccessResponse({ isLiked: false });
   }),
 ];

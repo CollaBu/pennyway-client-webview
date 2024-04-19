@@ -6,17 +6,17 @@ interface Likes {
 
 interface Like {
   totalCount: number;
-  isLike: boolean;
+  isLiked: boolean;
 }
 
 export const likes: Likes = {
-  1: { totalCount: 10, isLike: false },
-  2: { totalCount: 2, isLike: true },
-  3: { totalCount: 4, isLike: false },
-  4: { totalCount: 1, isLike: true },
-  5: { totalCount: 7, isLike: true },
-  6: { totalCount: 0, isLike: false },
-  7: { totalCount: 3, isLike: false },
-  8: { totalCount: 924, isLike: false },
-  9: { totalCount: 11, isLike: true },
+  1: { totalCount: 10, isLiked: false },
+  2: { totalCount: 2, isLiked: true },
+  3: { totalCount: 4, isLiked: false },
+  4: { totalCount: 1, isLiked: true },
+  5: { totalCount: 7, isLiked: true },
+  6: { totalCount: 0, isLiked: false },
+  7: { totalCount: 3, isLiked: false },
+  8: { totalCount: 924, isLiked: false },
+  9: { totalCount: 11, isLiked: true },
 };
