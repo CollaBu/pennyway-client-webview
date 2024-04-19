@@ -1,6 +1,7 @@
 import { http } from 'msw';
 
 import { likes } from '../consts/like';
+import { feeds } from '../consts/feed';
 import {
   createHttpSuccessResponse,
   createHttpErrorResponse,
@@ -43,6 +44,8 @@ export const likeHandlers = [
     if (!likeInfo.isLiked) {
       likeInfo.isLiked = true;
       likeInfo.totalCount += 1;
+      feeds[formattedFeedId].isLiked = true;
+      feeds[formattedFeedId].likeCount += 1;
     }
 
     return createHttpSuccessResponse({ isLiked: true });
@@ -66,6 +69,8 @@ export const likeHandlers = [
     if (likeInfo.isLiked) {
       likeInfo.isLiked = false;
       likeInfo.totalCount -= 1;
+      feeds[formattedFeedId].isLiked = false;
+      feeds[formattedFeedId].likeCount -= 1;
     }
 
     return createHttpSuccessResponse({ isLiked: false });
