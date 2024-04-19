@@ -1,7 +1,10 @@
-import { HttpResponse, http } from 'msw';
+import { http } from 'msw';
 
 import { likes } from '../consts/like';
-import { createHttpErrorResponse } from '../dir/response';
+import {
+  createHttpSuccessResponse,
+  createHttpErrorResponse,
+} from '../dir/response';
 
 export const likeHandlers = [
   // 1️⃣ 피드 좋아요 조회
@@ -19,7 +22,7 @@ export const likeHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    return HttpResponse.json({ code: '2000', like: likeInfo }, { status: 200 });
+    return createHttpSuccessResponse({ like: likeInfo });
   }),
 
   // 2️⃣ 피드 좋아요
@@ -42,7 +45,7 @@ export const likeHandlers = [
       likeInfo.totalCount += 1;
     }
 
-    return HttpResponse.json({ code: '2000', data: {} }, { status: 200 });
+    return createHttpSuccessResponse({});
   }),
 
   // 3️⃣ 피드 좋아요 취소
@@ -65,6 +68,6 @@ export const likeHandlers = [
       likeInfo.totalCount -= 1;
     }
 
-    return HttpResponse.json({ code: '2000', data: {} }, { status: 200 });
+    return createHttpSuccessResponse({});
   }),
 ];

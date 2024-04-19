@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 async function getFeedById(feedId: number) {
   const likes = await axios.get(`/feeds/${feedId}/likes`);
-  const { totalCount, isLike } = likes.data.like;
+  const { totalCount, isLike } = likes.data.data.like;
 
   return { totalCount, isLike };
 }
