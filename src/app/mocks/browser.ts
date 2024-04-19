@@ -1,4 +1,5 @@
 import { setupWorker } from 'msw/browser';
+
 import { likeHandlers } from './handler/like';
 
 // 브라우저에서 실행하기 위한 mocking worker 초기화

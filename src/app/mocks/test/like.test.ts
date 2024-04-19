@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import axios from 'axios';
+import { describe, expect, it } from 'vitest';
 
 async function getFeedById(feedId: number) {
   const likes = await axios.get(`/feeds/${feedId}/likes`);

@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import axios from 'axios';
+import { describe, expect, it } from 'vitest';
 
 const testCases = [
   ['GET', '피드 좋아요 조회 API'],

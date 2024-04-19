@@ -1,4 +1,5 @@
 import { HttpResponse } from 'msw';
+
 import { errorMessage } from '../consts/error';
 
 export function createHttpErrorResponse(code: keyof typeof errorMessage) {

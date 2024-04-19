@@ -1,4 +1,5 @@
 import { HttpResponse, http } from 'msw';
+
 import { likes } from '../consts/like';
 import { createHttpErrorResponse } from '../dir/response';
 
