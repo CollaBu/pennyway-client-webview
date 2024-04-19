@@ -1,5 +1,5 @@
 import { feeds } from './feed';
-import { users } from './user';
+import { User, users } from './user';
 
 interface Comments {
   [feedId: keyof typeof feeds]: Comment[];
@@ -8,12 +8,7 @@ interface Comments {
 interface Comment {
   id: number;
 
-  user: {
-    id: number;
-    profileImage: string;
-    name: string;
-  };
-
+  user: User;
   content: string;
 
   createdAt: string;
