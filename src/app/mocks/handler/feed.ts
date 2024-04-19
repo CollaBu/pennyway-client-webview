@@ -1,4 +1,4 @@
-import { HttpResponse, http } from 'msw';
+import { http } from 'msw';
 
 import { feeds } from '../consts/feed';
 import { reports } from '../consts/report';
@@ -6,7 +6,10 @@ import { users } from '../consts/user';
 import { likes } from '../consts/like';
 import { comments } from '../consts/comment';
 import { getCurrentDate } from '../dir/date';
-import { createHttpErrorResponse } from '../dir/response';
+import {
+  createHttpSuccessResponse,
+  createHttpErrorResponse,
+} from '../dir/response';
 
 interface FeedForm {
   title: string;
@@ -43,19 +46,13 @@ export const feedHandlers = [
     const endOfPageRange = formattedPage * pageCount;
     const hasNext = endOfPageRange < totalFeeds;
 
-    return HttpResponse.json(
-      {
-        code: '2000',
-        data: {
-          feeds: feedsData,
-          currentPageNumber: pageCount,
-          pageSize: formattedPage,
-          numberOfElements: feedsData.length,
-          hasNext,
-        },
-      },
-      { status: 200 },
-    );
+    return createHttpSuccessResponse({
+      feeds: feedsData,
+      currentPageNumber: pageCount,
+      pageSize: formattedPage,
+      numberOfElements: feedsData.length,
+      hasNext,
+    });
   }),
 
   // 2️⃣ 피드 작성
@@ -92,7 +89,7 @@ export const feedHandlers = [
     comments[nextFeedId] = [];
     reports[nextFeedId] = false;
 
-    return HttpResponse.json({ code: '2000', data: {} }, { status: 200 });
+    return createHttpSuccessResponse({});
   }),
 
   // 3️⃣ 피드 상세
@@ -110,7 +107,7 @@ export const feedHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    return HttpResponse.json({ code: '2000', feed }, { status: 200 });
+    return createHttpSuccessResponse({ feed });
   }),
 
   // 4️⃣ 피드 수정
@@ -142,7 +139,7 @@ export const feedHandlers = [
       updatedAt: getCurrentDate(),
     };
 
-    return HttpResponse.json({ code: '2000', data: {} }, { status: 200 });
+    return createHttpSuccessResponse({});
   }),
 
   // 5️⃣ 피드 삭제
@@ -163,7 +160,7 @@ export const feedHandlers = [
     delete likes[formattedFeedId];
     delete comments[formattedFeedId];
 
-    return HttpResponse.json({ code: '2000', data: {} }, { status: 200 });
+    return createHttpSuccessResponse({});
   }),
 
   // 6️⃣ 피드 신고
@@ -191,6 +188,6 @@ export const feedHandlers = [
       reports[formattedFeedId] = true;
     }
 
-    return HttpResponse.json({ code: '2000', data: {} }, { status: 200 });
+    return createHttpSuccessResponse({});
   }),
 ];
