@@ -82,7 +82,7 @@
 ### 2️⃣ CI/CD Pipeline
 
 <div align="center">
-    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/27904f85-6bdf-49ec-a08d-54821827f6fe" alt="ci pipeline" width="600" />
+    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/e236ae0b-66d1-48a3-ade7-4801fedd1285" alt="ci pipeline" width="600" />
     <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/37d03add-2956-466e-a100-549168860cad" alt="cd pipeline" width="600" />
 </div>
 
