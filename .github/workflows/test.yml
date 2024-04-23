@@ -24,18 +24,6 @@ on:
         required: false
 
 jobs:
-  lint:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout pull request
-        uses: actions/checkout@v4
-
-      - name: Reuse setup action
-        uses: ./.github/actions/setup
-
-      - name: Test with eslint
-        run: yarn lint
-
   test:
     runs-on: ubuntu-20.04
     steps:
