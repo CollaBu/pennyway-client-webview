@@ -1,5 +1,5 @@
 import './ConfirmButton.scss';
-import { ActiveButtonProps } from './buttonType';
+import { ActiveButtonProps } from './types';
 
 interface ConfirmButtonProps extends ActiveButtonProps {
   isActive: boolean;

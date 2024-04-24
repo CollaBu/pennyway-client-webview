@@ -1,5 +1,5 @@
 import './followButton.scss';
-import { ActiveButtonProps } from './buttonType';
+import { ActiveButtonProps } from './types';
 
 interface FollowButtonLgProps extends ActiveButtonProps {}
 

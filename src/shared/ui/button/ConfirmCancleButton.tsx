@@ -1,5 +1,5 @@
 import './ConfirmButton.scss';
-import { BaseButtonProps } from './buttonType';
+import { BaseButtonProps } from './types';
 
 interface ConfirmCancleButtonProps extends BaseButtonProps {}
 
