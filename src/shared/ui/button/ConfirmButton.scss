@@ -22,7 +22,7 @@
 }
 
 .confirmButtonActive {
-  @include confirmButton(true, false);
+  @include confirmButton(false, true);
 }
 .confirmButton {
   @include confirmButton(false, false);
