@@ -1,4 +1,4 @@
-@use '../../styles/_index.scss' as *;
+@use '@/shared/styles/_index.scss' as *;
 
 .pageHeader {
   @include responsive-dimensions(320px, 44px);

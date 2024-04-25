@@ -1,4 +1,4 @@
-@use '../../styles/_index.scss' as *;
+@use '@/shared/styles/_index.scss' as *;
 
 @mixin confirmButton($isCancle: false, $isActive: false) {
   @include responsive-dimensions(108px, 40px);
