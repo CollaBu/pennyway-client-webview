@@ -7,24 +7,26 @@
   border-radius: 8px;
   border: none;
   background-color: white;
-}
-.profileImage {
-  @include responsive-dimensions(45px, 45px);
-  border-radius: 50%;
-  overflow: hidden;
-}
-.nameSection {
-  @include responsive-dimensions(155px, 32px);
-  padding-left: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.userName {
-  color: $gray7;
-  margin: 0;
-}
-.description {
-  color: $gray4;
-  margin: 0;
+
+  .profileImage {
+    @include responsive-dimensions(45px, 45px);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .nameSection {
+    @include responsive-dimensions(155px, 32px);
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .userName {
+      color: $gray7;
+      margin: 0;
+    }
+    .description {
+      color: $gray4;
+      margin: 0;
+    }
+  }
 }
