@@ -14,7 +14,6 @@ export default function PageHeader({ prevPageLink, page }: PageHeaderProps) {
         <BackIcon />
       </Link>
       <p className='page'>{page}</p>
-      <div className='dummy'></div>
     </div>
   );
 }
