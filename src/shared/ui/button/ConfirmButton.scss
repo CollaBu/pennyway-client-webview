@@ -3,7 +3,6 @@
 @mixin confirmButton($isCancle: false, $isActive: false) {
   @include responsive-dimensions(108px, 40px);
   border-radius: 4px;
-  border: none;
 
   @if $isCancle {
     color: $gray4;

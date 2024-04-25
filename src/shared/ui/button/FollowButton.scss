@@ -2,7 +2,7 @@
 
 @mixin followButton($isLg: false, $isActive: false) {
   border-radius: 30px;
-  border: none;
+
   @if $isLg {
     @include responsive-dimensions(280px, 30px);
   } @else {
