@@ -1,10 +1,8 @@
 @use '../../styles/_index.scss' as *;
 
-@mixin followButton($isLg: false, $isActive: false) {}
-
-.confirmModal {
-  @include responsive-dimensions(252px, 146px);
+@mixin confirmModal($isReport: false) {
   position: fixed;
+  padding: 0 18px;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -40%);
@@ -16,15 +14,32 @@
   border: none;
   background-color: white;
 
+  @if $isReport {
+    @include responsive-dimensions(280px, 356px);
+  } @else {
+    @include responsive-dimensions(252px, 146px);
+  }
+
   .title {
     color: $gray7;
   }
-  .description {
+  .content {
     color: $gray4;
   }
   .buttons {
     @include responsive-dimensions(224px, 40px);
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.confirmModal {
+  @include confirmModal(false);
+}
+
+.confirmReportModal {
+  @include confirmModal(true);
+  .title {
+    align-self: start;
   }
 }
