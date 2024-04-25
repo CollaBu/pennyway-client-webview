@@ -1,22 +1,22 @@
 import { Fragment } from 'react/jsx-runtime';
-import './BottomModal.scss';
+import './BottomSheetModal.scss';
 
 interface Option {
   label: string;
   onClick: () => void;
 }
 
-interface BottomModalProps {
+interface BottomSheetModalProps {
   options: Option[];
 }
 
-export default function BottomModal({ options }: BottomModalProps) {
+export default function BottomSheetModal({ options }: BottomSheetModalProps) {
   return (
-    <div className='dropupModal'>
+    <div className='bottomModal'>
       <div className='modalContent'>
         {options.map((option, index) => (
           <Fragment key={index}>
-            <button onClick={option.onClick} className='modalOption'>
+            <button onClick={option.onClick} className='option'>
               {option.label}
             </button>
             {index < options.length - 1 && <hr className='optionDivider' />}

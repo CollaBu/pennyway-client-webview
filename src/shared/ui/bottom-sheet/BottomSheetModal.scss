@@ -1,6 +1,6 @@
 @use '../../styles/_index.scss' as *;
 
-.dropupModal {
+.bottomSheetModal {
   position: fixed;
   left: 0;
   right: 0;
@@ -19,7 +19,7 @@
     border-radius: 4px;
   }
 
-  .modalOption {
+  .option {
     @include responsive-dimensions(280px, 40px);
     background-color: $gray1;
     color: $gray5;
