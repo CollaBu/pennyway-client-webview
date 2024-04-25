@@ -20,7 +20,7 @@ export default function ConfirmModal({
   return (
     <div className='confirmModal'>
       <h3 className='title h3semi'>{title}</h3>
-      <p className='description b1md'>{content}</p>
+      <p className='content b1md'>{content}</p>
       <div className='buttons'>
         <ConfirmCancleButton onClick={onClose}>
           {onCloseMsg}
