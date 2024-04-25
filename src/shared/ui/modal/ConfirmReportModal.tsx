@@ -17,7 +17,7 @@ export default function ConfirmReportModal({
   onCloseMsg,
 }: ConfirmReportModalProps) {
   return (
-    <div className='confirmReportModal'>
+    <form className='confirmReportModal'>
       <h3 className='title h3semi'>{title}</h3>
       <section>{children}</section>
       <div className='buttons'>
@@ -28,6 +28,6 @@ export default function ConfirmReportModal({
           {onExecuteMsg}
         </ConfirmButton>
       </div>
-    </div>
+    </form>
   );
 }
