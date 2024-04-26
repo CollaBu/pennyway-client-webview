@@ -18,26 +18,11 @@
     align-items: center;
     border-radius: 4px;
   }
-
-  .option {
-    @include responsive-dimensions(280px, 40px);
-    background-color: $gray1;
-    color: $gray5;
-    text-align: center;
-  }
   .optionDivider {
     width: 240px;
     margin: 0 auto;
     border: none;
     height: 1px;
     background-color: $gray3;
-  }
-  .cancleButton {
-    @include responsive-dimensions(280px, 47px);
-    text-align: center;
-    background-color: $gray5;
-    color: white;
-    border-radius: 4px;
-    margin-top: 8px;
   }
 }

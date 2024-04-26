@@ -1,5 +1,7 @@
 import { Fragment } from 'react/jsx-runtime';
+
 import './BottomSheetModal.scss';
+import BasicButton from '../button/BasicButton';
 
 interface Option {
   label: string;
@@ -8,9 +10,13 @@ interface Option {
 
 interface BottomSheetModalProps {
   options: Option[];
+  onClose: () => void;
 }
 
-export default function BottomSheetModal({ options }: BottomSheetModalProps) {
+export default function BottomSheetModal({
+  options,
+  onClose,
+}: BottomSheetModalProps) {
   return (
     <div className='bottomModal'>
       <div className='modalContent'>
@@ -23,7 +29,9 @@ export default function BottomSheetModal({ options }: BottomSheetModalProps) {
           </Fragment>
         ))}
       </div>
-      <button className='cancleButton'>취소</button>
+      <BasicButton styleClass='bsm-cancle' onClick={onClose}>
+        취소
+      </BasicButton>
     </div>
   );
 }
