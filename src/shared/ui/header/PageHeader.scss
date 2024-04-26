@@ -1,6 +1,6 @@
 @use '@/shared/styles/_index.scss' as *;
 
-.pageHeader {
+.page-header {
   @include responsive-dimensions(320px, 44px);
   display: flex;
   align-items: center;

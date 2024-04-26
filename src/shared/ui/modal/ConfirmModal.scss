@@ -33,11 +33,11 @@
   }
 }
 
-.confirmModal {
+.confirm-modal {
   @include confirmModal(false);
 }
 
-.confirmReportModal {
+.confirm-report-modal {
   @include confirmModal(true);
   .title {
     align-self: start;

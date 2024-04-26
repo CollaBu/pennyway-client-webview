@@ -1,6 +1,6 @@
 @use '@/shared/styles/_index.scss' as *;
 
-.bottomSheetModal {
+.bottom-sheet-modal {
   position: fixed;
   left: 0;
   right: 0;
@@ -11,14 +11,14 @@
   justify-content: center;
   align-items: center;
 
-  .modalContent {
+  .modal-content {
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 4px;
   }
-  .optionDivider {
+  .option-divider {
     width: 240px;
     margin: 0 auto;
     border: none;

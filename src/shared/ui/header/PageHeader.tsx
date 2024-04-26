@@ -10,7 +10,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ prevPageLink, page }: PageHeaderProps) {
   return (
-    <div className='pageHeader'>
+    <div className='page-header'>
       <Link to={prevPageLink}>
         <BackIcon />
       </Link>

@@ -8,12 +8,12 @@
   border: none;
   background-color: white;
 
-  .profileImage {
+  .profile-image {
     @include responsive-dimensions(45px, 45px);
     border-radius: 50%;
     overflow: hidden;
   }
-  .nameSection {
+  .name-section {
     @include responsive-dimensions(155px, 32px);
     padding-left: 5px;
     display: flex;

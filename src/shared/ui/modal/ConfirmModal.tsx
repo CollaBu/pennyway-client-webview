@@ -18,7 +18,7 @@ export default function ConfirmModal({
   onCloseMsg,
 }: ConfirmModalProps) {
   return (
-    <div className='confirmModal'>
+    <div className='confirm-modal'>
       <h3 className='title h3semi'>{title}</h3>
       <p className='content b1md'>{content}</p>
       <div className='buttons'>

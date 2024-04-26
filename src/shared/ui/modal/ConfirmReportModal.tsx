@@ -12,7 +12,7 @@ export default function ConfirmReportModal({
   onCloseMsg,
 }: ConfirmReportModalProps) {
   return (
-    <form className='confirmReportModal'>
+    <form className='confirm-report-modal'>
       <h3 className='title h3semi'>{title}</h3>
       <section></section>
       <div className='buttons'>

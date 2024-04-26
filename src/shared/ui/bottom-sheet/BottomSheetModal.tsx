@@ -18,14 +18,14 @@ export default function BottomSheetModal({
   onClose,
 }: BottomSheetModalProps) {
   return (
-    <div className='bottomModal'>
-      <div className='modalContent'>
+    <div className='bottom-sheet-modal'>
+      <div className='modal-content'>
         {options.map((option, index) => (
           <Fragment key={index}>
             <button onClick={option.onClick} className='option'>
               {option.label}
             </button>
-            {index < options.length - 1 && <hr className='optionDivider' />}
+            {index < options.length - 1 && <hr className='option-divider' />}
           </Fragment>
         ))}
       </div>
