@@ -1,5 +1,5 @@
-import ConfirmButton from '../button/ConfirmButton';
-import ConfirmCancleButton from '../button/ConfirmCancleButton';
+import ActiveButton from '../button/ActiveButton';
+import BasicButton from '../button/BasicButton';
 
 import './ConfirmModal.scss';
 import { BaseModalProps } from './types';
@@ -13,7 +13,7 @@ export default function ConfirmModal({
   content,
   onExecute,
   onExecuteMsg,
-  onExecuteisActive,
+  onExecuteIsDisabled,
   onClose,
   onCloseMsg,
 }: ConfirmModalProps) {
@@ -22,12 +22,16 @@ export default function ConfirmModal({
       <h3 className='title h3semi'>{title}</h3>
       <p className='content b1md'>{content}</p>
       <div className='buttons'>
-        <ConfirmCancleButton onClick={onClose}>
+        <BasicButton onClick={onClose} styleClass='confirm-cancle'>
           {onCloseMsg}
-        </ConfirmCancleButton>
-        <ConfirmButton onClick={onExecute} isActive={onExecuteisActive}>
+        </BasicButton>
+        <ActiveButton
+          onClick={onExecute}
+          isDisabled={onExecuteIsDisabled}
+          styleClass='confirm'
+        >
           {onExecuteMsg}
-        </ConfirmButton>
+        </ActiveButton>
       </div>
     </div>
   );

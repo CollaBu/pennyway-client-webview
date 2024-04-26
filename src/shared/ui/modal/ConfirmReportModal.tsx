@@ -1,32 +1,31 @@
-import ConfirmButton from '../button/ConfirmButton';
-import ConfirmCancleButton from '../button/ConfirmCancleButton';
+import ActiveButton from '../button/ActiveButton';
+import BasicButton from '../button/BasicButton';
 
-import { BaseModalProps } from './types';
-
-interface ConfirmReportModalProps extends BaseModalProps {
-  children: React.ReactNode;
-}
+import { BaseModalProps as ConfirmReportModalProps } from './types';
 
 export default function ConfirmReportModal({
   title,
-  children,
   onExecute,
   onExecuteMsg,
-  onExecuteisActive,
+  onExecuteIsDisabled,
   onClose,
   onCloseMsg,
 }: ConfirmReportModalProps) {
   return (
     <form className='confirmReportModal'>
       <h3 className='title h3semi'>{title}</h3>
-      <section>{children}</section>
+      <section></section>
       <div className='buttons'>
-        <ConfirmCancleButton onClick={onClose}>
+        <BasicButton onClick={onClose} styleClass='confirm-cancle'>
           {onCloseMsg}
-        </ConfirmCancleButton>
-        <ConfirmButton onClick={onExecute} isActive={onExecuteisActive}>
+        </BasicButton>
+        <ActiveButton
+          onClick={onExecute}
+          isDisabled={onExecuteIsDisabled}
+          styleClass='confirm'
+        >
           {onExecuteMsg}
-        </ConfirmButton>
+        </ActiveButton>
       </div>
     </form>
   );

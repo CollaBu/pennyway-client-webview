@@ -2,7 +2,7 @@ export interface BaseModalProps {
   title: string;
   onExecute: () => void;
   onExecuteMsg: string;
-  onExecuteisActive: boolean;
+  onExecuteIsDisabled: boolean;
   onClose: () => void;
   onCloseMsg: string;
 }
