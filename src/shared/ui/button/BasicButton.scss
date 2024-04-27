@@ -1,5 +1,8 @@
 @use '@/shared/styles/_index.scss' as *;
 
+.defalut {
+}
+
 .confirm-cancle {
   @include responsive-dimensions(108px, 40px);
   @extend .h4semi;
