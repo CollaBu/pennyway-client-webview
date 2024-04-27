@@ -1,3 +1,4 @@
 dist
 .eslintrc.cjs
 mocks
+index.d.ts
