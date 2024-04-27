@@ -1,7 +1,10 @@
 import { ButtonProps } from './types';
+import './ActiveButton.scss';
+
+export type ActiveStyle = 'confirm' | 'follow-sm' | 'follow-lg';
 
 interface ActiveButtonProps extends ButtonProps {
-  styleClass: 'confirm' | 'follow-sm' | 'follow-lg';
+  styleClass: ActiveStyle;
   isDisabled: boolean;
 }
 

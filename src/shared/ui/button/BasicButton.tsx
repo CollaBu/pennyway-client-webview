@@ -1,7 +1,14 @@
 import { ButtonProps } from './types';
+import './BasicButton.scss';
+
+export type BasicStyle =
+  | 'defalut'
+  | 'confirm-cancle'
+  | 'bsm-cancle'
+  | 'bsm-option';
 
 interface BasicButtonProps extends ButtonProps {
-  styleClass: 'confirm-cancle' | 'bsm-cancle' | 'bsm-option';
+  styleClass: BasicStyle;
 }
 
 export default function BasicButton({
