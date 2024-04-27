@@ -7,9 +7,11 @@ interface ProfileProps {
 }
 
 export default function Profile({ profileImage, name, content }: ProfileProps) {
+  const profileImg = profileImage === '' ? 'defalut-img' : profileImage;
+
   return (
     <div className='profile'>
-      <img src={profileImage} className='profile-image' />
+      <img src={profileImg} className='profile-image' />
       <div className='name-section'>
         <h5 className='name b1semi'>{name}</h5>
         <p className='content b3md'>{content}</p>
