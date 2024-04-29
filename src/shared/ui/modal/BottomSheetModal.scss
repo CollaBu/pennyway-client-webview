@@ -1,11 +1,6 @@
 @use '@/shared/styles/_index.scss' as *;
 
 .bottom-sheet-modal {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 33.5px;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
