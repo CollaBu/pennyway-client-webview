@@ -41,15 +41,15 @@
 }
 
 .follow-lg {
-  @include followButtonLg(true, false);
+  @include followButton(true, false);
 }
 .follow-lg-disabled {
   @include followButton(true, true);
 }
 
 .follow-sm {
-  @include followButtonSm(false, false);
+  @include followButton(false, false);
 }
 .follow-sm-disabled {
-  @include followButtonSm(false, true);
+  @include followButton(false, true);
 }
