@@ -16,7 +16,7 @@ export function logApiRequestOnDev(config: InternalAxiosRequestConfig) {
     const title = `${method?.toUpperCase()} ${url}`;
 
     console.group(`🛫 [API 요청] ${title}`);
-    console.log(`현재 시간: ${getCurrentDate()}`);
+    console.log(`현재 시각: ${getCurrentDate()}`);
     console.log(`요청 데이터: ${JSON.stringify(data, null, 2) || 'X'}`);
     console.groupEnd();
   }
@@ -32,7 +32,7 @@ export function logApiResponseOnDev(response: AxiosResponse) {
     const httpStatus = `${status} ${statusText}`;
 
     console.group(`🛬 [API 응답] ${title}`);
-    console.log(`현재 시간: ${getCurrentDate()}`);
+    console.log(`현재 시각: ${getCurrentDate()}`);
     console.log(`HTTP 응답 코드: ${httpStatus}`);
     console.log(`서버 응답 코드: ${code}`);
     console.log(`서버 응답 데이터: ${JSON.stringify(data, null, 2)}`);
@@ -48,7 +48,7 @@ export function logApiErrorOnDev(error: AxiosError) {
     const title = `${method?.toUpperCase()} ${url}`;
 
     console.group(`🚨 [API 에러] ${title}`);
-    console.log(`현재 시간: ${getCurrentDate()}`);
+    console.log(`현재 시각: ${getCurrentDate()}`);
     console.log(`에러 코드: ${code}`);
     console.log(`에러명: ${error.message}`);
     console.groupEnd();
