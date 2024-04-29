@@ -1,7 +1,8 @@
 import './Profile.scss';
+import { ProfileImage } from './ProfileImage';
+import { ProfileImageProps } from './types';
 
-interface ProfileProps {
-  profileImage: string;
+interface ProfileProps extends ProfileImageProps {
   name: string;
   content: string;
 }
@@ -11,7 +12,7 @@ export const Profile = ({ profileImage, name, content }: ProfileProps) => {
 
   return (
     <div className='profile'>
-      <img src={profileImg} className='profile-image' />
+      <ProfileImage profileImage={profileImg} />
       <div className='name-section'>
         <h5 className='name b1semi'>{name}</h5>
         <p className='content b3md'>{content}</p>
