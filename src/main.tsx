@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 
 import App from './app/App';
+import { initWebViewInfo } from './app/webview';
 
 async function enableMocking() {
   if (import.meta.env.PROD) {
@@ -13,5 +14,6 @@ async function enableMocking() {
 }
 
 enableMocking().then(() => {
+  initWebViewInfo();
   ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
 });
