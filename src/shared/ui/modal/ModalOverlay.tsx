@@ -24,7 +24,7 @@ export const ModalOverlay = ({
     <>
       {createPortal(<Backdrop onClick={onClose} />, portalElement)}
       {createPortal(
-        <figure className={styleClass}>{children}</figure>,
+        <section className={styleClass}>{children}</section>,
         portalElement,
       )}
     </>
