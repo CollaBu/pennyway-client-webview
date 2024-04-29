@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import FNB from '@/shared/ui/fnb/FNB';
+import { FNB } from '@/shared/ui/fnb';
 
 export default function RootLayout() {
   return (
