@@ -6,7 +6,7 @@ interface ProfileProps {
   content: string;
 }
 
-export default function Profile({ profileImage, name, content }: ProfileProps) {
+export const Profile = ({ profileImage, name, content }: ProfileProps) => {
   const profileImg = profileImage === '' ? 'defalut-img' : profileImage;
 
   return (
@@ -18,4 +18,4 @@ export default function Profile({ profileImage, name, content }: ProfileProps) {
       </div>
     </div>
   );
-}
+};

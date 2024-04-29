@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime';
 
 import './BottomSheetModal.scss';
-import BasicButton from '../button/BasicButton';
+import { BasicButton } from '../button/index';
 
 interface Option {
   label: string;
@@ -13,10 +13,10 @@ interface BottomSheetModalProps {
   onClose: () => void;
 }
 
-export default function BottomSheetModal({
+export const BottomSheetModal = ({
   options,
   onClose,
-}: BottomSheetModalProps) {
+}: BottomSheetModalProps) => {
   return (
     <div className='bottom-sheet-modal'>
       <div className='modal-content'>
@@ -34,4 +34,4 @@ export default function BottomSheetModal({
       </BasicButton>
     </div>
   );
-}
+};

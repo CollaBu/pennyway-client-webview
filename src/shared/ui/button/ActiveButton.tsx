@@ -8,12 +8,12 @@ interface ActiveButtonProps extends ButtonProps {
   isDisabled: boolean;
 }
 
-export default function ActiveButton({
+export const ActiveButton = ({
   onClick,
   styleClass,
   isDisabled,
   children,
-}: ActiveButtonProps) {
+}: ActiveButtonProps) => {
   const sytleClassname = isDisabled ? styleClass : `${styleClass}-disabled`;
 
   return (
@@ -25,4 +25,4 @@ export default function ActiveButton({
       {children}
     </button>
   );
-}
+};

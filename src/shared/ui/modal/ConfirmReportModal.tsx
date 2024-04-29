@@ -3,14 +3,14 @@ import BasicButton from '../button/BasicButton';
 
 import { BaseModalProps as ConfirmReportModalProps } from './types';
 
-export default function ConfirmReportModal({
+export const ConfirmReportModal = ({
   title,
   onExecute,
   onExecuteMsg,
   onExecuteIsDisabled,
   onClose,
   onCloseMsg,
-}: ConfirmReportModalProps) {
+}: ConfirmReportModalProps) => {
   return (
     <form className='confirm-report-modal'>
       <h3 className='title h3semi'>{title}</h3>
@@ -29,4 +29,4 @@ export default function ConfirmReportModal({
       </div>
     </form>
   );
-}
+};

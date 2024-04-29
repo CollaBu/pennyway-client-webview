@@ -8,7 +8,7 @@ interface ConfirmModalProps extends BaseModalProps {
   content: string;
 }
 
-export default function ConfirmModal({
+export const ConfirmModal = ({
   title,
   content,
   onExecute,
@@ -16,9 +16,9 @@ export default function ConfirmModal({
   onExecuteIsDisabled,
   onClose,
   onCloseMsg,
-}: ConfirmModalProps) {
+}: ConfirmModalProps) => {
   return (
-    <div className='confirm-modal'>
+    <figure className='confirm-modal'>
       <h3 className='title h3semi'>{title}</h3>
       <p className='content b1md'>{content}</p>
       <div className='buttons'>
@@ -33,6 +33,6 @@ export default function ConfirmModal({
           {onExecuteMsg}
         </ActiveButton>
       </div>
-    </div>
+    </figure>
   );
-}
+};

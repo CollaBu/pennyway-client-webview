@@ -1,5 +1,5 @@
 import './FNB.scss';
 
-export default function FNB() {
+export const FNB = () => {
   return <div className='fnb' />;
-}
+};

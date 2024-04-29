@@ -8,7 +8,7 @@ interface PageHeaderProps {
   page: string;
 }
 
-export default function PageHeader({ prevPageLink, page }: PageHeaderProps) {
+export const PageHeader = ({ prevPageLink, page }: PageHeaderProps) => {
   return (
     <div className='page-header'>
       <Link to={prevPageLink}>
@@ -17,4 +17,4 @@ export default function PageHeader({ prevPageLink, page }: PageHeaderProps) {
       <p className='page'>{page}</p>
     </div>
   );
-}
+};

@@ -11,14 +11,14 @@ interface BasicButtonProps extends ButtonProps {
   styleClass: BasicStyle;
 }
 
-export default function BasicButton({
+export const BasicButton = ({
   onClick,
   styleClass,
   children,
-}: BasicButtonProps) {
+}: BasicButtonProps) => {
   return (
     <button onClick={onClick} className={styleClass}>
       {children}
     </button>
   );
-}
+};
