@@ -1,0 +1,55 @@
+@use '@/shared/styles/_index.scss' as *;
+
+@mixin confirmButton($isDisabled: false) {
+  @include responsive-dimensions(108px, 40px);
+  @extend .h4semi;
+  border-radius: 4px;
+
+  @if $isDisabled {
+    color: $gray4;
+    background-color: $gray3;
+  } @else {
+    color: white;
+    background-color: $mint3;
+  }
+}
+
+.confirm {
+  @include confirmButton(true);
+}
+.confirm-disabled {
+  @include confirmButton(false);
+}
+
+@mixin followButton($isLg: false, $isDisabled: false) {
+  border-radius: 30px;
+
+  @if $isLg {
+    @include responsive-dimensions(280px, 30px);
+    @extend .b1semi;
+  } @else {
+    @include responsive-dimensions(48px, 24px);
+    @extend .b2semi;
+  }
+  @if $isDisabled {
+    color: $gray4;
+    background-color: $gray2;
+  } @else {
+    color: white;
+    background-color: $mint3;
+  }
+}
+
+.follow-lg {
+  @include followButton(true, false);
+}
+.follow-lg-disabled {
+  @include followButton(true, true);
+}
+
+.follow-sm {
+  @include followButton(false, false);
+}
+.follow-sm-disabled {
+  @include followButton(false, true);
+}

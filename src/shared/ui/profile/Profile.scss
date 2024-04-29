@@ -1,0 +1,30 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.profile {
+  @include responsive-dimensions(200px, 45px);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+
+  .profile-image {
+    @include responsive-dimensions(45px, 45px);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .name-section {
+    @include responsive-dimensions(155px, 32px);
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .name {
+      color: $gray7;
+    }
+    .content {
+      color: $gray4;
+    }
+  }
+}

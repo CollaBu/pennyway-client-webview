@@ -1,0 +1,22 @@
+@mixin overlay($isModal: false) {
+  position: absolute;
+  z-index: 10;
+
+  @if $isModal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else {
+    left: 0;
+    right: 0;
+    bottom: 33.5px;
+  }
+}
+
+.modal {
+  @include overlay(true);
+}
+
+.bottom-sheet {
+  @include overlay(false);
+}

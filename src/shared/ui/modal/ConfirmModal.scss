@@ -1,0 +1,40 @@
+@use '@/shared/styles/_index.scss' as *;
+
+@mixin confirmModal($isReport: false) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  justify-content: space-around;
+
+  @if $isReport {
+    @include responsive-dimensions(280px, 356px);
+  } @else {
+    @include responsive-dimensions(252px, 146px);
+  }
+
+  .title {
+    color: $gray7;
+  }
+  .content {
+    color: $gray4;
+  }
+  .buttons {
+    @include responsive-dimensions(224px, 40px);
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.confirm-modal {
+  @include confirmModal(false);
+}
+
+.confirm-report-modal {
+  @include confirmModal(true);
+  .title {
+    align-self: start;
+  }
+}

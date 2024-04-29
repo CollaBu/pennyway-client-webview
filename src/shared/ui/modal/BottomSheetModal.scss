@@ -1,0 +1,23 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.bottom-sheet-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+  }
+  .option-divider {
+    width: 240px;
+    margin: 0 auto;
+    border: none;
+    height: 1px;
+    background-color: $gray3;
+  }
+}

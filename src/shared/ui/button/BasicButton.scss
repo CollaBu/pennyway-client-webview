@@ -1,0 +1,31 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.defalut {
+}
+
+.confirm-cancle {
+  @include responsive-dimensions(108px, 40px);
+  @extend .h4semi;
+  border-radius: 4px;
+  color: $gray4;
+  background-color: $gray2;
+}
+
+.bsm-option {
+  @include responsive-dimensions(280px, 40px);
+  @extend .h4md;
+  background-color: $gray1;
+  color: $gray5;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.bsm-cancle {
+  @include responsive-dimensions(280px, 47px);
+  @extend .h4semi;
+  text-align: center;
+  background-color: $gray5;
+  color: white;
+  border-radius: 4px;
+  margin-top: 8px;
+}

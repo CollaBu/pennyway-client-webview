@@ -1,0 +1,16 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.page-header {
+  @include responsive-dimensions(320px, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background-color: white;
+
+  .page {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 44px;
+  }
+}
