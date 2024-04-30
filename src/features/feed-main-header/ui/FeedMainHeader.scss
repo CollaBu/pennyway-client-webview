@@ -1,6 +1,8 @@
 @use '@/shared/styles/_index.scss' as *;
 
 #feed-main-header {
+  padding: 44px 3px 0 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
