@@ -1,0 +1,21 @@
+@use '@/shared/styles/_index.scss' as *;
+
+#feed-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 44px 3px 0 20px;
+
+  .header-right {
+    display: flex;
+
+    .icon-link {
+      @include responsive-dimensions(44px, 44px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
