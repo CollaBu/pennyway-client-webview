@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import BackIcon from '@/shared/icon/back-icon.svg?react';
+import BackIcon from '@/shared/ui/icon/assets/back_icon.svg?react';
 import './PageHeader.scss';
 
 interface PageHeaderProps {
