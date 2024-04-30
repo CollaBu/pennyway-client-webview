@@ -4,6 +4,7 @@ import ChatIcon from '@/shared/ui/icon/assets/chat_icon.svg?react';
 import KebabMenuIcon from '@/shared/ui/icon/assets/kebab_menu_icon.svg?react';
 import LikeIcon from '@/shared/ui/icon/assets/like_icon.svg?react';
 import SharedIcon from '@/shared/ui/icon/assets/share_icon.svg?react';
+import { calculateElapsedTime } from '@/shared/utils';
 
 import './Feed.scss';
 import { FeedProps } from '../consts/type';
@@ -18,7 +19,7 @@ export const Feed: React.FC<FeedProps> = ({ feed }) => {
           <Profile
             profileImage={user.profileImage}
             name={user.name}
-            content={updatedAt}
+            content={calculateElapsedTime(updatedAt)}
           />
 
           <button className='kebab-icon-btn'>
