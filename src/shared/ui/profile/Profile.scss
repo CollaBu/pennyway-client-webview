@@ -9,10 +9,11 @@
   background-color: white;
 
   .profile-image {
-    @include responsive-dimensions(45px, 45px);
+    @include responsive-dimensions(32px, 32px);
     border-radius: 50%;
     overflow: hidden;
   }
+
   .name-section {
     @include responsive-dimensions(155px, 32px);
     padding-left: 5px;
