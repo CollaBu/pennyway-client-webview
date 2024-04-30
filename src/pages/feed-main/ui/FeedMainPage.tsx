@@ -1,5 +1,5 @@
-import Feed from '@/features/feed/ui/Feed';
-import { FeedMainHeader } from '@/features/feed-main-header/ui/FeedMainHeader';
+import { Feed } from '@/features/feed';
+import { FeedMainHeader } from '@/features/feed-main-header';
 
 import './FeedMainPage.scss';
 
@@ -30,7 +30,7 @@ const DUMMY_FEED = {
   updatedAt: '2024-04-16 12:00:00',
 };
 
-const FeedMainPage = () => {
+export const FeedMainPage = () => {
   return (
     <section className='feed-main-section'>
       <FeedMainHeader />
@@ -44,5 +44,3 @@ const FeedMainPage = () => {
     </section>
   );
 };
-
-export default FeedMainPage;

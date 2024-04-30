@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
-import FeedMainPage from '@/pages/feed-main/ui/FeedMainPage.tsx';
+import { FeedMainPage } from '@/pages/index.ts';
 
 import RootLayout from '../layout/RootLayout.tsx';
 

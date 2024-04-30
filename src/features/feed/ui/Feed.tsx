@@ -8,7 +8,7 @@ import SharedIcon from '@/shared/ui/icon/assets/share_icon.svg?react';
 import './Feed.scss';
 import { FeedProps } from '../consts/type';
 
-const Feed: React.FC<FeedProps> = ({ feed }) => {
+export const Feed: React.FC<FeedProps> = ({ feed }) => {
   const { user, content, likeCount, commentCount, updatedAt } = feed;
 
   return (
@@ -55,5 +55,3 @@ const Feed: React.FC<FeedProps> = ({ feed }) => {
     </div>
   );
 };
-
-export default Feed;
