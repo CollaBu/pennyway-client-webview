@@ -1,0 +1,63 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.feed-wrapper {
+  .feed-article {
+    padding: 0 3px 0 20px;
+
+    .feed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .kebab-icon-btn {
+        @include responsive-dimensions(44px, 44px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .feed-content {
+      padding-top: 10px;
+      padding-bottom: 16px;
+
+      .feed-text {
+        color: $gray6;
+      }
+    }
+
+    .feed-count-container {
+      display: flex;
+      align-items: center;
+
+      .count-divider {
+        @include responsive-dimensions(2px, 2px);
+
+        margin: 0 4px;
+        background-color: $gray4;
+      }
+
+      .count-text {
+        color: $gray4;
+      }
+    }
+
+    .feed-footer {
+      margin: 8px 12px 0 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .footer-left {
+        display: flex;
+        gap: 12px;
+      }
+
+      .icon-btn {
+        @include responsive-dimensions(20px, 20px);
+      }
+    }
+  }
+}

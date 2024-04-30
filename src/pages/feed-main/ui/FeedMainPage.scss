@@ -1,3 +1,15 @@
+@use '@/shared/styles/_index.scss' as *;
+
 .feed-main-section {
-  padding: 44px 3px 0 20px;
+  .feed-list {
+    margin: 16px 0 24px;
+
+    .feed-wrapper:not(:last-child)::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background-color: $gray2;
+      margin: 15px 0 14px;
+    }
+  }
 }
