@@ -13,7 +13,7 @@ export const FeedMainHeader = () => {
       <div className='header-left'>
         <PennywayLogo />
       </div>
-      <div className='header-right'>
+      <nav className='header-right'>
         <Link to='search' className='icon-link'>
           <SearchIcon />
         </Link>
@@ -23,7 +23,7 @@ export const FeedMainHeader = () => {
         <Link to='notification' className='icon-link'>
           <NotificationIcon />
         </Link>
-      </div>
+      </nav>
     </header>
   );
 };

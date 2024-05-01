@@ -32,15 +32,15 @@ const DUMMY_FEED = {
 
 export const FeedMainPage = () => {
   return (
-    <section className='feed-main-section'>
+    <main className='feed-main'>
       <FeedMainHeader />
-      <div className='feed-list'>
+      <section className='feed-list-section'>
         <Feed feed={DUMMY_FEED} />
         <Feed feed={DUMMY_FEED} />
         <Feed feed={DUMMY_FEED} />
         <Feed feed={DUMMY_FEED} />
         <Feed feed={DUMMY_FEED} />
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
