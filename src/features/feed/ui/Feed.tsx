@@ -17,7 +17,7 @@ export const Feed: React.FC<FeedProps> = ({ feed }) => {
             content={calculateElapsedTime(updatedAt)}
           />
 
-          <button className='kebab-icon-btn'>
+          <button className='icon kebab-icon-btn'>
             <Icon name='kebab-menu' width='20' height='20' color='red' />
           </button>
         </header>
@@ -31,18 +31,18 @@ export const Feed: React.FC<FeedProps> = ({ feed }) => {
         </div>
         <footer className='feed-footer'>
           <div className='footer-left'>
-            <button className='icon-btn'>
+            <button className='icon icon-btn'>
               <Icon name='like' width='20' height='20' />
             </button>
-            <button className='icon-btn'>
+            <button className='icon icon-btn'>
               <Icon name='chat' width='20' height='20' />
             </button>
-            <button className='icon-btn'>
+            <button className='icon icon-btn'>
               <Icon name='share' width='20' height='20' />
             </button>
           </div>
           <div className='footer-right'>
-            <button className='icon-btn'>
+            <button className='icon icon-btn'>
               <Icon name='bookmark' width='20' height='20' />
             </button>
           </div>

@@ -11,10 +11,6 @@
 
       .kebab-icon-btn {
         @include responsive-dimensions(44px, 44px);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
 

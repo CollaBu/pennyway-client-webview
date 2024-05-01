@@ -11,13 +11,13 @@ export const FeedMainHeader = () => {
         <Icon name='pennyway-logo' width='99' height='17.32' />
       </div>
       <nav className='header-right'>
-        <Link to='search' className='icon-link'>
+        <Link to='search' className='icon icon-link'>
           <Icon name='search' width='24' height='24' />
         </Link>
-        <Link to='writing' className='icon-link'>
+        <Link to='writing' className='icon icon-link'>
           <Icon name='writing' width='24' height='24' />
         </Link>
-        <Link to='notification' className='icon-link'>
+        <Link to='notification' className='icon icon-link'>
           <Icon name='notification' width='24' height='24' />
         </Link>
       </nav>
