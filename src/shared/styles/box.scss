@@ -1,4 +1,9 @@
-@mixin responsive-dimensions($default-width, $default-height) {
+@mixin fixed-box($default-width, $default-height) {
+  width: $default-width;
+  height: $default-height;
+}
+
+@mixin responsive-box($default-width, $default-height) {
   width: $default-width;
   height: $default-height;
 

@@ -10,11 +10,7 @@
       align-items: center;
 
       .kebab-icon-btn {
-        @include responsive-dimensions(44px, 44px);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include fixed-box(44px, 44px);
       }
     }
 
@@ -32,7 +28,7 @@
       align-items: center;
 
       .count-divider {
-        @include responsive-dimensions(2px, 2px);
+        @include responsive-box(2px, 2px);
 
         margin: 0 4px;
         background-color: $gray4;
@@ -56,7 +52,7 @@
       }
 
       .icon-btn {
-        @include responsive-dimensions(20px, 20px);
+        @include fixed-box(20px, 20px);
       }
     }
   }

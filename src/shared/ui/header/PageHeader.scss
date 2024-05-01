@@ -1,7 +1,7 @@
 @use '@/shared/styles/_index.scss' as *;
 
 .page-header {
-  @include responsive-dimensions(320px, 44px);
+  @include responsive-box(320px, 44px);
   display: flex;
   align-items: center;
   justify-content: space-between;

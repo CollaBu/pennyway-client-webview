@@ -11,11 +11,7 @@
     display: flex;
 
     .icon-link {
-      @include responsive-dimensions(44px, 44px);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include fixed-box(44px, 44px);
     }
   }
 }

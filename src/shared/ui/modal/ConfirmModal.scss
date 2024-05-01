@@ -10,9 +10,9 @@
   justify-content: space-around;
 
   @if $isReport {
-    @include responsive-dimensions(280px, 356px);
+    @include responsive-box(280px, 356px);
   } @else {
-    @include responsive-dimensions(252px, 146px);
+    @include responsive-box(252px, 146px);
   }
 
   .title {
@@ -22,7 +22,7 @@
     color: $gray4;
   }
   .buttons {
-    @include responsive-dimensions(224px, 40px);
+    @include responsive-box(224px, 40px);
     display: flex;
     justify-content: space-between;
   }

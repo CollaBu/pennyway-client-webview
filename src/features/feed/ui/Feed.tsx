@@ -1,9 +1,4 @@
-import { Profile } from '@/shared/ui';
-import BookmarkIcon from '@/shared/ui/icon/assets/bookmark_icon.svg?react';
-import ChatIcon from '@/shared/ui/icon/assets/chat_icon.svg?react';
-import KebabMenuIcon from '@/shared/ui/icon/assets/kebab_menu_icon.svg?react';
-import LikeIcon from '@/shared/ui/icon/assets/like_icon.svg?react';
-import SharedIcon from '@/shared/ui/icon/assets/share_icon.svg?react';
+import { Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
 
 import './Feed.scss';
@@ -22,8 +17,8 @@ export const Feed: React.FC<FeedProps> = ({ feed }) => {
             content={calculateElapsedTime(updatedAt)}
           />
 
-          <button className='kebab-icon-btn'>
-            <KebabMenuIcon />
+          <button className='icon kebab-icon-btn'>
+            <Icon name='kebab-menu' width='20' height='20' color='red' />
           </button>
         </header>
         <div className='feed-content'>
@@ -36,19 +31,19 @@ export const Feed: React.FC<FeedProps> = ({ feed }) => {
         </div>
         <footer className='feed-footer'>
           <div className='footer-left'>
-            <button className='icon-btn'>
-              <LikeIcon />
+            <button className='icon icon-btn'>
+              <Icon name='like' width='20' height='20' />
             </button>
-            <button className='icon-btn'>
-              <ChatIcon />
+            <button className='icon icon-btn'>
+              <Icon name='chat' width='20' height='20' />
             </button>
-            <button className='icon-btn'>
-              <SharedIcon />
+            <button className='icon icon-btn'>
+              <Icon name='share' width='20' height='20' />
             </button>
           </div>
           <div className='footer-right'>
-            <button className='icon-btn'>
-              <BookmarkIcon />
+            <button className='icon icon-btn'>
+              <Icon name='bookmark' width='20' height='20' />
             </button>
           </div>
         </footer>
