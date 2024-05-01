@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import BackIcon from '@/shared/ui/icon/assets/back_icon.svg?react';
+import { Icon } from '..';
+
 import './PageHeader.scss';
 
 interface PageHeaderProps {
@@ -12,7 +13,7 @@ export const PageHeader = ({ prevPageLink, page }: PageHeaderProps) => {
   return (
     <div className='page-header'>
       <Link to={prevPageLink}>
-        <BackIcon />
+        <Icon name='back' width='44' height='44' />
       </Link>
       <p className='page'>{page}</p>
     </div>

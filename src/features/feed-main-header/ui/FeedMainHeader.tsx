@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import NotificationIcon from '@/shared/ui/icon/assets/notification_icon.svg?react';
-import PennywayLogo from '@/shared/ui/icon/assets/pennyway_logo_icon.svg?react';
-import SearchIcon from '@/shared/ui/icon/assets/search_icon.svg?react';
-import WritingIcon from '@/shared/ui/icon/assets/writing_icon.svg?react';
+import { Icon } from '@/shared/ui';
 
 import './FeedMainHeader.scss';
 
@@ -11,17 +8,17 @@ export const FeedMainHeader = () => {
   return (
     <header id='feed-main-header'>
       <div className='header-left'>
-        <PennywayLogo />
+        <Icon name='pennyway-logo' width='99' height='17.32' />
       </div>
       <nav className='header-right'>
         <Link to='search' className='icon-link'>
-          <SearchIcon />
+          <Icon name='search' width='24' height='24' />
         </Link>
         <Link to='writing' className='icon-link'>
-          <WritingIcon />
+          <Icon name='writing' width='24' height='24' />
         </Link>
         <Link to='notification' className='icon-link'>
-          <NotificationIcon />
+          <Icon name='notification' width='24' height='24' />
         </Link>
       </nav>
     </header>
