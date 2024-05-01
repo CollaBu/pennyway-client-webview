@@ -4,7 +4,7 @@
 }
 
 .confirm-cancle {
-  @include responsive-dimensions(108px, 40px);
+  @include responsive-box(108px, 40px);
   @extend .h4semi;
   border-radius: 4px;
   color: $gray4;
@@ -12,7 +12,7 @@
 }
 
 .bsm-option {
-  @include responsive-dimensions(280px, 40px);
+  @include responsive-box(280px, 40px);
   @extend .h4md;
   background-color: $gray1;
   color: $gray5;
@@ -21,7 +21,7 @@
 }
 
 .bsm-cancle {
-  @include responsive-dimensions(280px, 47px);
+  @include responsive-box(280px, 47px);
   @extend .h4semi;
   text-align: center;
   background-color: $gray5;

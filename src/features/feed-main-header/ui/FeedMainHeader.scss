@@ -11,8 +11,7 @@
     display: flex;
 
     .icon-link {
-      width: 44px;
-      height: 44px;
+      @include fixed-box(44px, 44px);
     }
   }
 }
