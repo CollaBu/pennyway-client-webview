@@ -10,7 +10,8 @@
       align-items: center;
 
       .kebab-icon-btn {
-        @include responsive-dimensions(44px, 44px);
+        width: 44px;
+        height: 44px;
       }
     }
 
@@ -52,7 +53,8 @@
       }
 
       .icon-btn {
-        @include responsive-dimensions(20px, 20px);
+        width: 20px;
+        height: 20px;
       }
     }
   }
