@@ -2,7 +2,9 @@ export interface FeedProps {
   feed: Feed;
 }
 
-interface Feed {
+export type FeedList = Feed[];
+
+export interface Feed {
   id: number;
 
   user: User;
