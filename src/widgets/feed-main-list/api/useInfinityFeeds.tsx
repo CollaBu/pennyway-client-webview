@@ -8,7 +8,7 @@ interface FetchFeeds {
   data: {
     currentPageNumber: number;
     feeds: Feed[];
-    hasNext: boolean;
+    hasNextPage: boolean;
     numberOfElements: number;
     pageSize: number;
   };
@@ -33,7 +33,7 @@ export const useInfinityFeeds = () => {
     queryFn: ({ pageParam }) => fetchFeeds(pageParam),
     initialPageParam: 1,
     getNextPageParam: (currentPages, _, lastPageParam) => {
-      return currentPages.data.hasNext ? lastPageParam + 1 : null;
+      return currentPages.data.hasNextPage ? lastPageParam + 1 : null;
     },
   });
 
