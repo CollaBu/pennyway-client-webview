@@ -3,7 +3,8 @@
 .feed-list-section {
   margin: 16px 0 24px;
 
-  .feed-wrapper:not(:last-child)::after {
+  .feed-wrapper:not(:last-child)::after,
+  .skeleton-feed-wrapper:not(:last-child)::after {
     content: '';
     display: block;
     height: 1px;

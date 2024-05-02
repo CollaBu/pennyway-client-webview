@@ -3,6 +3,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import { useInfinityFeeds } from '../api/useInfinityFeeds';
 
 import { Feed } from './Feed';
+import { SkeletonFeedMainList } from './SkeletonFeedMainList';
 import './FeedMainList.scss';
 
 export const FeedMainList = () => {
@@ -16,7 +17,7 @@ export const FeedMainList = () => {
   } = useInfinityFeeds();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <SkeletonFeedMainList />;
   }
 
   if (isError) {
