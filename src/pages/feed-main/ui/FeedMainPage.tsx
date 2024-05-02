@@ -1,5 +1,4 @@
-import { Feed } from '@/widgets/feed';
-import { FeedMainHeader } from '@/widgets/feed-main-header';
+import { Feed, FeedMainHeader } from '@/widgets';
 
 import './FeedMainPage.scss';
 
