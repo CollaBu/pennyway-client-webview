@@ -1,33 +1,11 @@
+import { Feed } from '@/shared/consts';
+
 import { comments } from './comment';
 import { likes } from './like';
-import { User, users } from './user';
+import { users } from './user';
 
 interface Feeds {
   [feedId: number]: Feed;
-}
-
-interface Feed {
-  id: number;
-
-  user: User;
-
-  title: string;
-  content: string;
-  images: Image[];
-
-  likeCount: number;
-  commentCount: number;
-
-  isLiked: boolean;
-  isBookmark: boolean;
-
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface Image {
-  id: number;
-  imageUrl: string;
 }
 
 export const feeds: Feeds = {
