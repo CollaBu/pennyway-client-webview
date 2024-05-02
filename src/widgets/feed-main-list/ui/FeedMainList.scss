@@ -1,7 +1,9 @@
 @use '@/shared/styles/_index.scss' as *;
 
 .feed-list-section {
-  margin: 16px 0 24px;
+  .feed-list {
+    padding: 16px 0 24px;
+  }
 
   .feed-wrapper:not(:last-child)::after {
     content: '';

@@ -30,6 +30,7 @@ export const FeedMainList = () => {
   return (
     <section className='feed-list-section'>
       <InfiniteScroll
+        className='feed-list'
         loadMore={() => {
           if (!isFetching) fetchNextFeeds();
         }}
