@@ -1,4 +1,4 @@
-import NetworkErrorImage from '@public/assets/image/network_error.png';
+import NetworkErrorImage from '/assets/image/network_error.png';
 import './NetworkError.scss';
 
 interface NetworkErrorProps {
