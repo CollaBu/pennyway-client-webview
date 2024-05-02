@@ -1,11 +1,12 @@
 export type IconName =
   | 'back'
   | 'notification'
-  | 'like'
   | 'share'
   | 'kebab-menu'
   | 'writing'
   | 'bookmark'
   | 'pennyway-logo'
+  | 'like'
   | 'chat'
-  | 'search';
+  | 'search'
+  | 'caution';
