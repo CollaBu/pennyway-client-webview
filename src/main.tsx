@@ -4,9 +4,9 @@ import App from './app/App';
 import { initWebViewInfo } from './app/webview';
 
 async function enableMocking() {
-  if (import.meta.env.PROD) {
-    return;
-  }
+  // if (import.meta.env.PROD) {
+  //   return;
+  // }
 
   const { worker } = await import('@/app/mocks/browser');
 
