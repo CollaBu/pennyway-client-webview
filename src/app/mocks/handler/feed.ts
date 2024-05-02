@@ -35,7 +35,7 @@ export const feedHandlers = [
     }
 
     const formattedPage = Number(page);
-    const pageCount = 5; // 임시 5개 -> 추후 10개 변경 예정
+    const pageCount = 10; // 임시 5개 -> 추후 10개 변경 예정
 
     // 임시 5개 -> 추후 10개 변경 예정
     const feedsData = Object.values(feeds)

@@ -3,6 +3,7 @@ import { Feed } from '@/shared/consts';
 import { comments } from './comment';
 import { likes } from './like';
 import { users } from './user';
+import { reports } from './report';
 
 interface Feeds {
   [feedId: number]: Feed;
@@ -235,3 +236,25 @@ export const feeds: Feeds = {
     updatedAt: '2024-04-16 13:20:00',
   },
 };
+
+for (let i = 10; i < 100; i++) {
+  reports[i] = false;
+  comments[i] = [];
+  likes[i] = { totalCount: i, isLiked: false };
+  feeds[i] = {
+    id: i,
+    user: users[1],
+    title: `Feed Title ${i}`,
+    content: `Feed Content ${i}`,
+    images: [],
+
+    likeCount: likes[i].totalCount,
+    commentCount: comments[i].length,
+
+    isLiked: likes[i].isLiked,
+    isBookmark: false,
+
+    createdAt: '2024-05-03 12:00:00',
+    updatedAt: '2024-05-03 12:00:00',
+  };
+}
