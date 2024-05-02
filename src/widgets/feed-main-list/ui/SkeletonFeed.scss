@@ -12,7 +12,9 @@
       align-items: center;
 
       .skeleton-kebab-icon {
+        @include skeletonAnimation();
         @include responsive-box(26px, 26px);
+
         border-radius: 6px;
         background-color: $gray2;
       }
@@ -27,10 +29,12 @@
       padding: 19px 0 15px;
 
       .feed-content-1 {
+        @include skeletonAnimation();
         @include responsive-box(215px, 14px);
       }
 
       .feed-content-2 {
+        @include skeletonAnimation();
         @include responsive-box(161px, 14px);
       }
 
@@ -51,6 +55,7 @@
       }
 
       .skeleton-footer-icon {
+        @include skeletonAnimation();
         @include responsive-box(26px, 26px);
         background-color: $gray2;
 
