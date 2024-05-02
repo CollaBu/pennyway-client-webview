@@ -1,1 +1,1 @@
-export { FeedMainPage } from './feed-main/ui/FeedMainPage';
+export { FeedMainPage } from './feed-main';
