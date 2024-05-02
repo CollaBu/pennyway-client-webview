@@ -1,2 +1,2 @@
 export { FeedMainHeader } from './feed-main-header';
-export { Feed } from './feed';
+export { FeedMainList } from './feed-main-list';
