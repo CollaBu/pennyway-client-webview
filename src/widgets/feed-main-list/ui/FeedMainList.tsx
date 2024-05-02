@@ -1,5 +1,7 @@
 import InfiniteScroll from 'react-infinite-scroller';
 
+import { NetworkError } from '@/shared/ui';
+
 import { useInfinityFeeds } from '../api/useInfinityFeeds';
 
 import { Feed } from './Feed';
@@ -14,6 +16,7 @@ export const FeedMainList = () => {
     hasNextFeeds,
     isLoading,
     isError,
+    refetchFeeds,
   } = useInfinityFeeds();
 
   if (isLoading) {
@@ -21,7 +24,7 @@ export const FeedMainList = () => {
   }
 
   if (isError) {
-    return <p>Error</p>;
+    return <NetworkError refetch={refetchFeeds} />;
   }
 
   return (

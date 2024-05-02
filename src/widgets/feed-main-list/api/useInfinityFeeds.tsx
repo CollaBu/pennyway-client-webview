@@ -28,6 +28,7 @@ export const useInfinityFeeds = () => {
     hasNextPage: hasNextFeeds,
     isLoading,
     isError,
+    refetch: refetchFeeds,
   } = useInfiniteQuery({
     queryKey: [QUERY_KEYS.feeds],
     queryFn: ({ pageParam }) => fetchFeeds(pageParam),
@@ -44,5 +45,6 @@ export const useInfinityFeeds = () => {
     hasNextFeeds,
     isLoading,
     isError,
+    refetchFeeds,
   };
 };

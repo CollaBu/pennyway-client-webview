@@ -1,0 +1,47 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.network-error-wrapper {
+  z-index: 999;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #fff;
+
+  .network-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 121px;
+
+    .error-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 8px;
+
+      margin: 27.5px 0 16px;
+
+      .error-title {
+        color: $gray7;
+      }
+
+      .error-description {
+        color: $gray4;
+      }
+    }
+
+    .refetch-btn {
+      @include responsive-box(107px, 36px);
+      border-radius: 6px;
+      background-color: $mint3;
+
+      color: #ffffff;
+    }
+  }
+}
