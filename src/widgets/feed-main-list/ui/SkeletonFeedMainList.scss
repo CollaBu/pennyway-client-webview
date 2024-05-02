@@ -1,9 +1,12 @@
 @use '@/shared/styles/_index.scss' as *;
 
-.feed-list-section {
+.skeleton-feed-section {
+  @include responsive-box(320px, 508px);
   margin: 16px 0 24px;
 
-  .feed-wrapper:not(:last-child)::after {
+  overflow: hidden;
+
+  .skeleton-feed-wrapper:not(:last-child)::after {
     content: '';
     display: block;
     height: 1px;
