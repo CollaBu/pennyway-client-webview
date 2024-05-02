@@ -1,10 +1,10 @@
+import { Feed as FeedProps } from '@/shared/consts';
 import { Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
 
 import './Feed.scss';
-import { FeedProps } from '../consts/type';
 
-export const Feed: React.FC<FeedProps> = ({ feed }) => {
+export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
   const { user, content, likeCount, commentCount, updatedAt } = feed;
 
   return (

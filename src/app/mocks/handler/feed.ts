@@ -44,14 +44,14 @@ export const feedHandlers = [
 
     const totalFeeds = Object.values(feeds).length;
     const endOfPageRange = formattedPage * pageCount;
-    const hasNext = endOfPageRange < totalFeeds;
+    const hasNextPage = endOfPageRange < totalFeeds;
 
     return createHttpSuccessResponse({
       feeds: feedsData,
       currentPageNumber: pageCount,
       pageSize: formattedPage,
       numberOfElements: feedsData.length,
-      hasNext,
+      hasNextPage,
     });
   }),
 

@@ -1,12 +1,7 @@
+import { User } from '@/shared/consts';
+
 interface Users {
   [userId: number]: User;
-}
-
-export interface User {
-  id: number;
-  profileImage: string;
-  name: string;
-  content: string;
 }
 
 export const users: Users = {

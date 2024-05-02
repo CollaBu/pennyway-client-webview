@@ -1,12 +1,9 @@
+import { Like } from '@/shared/consts';
+
 import { feeds } from './feed';
 
 interface Likes {
   [feedId: keyof typeof feeds]: Like;
-}
-
-interface Like {
-  totalCount: number;
-  isLiked: boolean;
 }
 
 export const likes: Likes = {

@@ -1,15 +1,14 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { axiosInstance } from '@/shared/axios';
-import { QUERY_KEYS } from '@/shared/consts';
-import { FeedList } from '@/widgets/feed/consts/type';
+import { Feed, QUERY_KEYS } from '@/shared/consts';
 
 interface FetchFeeds {
   code: string;
   data: {
     currentPageNumber: number;
-    feeds: FeedList;
-    hasNext: boolean;
+    feeds: Feed[];
+    hasNextPage: boolean;
     numberOfElements: number;
     pageSize: number;
   };
@@ -34,7 +33,7 @@ export const useInfinityFeeds = () => {
     queryFn: ({ pageParam }) => fetchFeeds(pageParam),
     initialPageParam: 1,
     getNextPageParam: (currentPages, _, lastPageParam) => {
-      return currentPages.data.hasNext ? lastPageParam + 1 : null;
+      return currentPages.data.hasNextPage ? lastPageParam + 1 : null;
     },
   });
 

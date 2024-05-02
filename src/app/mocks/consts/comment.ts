@@ -1,18 +1,10 @@
+import { Comment } from '@/shared/consts';
+
 import { feeds } from './feed';
-import { User, users } from './user';
+import { users } from './user';
 
 interface Comments {
   [feedId: keyof typeof feeds]: Comment[];
-}
-
-interface Comment {
-  id: number;
-
-  user: User;
-  content: string;
-
-  createdAt: string;
-  updatedAt: string;
 }
 
 export const comments: Comments = {

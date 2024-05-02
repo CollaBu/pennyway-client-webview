@@ -1,9 +1,3 @@
-export interface FeedProps {
-  feed: Feed;
-}
-
-export type FeedList = Feed[];
-
 export interface Feed {
   id: number;
 
@@ -23,14 +17,7 @@ export interface Feed {
   updatedAt: string;
 }
 
-interface Image {
+export interface Image {
   id: number;
   imageUrl: string;
-}
-
-interface User {
-  id: number;
-  profileImage: string;
-  name: string;
-  content: string;
 }
