@@ -48,8 +48,8 @@ export const FeedMainList = () => {
             <Feed key={feed.id} feed={feed} />
           ));
         })}
-        <NetworkToastError />
       </InfiniteScroll>
+      <NetworkToastError />
     </section>
   );
 };
