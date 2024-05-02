@@ -1,8 +1,8 @@
 import InfiniteScroll from 'react-infinite-scroller';
 
-import { Feed } from '@/widgets';
-
 import { useInfinityFeeds } from '../api/useInfinityFeeds';
+
+import { Feed } from './Feed';
 import './FeedMainList.scss';
 
 export const FeedMainList = () => {
