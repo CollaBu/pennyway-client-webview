@@ -26,6 +26,9 @@ interface ReportForm {
 
 export const feedHandlers = [
   // 1️⃣ 피드 목록 조회
+  /**
+   * @todo pageCount를 쿼리 파라미터로 받도록 수정
+   */
   http.get('/feeds', ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page') || 1;
@@ -35,9 +38,8 @@ export const feedHandlers = [
     }
 
     const formattedPage = Number(page);
-    const pageCount = 10; // 임시 5개 -> 추후 10개 변경 예정
+    const pageCount = 10;
 
-    // 임시 5개 -> 추후 10개 변경 예정
     const feedsData = Object.values(feeds)
       .slice((formattedPage - 1) * pageCount, formattedPage * pageCount)
       .filter((feed) => !reports[feed.id]);
