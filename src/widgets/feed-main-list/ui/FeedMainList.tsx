@@ -1,8 +1,12 @@
 import InfiniteScroll from 'react-infinite-scroller';
+import { toast } from 'react-toastify';
 
-import { Feed } from '@/widgets';
+import { NetworkError, NetworkToastError } from '@/shared/ui';
 
 import { useInfinityFeeds } from '../api/useInfinityFeeds';
+
+import { Feed } from './Feed';
+import { SkeletonFeedMainList } from './SkeletonFeedMainList';
 import './FeedMainList.scss';
 
 export const FeedMainList = () => {
@@ -13,19 +17,27 @@ export const FeedMainList = () => {
     hasNextFeeds,
     isLoading,
     isError,
+    refetchFeeds,
   } = useInfinityFeeds();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <SkeletonFeedMainList />;
   }
 
-  if (isError) {
-    return <p>Error</p>;
+  if (isError && !feeds) {
+    // 초기 로딩에서 에러가 발생할 경우
+    return <NetworkError refetch={refetchFeeds} />;
+  }
+
+  if (isError && feeds) {
+    // 무한 스크롤 도중 에러가 발생할 경우
+    toast('인터넷 연결이 불안정해요');
   }
 
   return (
     <section className='feed-list-section'>
       <InfiniteScroll
+        className='feed-list'
         loadMore={() => {
           if (!isFetching) fetchNextFeeds();
         }}
@@ -37,6 +49,7 @@ export const FeedMainList = () => {
           ));
         })}
       </InfiniteScroll>
+      <NetworkToastError />
     </section>
   );
 };

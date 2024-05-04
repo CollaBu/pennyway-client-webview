@@ -1,0 +1,27 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.skeleton-profile {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+
+  .skeleton-profile-image {
+    @include skeletonAnimation();
+    @include responsive-box(32px, 32px);
+    border-radius: 50%;
+    overflow: hidden;
+
+    background-color: $gray2;
+  }
+
+  .skeleton-name-section {
+    @include skeletonAnimation();
+    @include responsive-box(56px, 14px);
+
+    margin: 0 0 8px 8px;
+    background-color: $gray2;
+    border-radius: 4px;
+  }
+}

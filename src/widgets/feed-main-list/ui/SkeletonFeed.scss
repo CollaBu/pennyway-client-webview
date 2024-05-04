@@ -1,0 +1,66 @@
+@use '@/shared/styles/_index.scss' as *;
+
+.skeleton-feed-wrapper {
+  .skeleton-feed-article {
+    padding: 0 13px 0 20px;
+
+    .skeleton-feed-header {
+      height: 44px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .skeleton-kebab-icon {
+        @include skeletonAnimation();
+        @include responsive-box(26px, 26px);
+
+        border-radius: 6px;
+        background-color: $gray2;
+      }
+    }
+
+    .feed-content {
+      display: flex;
+      flex-direction: column;
+
+      gap: 4px;
+
+      padding: 19px 0 15px;
+
+      .feed-content-1 {
+        @include skeletonAnimation();
+        @include responsive-box(215px, 14px);
+      }
+
+      .feed-content-2 {
+        @include skeletonAnimation();
+        @include responsive-box(161px, 14px);
+      }
+
+      & > * {
+        background-color: $gray2;
+        border-radius: 4px;
+      }
+    }
+
+    .feed-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .footer-left {
+        display: flex;
+        gap: 6px;
+      }
+
+      .skeleton-footer-icon {
+        @include skeletonAnimation();
+        @include responsive-box(26px, 26px);
+        background-color: $gray2;
+
+        border-radius: 4px;
+      }
+    }
+  }
+}

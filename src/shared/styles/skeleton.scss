@@ -1,0 +1,24 @@
+@keyframes loading {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@mixin skeletonAnimation() {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: loading;
+  animation-timing-function: linear;
+  background-image: linear-gradient(
+    to right,
+    #d8d8d8 0%,
+    #bdbdbd 20%,
+    #d8d8d8 40%,
+    #d8d8d8 100%
+  );
+
+  background-repeat: no-repeat;
+}

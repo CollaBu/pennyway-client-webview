@@ -32,5 +32,5 @@ export async function onError(error: AxiosError | Error) {
     logApiErrorOnDev(error);
   }
 
-  return error;
+  return Promise.reject(error);
 }
