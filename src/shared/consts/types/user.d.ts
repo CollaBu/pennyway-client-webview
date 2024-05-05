@@ -7,6 +7,8 @@ export interface User {
   feedCount: number;
   followingCount: number;
   followerCount: number;
+}
 
+export interface Relationship {
   relationshipStatus: 'self' | 'following' | 'none' | 'pending';
 }
