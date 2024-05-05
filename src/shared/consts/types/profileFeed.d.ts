@@ -7,4 +7,3 @@ export interface ProfileFeed {
   likeCount: number;
   commentCount: number;
 }
-혀ㅑ;
