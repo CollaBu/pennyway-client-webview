@@ -13,7 +13,6 @@ export const users: Users = {
     feedCount: 100,
     followingCount: 347,
     followerCount: 25,
-    relationshipStatus: 'self',
   },
   2: {
     id: 2,
@@ -23,7 +22,6 @@ export const users: Users = {
     feedCount: 124,
     followingCount: 2,
     followerCount: 5341,
-    relationshipStatus: 'following',
   },
   3: {
     id: 3,
@@ -33,7 +31,6 @@ export const users: Users = {
     feedCount: 6,
     followingCount: 35,
     followerCount: 423,
-    relationshipStatus: 'pending',
   },
   4: {
     id: 4,
@@ -43,7 +40,6 @@ export const users: Users = {
     feedCount: 24,
     followingCount: 42,
     followerCount: 53251,
-    relationshipStatus: 'none',
   },
   5: {
     id: 5,
@@ -53,7 +49,6 @@ export const users: Users = {
     feedCount: 51,
     followingCount: 7897,
     followerCount: 7890,
-    relationshipStatus: 'following',
   },
   6: {
     id: 6,
@@ -63,7 +58,6 @@ export const users: Users = {
     feedCount: 97,
     followingCount: 98,
     followerCount: 8975,
-    relationshipStatus: 'pending',
   },
   7: {
     id: 7,
@@ -73,7 +67,6 @@ export const users: Users = {
     feedCount: 87,
     followingCount: 67,
     followerCount: 4556,
-    relationshipStatus: 'following',
   },
   8: {
     id: 8,
@@ -83,7 +76,6 @@ export const users: Users = {
     feedCount: 32,
     followingCount: 24,
     followerCount: 543,
-    relationshipStatus: 'none',
   },
   9: {
     id: 9,
@@ -93,6 +85,5 @@ export const users: Users = {
     feedCount: 66,
     followingCount: 1,
     followerCount: 1,
-    relationshipStatus: 'pending',
   },
 };
