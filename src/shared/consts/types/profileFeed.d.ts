@@ -1,8 +1,8 @@
 export interface ProfileFeed {
   id: number;
-  profileImage: string;
   title: string;
   content: string;
+  thubnailImage: string;
 
   likeCount: number;
   commentCount: number;
