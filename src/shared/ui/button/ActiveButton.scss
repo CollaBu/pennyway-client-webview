@@ -1,6 +1,5 @@
 @mixin confirmButton($isDisabled: false) {
   @include responsive-box(108px, 40px);
-  @extend .h4semi;
   border-radius: 4px;
 
   @if $isDisabled {
@@ -24,10 +23,8 @@
 
   @if $isLg {
     @include responsive-box(280px, 30px);
-    @extend .b1semi;
   } @else {
     @include responsive-box(48px, 24px);
-    @extend .b2semi;
   }
   @if $isDisabled {
     color: $gray4;
