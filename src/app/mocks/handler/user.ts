@@ -7,6 +7,7 @@ import {
   createHttpErrorResponse,
 } from '../dir/response';
 import { reports } from '../consts/report';
+import { relationshipStatus } from '../consts/relationshipStatus';
 
 export const userHandlers = [
   // 1️⃣ 팔로우 요청
@@ -18,7 +19,7 @@ export const userHandlers = [
     }
 
     const formattedUserId = Number(user_id);
-    const followInfo = users[formattedUserId].relationshipStatus;
+    const followInfo = relationshipStatus[formattedUserId].relationshipStatus;
 
     if (followInfo !== 'none') {
       return createHttpErrorResponse('4220');
@@ -35,7 +36,7 @@ export const userHandlers = [
     }
 
     const formattedUserId = Number(user_id);
-    const followInfo = users[formattedUserId].relationshipStatus;
+    const followInfo = relationshipStatus[formattedUserId].relationshipStatus;
 
     if (followInfo === 'self' || followInfo === 'none') {
       return createHttpErrorResponse('4220');
@@ -52,7 +53,7 @@ export const userHandlers = [
     }
 
     const formattedUserId = Number(user_id);
-    const followInfo = users[formattedUserId].relationshipStatus;
+    const followInfo = relationshipStatus[formattedUserId].relationshipStatus;
 
     if (!followInfo) {
       return createHttpErrorResponse('4040');
