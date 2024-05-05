@@ -27,31 +27,32 @@
 }
 
 /* 24px */
-.h1bold { @include font-style(700, 1.5, 130%); }
-.h1semi { @include font-style(600, 1.5, 130%); }
+.h1bold { @include font-style(700, 1.5, 31px); }
+.h1semi { @include font-style(600, 1.5, 31px); }
 
 /* 20px */
-.h2semi { @include font-style(600, 1.25, 130%); }
+.h2semi { @include font-style(600, 1.25, 26px); }
 
 /* 16px */
-.h3semi { @include font-style(600, 1, 140%); }
+.h3bold { @include font-style(700, 1, 22px); }
+.h3semi { @include font-style(600, 1, 22px); }
 
 /* 14px */
-.h4semi { @include font-style(600, 0.875, 130%); }
-.h4md { @include font-style(500, 0.875, 130%); }
+.h4semi { @include font-style(600, 0.875, 18px); }
+.h4md { @include font-style(500, 0.875, 18px); }
 
 /* 12px */
-.b1semi { @include font-style(600, 0.75, 130%); }
-.b1md { @include font-style(500, 0.75, 130%) }
-.b1reg { @include font-style(400, 0.75, 140%); }
+.b1semi { @include font-style(600, 0.75, 16px); }
+.b1md { @include font-style(500, 0.75, 16px) }
+.b1reg { @include font-style(400, 0.75, 17px); }
 
 /* 11px */
-.b2md { @include font-style(500, 0.6875, 130%); }
-.b2semi { @include font-style(600, 0.6875, 130%); }
-.b2reg { @include font-style(400, 0.6875, 130%); }
+.b2md { @include font-style(500, 0.6875, 14px); }
+.b2semi { @include font-style(600, 0.6875, 14px); }
+.b2reg { @include font-style(400, 0.6875, 14px); }
 
 /* 9px */
-.b3md { @include font-style(500, 0.5625, 130%); }
+.b3md { @include font-style(500, 0.5625, 12px); }
 
 /* 8px */
-.b4md { @include font-style(500, 0.5, 130%); }
+.b4md { @include font-style(500, 0.5, 10px); }
