@@ -14,95 +14,45 @@
     font-style: normal;
   }
 
-  @media (min-height: 1px) and (max-height: 480px) {
-    font-size: $size * 0.95rem;
-  } // iPhone 3, 4S
-  @media (min-height: 481px) and (max-height: 568px) {
-    font-size: $size * 1rem;
-  } // iPhone 5, SE 1
-  @media (min-height: 569px) and (max-height: 667px) {
-    font-size: $size * 1.17rem;
-  } // iPhone 6, 6s, 7, 8, SE 2/3
-  @media (min-height: 668px) and (max-height: 736px) {
-    font-size: $size * 1.22rem;
-  } // iPhone 6+, 6s+, 7+, 8+
-  @media (min-height: 737px) and (max-height: 812px) {
-    font-size: $size * 1.25rem;
-  } // iPhone X, XS, 11, 12 mini, 13 mini
-  @media (min-height: 813px) and (max-height: 844px) {
-    font-size: $size * 1.27rem;
-  } // iPhone 12, 12 Pro, 13, 13 Pro, 14, 15
-  @media (min-height: 845px) and (max-height: 852px) {
-    font-size: $size * 1.27rem;
-  } // iPhone 14 Pro, 15 Pro
-  @media (min-height: 853px) and (max-height: 896px) {
-    font-size: $size * 1.32rem;
-  } // iPhone XR, XS Max, 11, 11 Pro Max
-  @media (min-height: 897px) and (max-height: 926px) {
-    font-size: $size * 1.32rem;
-  } // iPhone 12 Pro Max, 13 Pro Max, 14 Plus
-  @media (min-height: 927px) and (max-height: 932px) {
-    font-size: $size * 1.35rem;
-  } // iPhone 14 Pro Max
+  @media (min-height: 1px) and (max-height: 480px) { font-size: $size * 0.95rem; } // iPhone 3, 4S
+  @media (min-height: 481px) and (max-height: 568px) { font-size: $size * 1rem; } // iPhone 5, SE 1
+  @media (min-height: 569px) and (max-height: 667px) { font-size: $size * 1.17rem; } // iPhone 6, 6s, 7, 8, SE 2/3
+  @media (min-height: 668px) and (max-height: 736px) { font-size: $size * 1.22rem; } // iPhone 6+, 6s+, 7+, 8+
+  @media (min-height: 737px) and (max-height: 812px) { font-size: $size * 1.25rem; } // iPhone X, XS, 11, 12 mini, 13 mini
+  @media (min-height: 813px) and (max-height: 844px) { font-size: $size * 1.27rem; } // iPhone 12, 12 Pro, 13, 13 Pro, 14, 15
+  @media (min-height: 845px) and (max-height: 852px) { font-size: $size * 1.27rem; } // iPhone 14 Pro, 15 Pro
+  @media (min-height: 853px) and (max-height: 896px) { font-size: $size * 1.32rem; } // iPhone XR, XS Max, 11, 11 Pro Max
+  @media (min-height: 897px) and (max-height: 926px) { font-size: $size * 1.32rem; } // iPhone 12 Pro Max, 13 Pro Max, 14 Plus
+  @media (min-height: 927px) and (max-height: 932px) { font-size: $size * 1.35rem; } // iPhone 14 Pro Max
 }
 
 /* 24px */
-.h1bold {
-  @include font-style(700, 1.5, 31px);
-}
-.h1semi {
-  @include font-style(600, 1.5, 31px);
-}
+.h1bold { @include font-style(700, 1.5, 31px); }
+.h1semi { @include font-style(600, 1.5, 31px); }
 
 /* 20px */
-.h2semi {
-  @include font-style(600, 1.25, 26px);
-}
+.h2semi { @include font-style(600, 1.25, 26px); }
 
 /* 16px */
-.h3bold {
-  @include font-style(700, 1, 22px);
-}
-.h3semi {
-  @include font-style(600, 1, 22px);
-}
+.h3bold { @include font-style(700, 1, 22px); }
+.h3semi { @include font-style(600, 1, 22px); }
 
 /* 14px */
-.h4semi {
-  @include font-style(600, 0.875, 18px);
-}
-.h4md {
-  @include font-style(500, 0.875, 18px);
-}
+.h4semi { @include font-style(600, 0.875, 18px); }
+.h4md { @include font-style(500, 0.875, 18px); }
 
 /* 12px */
-.b1semi {
-  @include font-style(600, 0.75, 16px);
-}
-.b1md {
-  @include font-style(500, 0.75, 16px);
-}
-.b1reg {
-  @include font-style(400, 0.75, 17px);
-}
+.b1semi { @include font-style(600, 0.75, 16px); }
+.b1md { @include font-style(500, 0.75, 16px); }
+.b1reg { @include font-style(400, 0.75, 17px); }
 
 /* 11px */
-.b2md {
-  @include font-style(500, 0.6875, 14px);
-}
-.b2semi {
-  @include font-style(600, 0.6875, 14px);
-}
-.b2reg {
-  @include font-style(400, 0.6875, 14px);
-}
+.b2md { @include font-style(500, 0.6875, 14px); }
+.b2semi { @include font-style(600, 0.6875, 14px); }
+.b2reg { @include font-style(400, 0.6875, 14px); }
 
 /* 9px */
-.b3md {
-  @include font-style(500, 0.5625, 12px);
-}
+.b3md { @include font-style(500, 0.5625, 12px); }
 
 /* 8px */
-.b4md {
-  @include font-style(500, 0.5, 10px);
-}
+.b4md { @include font-style(500, 0.5, 10px); }
