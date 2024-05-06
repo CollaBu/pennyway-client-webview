@@ -18,4 +18,16 @@ export default defineConfig({
       { find: '@public', replacement: path.resolve(__dirname, 'public') },
     ],
   },
+  // SCSS 전역 사용
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/shared/styles/_box.scss";
+          @import "@/shared/styles/_colors.scss";
+          @import "@/shared/styles/_skeleton.scss";
+        `,
+      },
+    },
+  },
 });
