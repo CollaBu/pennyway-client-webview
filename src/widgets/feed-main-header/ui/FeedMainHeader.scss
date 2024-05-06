@@ -9,7 +9,8 @@
     display: flex;
 
     .icon-link {
-      @include fixed-box(44px, 44px);
+      width: 44px;
+      height: 44px;
     }
   }
 }

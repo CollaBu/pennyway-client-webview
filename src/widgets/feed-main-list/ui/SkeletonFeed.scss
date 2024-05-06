@@ -11,7 +11,8 @@
 
       .skeleton-kebab-icon {
         @include skeletonAnimation();
-        @include responsive-box(26px, 26px);
+        width: 26px;
+        height: 26px;
 
         border-radius: 6px;
         background-color: $gray2;
@@ -28,12 +29,14 @@
 
       .feed-content-1 {
         @include skeletonAnimation();
-        @include responsive-box(215px, 14px);
+        width: 215px;
+        height: 14px;
       }
 
       .feed-content-2 {
         @include skeletonAnimation();
-        @include responsive-box(161px, 14px);
+        width: 161px;
+        height: 14px;
       }
 
       & > * {
@@ -54,7 +57,8 @@
 
       .skeleton-footer-icon {
         @include skeletonAnimation();
-        @include responsive-box(26px, 26px);
+        width: 26px;
+        height: 26px;
         background-color: $gray2;
 
         border-radius: 4px;

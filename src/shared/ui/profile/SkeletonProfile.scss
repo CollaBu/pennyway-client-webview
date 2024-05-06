@@ -7,7 +7,8 @@
 
   .skeleton-profile-image {
     @include skeletonAnimation();
-    @include responsive-box(32px, 32px);
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     overflow: hidden;
 
@@ -16,7 +17,9 @@
 
   .skeleton-name-section {
     @include skeletonAnimation();
-    @include responsive-box(56px, 14px);
+    width: 56px;
+    height: 14px;
+    // @include responsive-box(56px, 14px);
 
     margin: 0 0 8px 8px;
     background-color: $gray2;

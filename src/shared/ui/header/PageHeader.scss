@@ -1,5 +1,6 @@
 .page-header {
-  @include responsive-box(320px, 44px);
+  width: 320px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;

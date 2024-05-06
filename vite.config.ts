@@ -23,7 +23,6 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/shared/styles/_box.scss";
           @import "@/shared/styles/_colors.scss";
           @import "@/shared/styles/_skeleton.scss";
         `,
