@@ -23,13 +23,13 @@ export const ConfirmModal = ({
         <h3 className='title h3semi'>{title}</h3>
         <p className='content b1md'>{content}</p>
         <div className='buttons'>
-          <BasicButton onClick={onClose} styleClass='confirm-cancle'>
+          <BasicButton onClick={onClose} styleClass='confirm-cancle h4semi'>
             {onCloseMsg}
           </BasicButton>
           <ActiveButton
             onClick={onExecute}
             isDisabled={onExecuteIsDisabled}
-            styleClass='confirm'
+            styleClass='confirm h4semi'
           >
             {onExecuteMsg}
           </ActiveButton>

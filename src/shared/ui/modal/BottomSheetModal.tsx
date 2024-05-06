@@ -25,14 +25,17 @@ export const BottomSheetModal = ({
         <div className='modal-content'>
           {options.map((option, index) => (
             <Fragment key={index}>
-              <BasicButton onClick={option.onClick} styleClass='bsm-option'>
+              <BasicButton
+                onClick={option.onClick}
+                styleClass='bsm-option h4md'
+              >
                 {option.label}
               </BasicButton>
               {index < options.length - 1 && <hr className='option-divider' />}
             </Fragment>
           ))}
         </div>
-        <BasicButton styleClass='bsm-cancle' onClick={onClose}>
+        <BasicButton styleClass='bsm-cancle h4semi' onClick={onClose}>
           취소
         </BasicButton>
       </div>
