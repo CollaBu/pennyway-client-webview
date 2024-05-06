@@ -9,6 +9,4 @@ export interface User {
   followerCount: number;
 }
 
-export interface Relationship {
-  relationshipStatus: 'self' | 'following' | 'none' | 'pending';
-}
+export type RelationshipStatus = 'self' | 'following' | 'none' | 'pending';
