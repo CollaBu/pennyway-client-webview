@@ -1,9 +1,9 @@
+import { User } from '.';
+
 export interface Feed {
   id: number;
+  user: Pick<User, 'id' | 'profileImage' | 'name'>;
 
-  user: User;
-
-  title: string;
   content: string;
   images: Image[];
 
