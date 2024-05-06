@@ -19,7 +19,7 @@ export const userHandlers = [
     }
 
     const formattedUserId = Number(user_id);
-    const followInfo = relationshipStatus[formattedUserId].relationshipStatus;
+    const followInfo = relationshipStatus[formattedUserId];
 
     if (followInfo !== 'none') {
       return createHttpErrorResponse('4220');
@@ -36,7 +36,7 @@ export const userHandlers = [
     }
 
     const formattedUserId = Number(user_id);
-    const followInfo = relationshipStatus[formattedUserId].relationshipStatus;
+    const followInfo = relationshipStatus[formattedUserId];
 
     if (followInfo === 'self' || followInfo === 'none') {
       return createHttpErrorResponse('4220');
@@ -53,7 +53,7 @@ export const userHandlers = [
     }
 
     const formattedUserId = Number(user_id);
-    const followInfo = relationshipStatus[formattedUserId].relationshipStatus;
+    const followInfo = relationshipStatus[formattedUserId];
 
     if (!followInfo) {
       return createHttpErrorResponse('4040');
