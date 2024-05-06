@@ -132,14 +132,14 @@ export const userHandlers = [
 
     const totalFeeds = Object.values(profileFeeds).length;
     const endOfPageRange = formattedPage * pageCount;
-    const hasNext = endOfPageRange < totalFeeds;
+    const hasNextPage = endOfPageRange < totalFeeds;
 
     return createHttpSuccessResponse({
       feeds: profileFeeds,
       currentPageNumber: pageCount,
       pageSize: formattedPage,
       numberOfElements: profileFeedsData.length,
-      hasNext,
+      hasNextPage,
     });
   }),
 ];
