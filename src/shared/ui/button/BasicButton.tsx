@@ -3,9 +3,9 @@ import './BasicButton.scss';
 
 export type BasicStyle =
   | 'defalut'
-  | 'confirm-cancle'
-  | 'bsm-cancle'
-  | 'bsm-option';
+  | 'confirm-cancle h4semi'
+  | 'bsm-cancle h4semi'
+  | 'bsm-option h4md';
 
 interface BasicButtonProps extends ButtonProps {
   styleClass: BasicStyle;
