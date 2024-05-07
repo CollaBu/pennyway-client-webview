@@ -35,7 +35,8 @@
     }
 
     .refetch-btn {
-      @include responsive-box(107px, 36px);
+      width: 107px;
+      height: 36px;
       border-radius: 6px;
       background-color: $mint3;
 

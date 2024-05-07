@@ -31,7 +31,8 @@
   left: 0;
   right: 0;
 
-  @include responsive-box(280px, 40px);
+  width: 280px;
+  height: 40px;
   margin: 0 auto;
 
   .network-error-toast {
@@ -59,7 +60,8 @@
         gap: 6px;
 
         .Toastify__toast-icon {
-          @include responsive-box(20px, 20px);
+          width: 20px;
+          height: 20px;
 
           margin-left: 12px;
         }

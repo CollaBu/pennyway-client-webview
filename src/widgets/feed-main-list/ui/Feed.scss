@@ -8,7 +8,8 @@
       align-items: center;
 
       .kebab-icon-btn {
-        @include fixed-box(44px, 44px);
+        width: 44px;
+        height: 44px;
       }
     }
 
@@ -26,7 +27,8 @@
       align-items: center;
 
       .count-divider {
-        @include responsive-box(2px, 2px);
+        width: 2px;
+        height: 2px;
 
         margin: 0 4px;
         background-color: $gray4;
@@ -50,7 +52,8 @@
       }
 
       .icon-btn {
-        @include fixed-box(20px, 20px);
+        width: 20px;
+        height: 20px;
       }
     }
   }

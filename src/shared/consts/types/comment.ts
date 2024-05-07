@@ -1,7 +1,9 @@
+import { User } from '.';
+
 export interface Comment {
   id: number;
 
-  user: User;
+  user: Pick<User, 'id' | 'profileImage' | 'name'>;
   content: string;
 
   createdAt: string;

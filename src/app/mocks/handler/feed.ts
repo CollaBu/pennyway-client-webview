@@ -12,7 +12,6 @@ import {
 } from '../dir/response';
 
 interface FeedForm {
-  title: string;
   content: string;
   images: string[];
   scope: 'public' | 'friend' | 'private';
@@ -59,9 +58,9 @@ export const feedHandlers = [
 
   // 2️⃣ 피드 작성
   http.post('/feeds', async ({ request }) => {
-    const { title, content, images } = (await request.json()) as FeedForm;
+    const { content, images } = (await request.json()) as FeedForm;
 
-    if (title.length === 0 || content.length === 0) {
+    if (content.length === 0) {
       return createHttpErrorResponse('4003');
     }
 
@@ -70,7 +69,6 @@ export const feedHandlers = [
     feeds[nextFeedId] = {
       id: nextFeedId,
       user: users[1], // 임의 지정
-      title,
       content,
       images: images.map((image, idx) => ({ id: idx + 1, imageUrl: image })),
 
@@ -126,15 +124,14 @@ export const feedHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    const { title, content, images } = (await request.json()) as FeedForm;
+    const { content, images } = (await request.json()) as FeedForm;
 
-    if (title.length === 0 || content.length === 0) {
+    if (content.length === 0) {
       return createHttpErrorResponse('4003');
     }
 
     feeds[formattedFeedId] = {
       ...feeds[formattedFeedId],
-      title,
       content,
       images: images.map((image, idx) => ({ id: idx + 1, imageUrl: image })),
 

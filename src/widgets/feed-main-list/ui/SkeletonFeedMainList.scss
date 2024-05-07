@@ -1,5 +1,6 @@
 .skeleton-feed-section {
-  @include responsive-box(320px, 508px);
+  width: 320px;
+  height: 508px;
   margin: 16px 0 24px;
 
   overflow: hidden;

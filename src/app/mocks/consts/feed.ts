@@ -13,7 +13,6 @@ export const feeds: Feeds = {
   1: {
     id: 1,
     user: users[1],
-    title: 'Feed Title 1',
     content: 'Feed Content 1',
     images: [
       {
@@ -34,7 +33,6 @@ export const feeds: Feeds = {
   2: {
     id: 2,
     user: users[2],
-    title: 'Feed Title 2',
     content: 'Feed Content 2',
     images: [
       {
@@ -63,7 +61,6 @@ export const feeds: Feeds = {
   3: {
     id: 3,
     user: users[3],
-    title: 'Feed Title 3',
     content: 'Feed Content 3',
     images: [
       {
@@ -84,7 +81,6 @@ export const feeds: Feeds = {
   4: {
     id: 4,
     user: users[4],
-    title: 'Feed Title 4',
     content: 'Feed Content 4',
     images: [
       {
@@ -109,7 +105,6 @@ export const feeds: Feeds = {
   5: {
     id: 5,
     user: users[5],
-    title: 'Feed Title 5',
     content: 'Feed Content 5',
     images: [
       {
@@ -138,7 +133,6 @@ export const feeds: Feeds = {
   6: {
     id: 6,
     user: users[6],
-    title: 'Feed Title 5',
     content: 'Feed Content 5',
     images: [
       {
@@ -167,7 +161,6 @@ export const feeds: Feeds = {
   7: {
     id: 7,
     user: users[7],
-    title: 'Feed Title 7',
     content: 'Feed Content 7',
     images: [
       {
@@ -192,7 +185,6 @@ export const feeds: Feeds = {
   8: {
     id: 8,
     user: users[8],
-    title: 'Feed Title 8',
     content: 'Feed Content 8',
     images: [
       {
@@ -213,7 +205,6 @@ export const feeds: Feeds = {
   9: {
     id: 9,
     user: users[9],
-    title: 'Feed Title 9',
     content: 'Feed Content 9',
     images: [
       {
@@ -244,7 +235,6 @@ for (let i = 10; i < 100; i++) {
   feeds[i] = {
     id: i,
     user: users[1],
-    title: `Feed Title ${i}`,
     content: `Feed Content ${i}`,
     images: [],
 
