@@ -1,6 +1,6 @@
-@mixin font-style($weight, $size, $line-height) {
+@mixin font-style($weight-number, $weight,  $size, $line-height) {
   font-family: 'Pretendard', sans-serif;
-  font-weight: $weight;
+  font-weight: $weight-number;
   font-size: $size * 1rem;
   letter-spacing: -0.03rem;
   line-height: $line-height;
@@ -16,32 +16,32 @@
 }
 
 /* 24px */
-.h1bold { @include font-style(700, 1.5, 31px); }
-.h1semi { @include font-style(600, 1.5, 31px); }
+.h1bold { @include font-style(700, 'bold', 1.5, 31px); }
+.h1semi { @include font-style(600, 'semibold', 1.5, 31px); }
 
 /* 20px */
-.h2semi { @include font-style(600, 1.25, 26px); }
+.h2semi { @include font-style(600, 'semibold', 1.25, 26px); }
 
 /* 16px */
-.h3bold { @include font-style(700, 1, 22px); }
-.h3semi { @include font-style(600, 1, 22px); }
+.h3bold { @include font-style(700, 'bold', 1, 22px); }
+.h3semi { @include font-style(600, 'semibold', 1, 22px); }
 
 /* 14px */
-.h4semi { @include font-style(600, 0.875, 18px); }
-.h4md { @include font-style(500, 0.875, 18px); }
+.h4semi { @include font-style(600, 'semibold', 0.875, 18px); }
+.h4md { @include font-style(500, 'medium', 0.875, 18px); }
 
 /* 12px */
-.b1semi { @include font-style(600, 0.75, 16px); }
-.b1md { @include font-style(500, 0.75, 16px); }
-.b1reg { @include font-style(400, 0.75, 17px); }
+.b1semi { @include font-style(600, 'semibold', 0.75, 16px); }
+.b1md { @include font-style(500, 'medium', 0.75, 16px); }
+.b1reg { @include font-style(400, 'regular', 0.75, 17px); }
 
 /* 11px */
-.b2md { @include font-style(500, 0.6875, 14px); }
-.b2semi { @include font-style(600, 0.6875, 14px); }
-.b2reg { @include font-style(400, 0.6875, 14px); }
+.b2md { @include font-style(500, 'medium', 0.6875, 14px); }
+.b2semi { @include font-style(600, 'semibold', 0.6875, 14px); }
+.b2reg { @include font-style(400, 'regular', 0.6875, 14px); }
 
 /* 9px */
-.b3md { @include font-style(500, 0.5625, 12px); }
+.b3md { @include font-style(500, 'medium', 0.5625, 12px); }
 
 /* 8px */
-.b4md { @include font-style(500, 0.5, 10px); }
+.b4md { @include font-style(500, 'medium', 0.5, 10px); }
