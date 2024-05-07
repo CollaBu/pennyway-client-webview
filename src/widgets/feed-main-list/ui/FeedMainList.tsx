@@ -21,7 +21,7 @@ export const FeedMainList = () => {
   } = useInfinityFeeds();
 
   if (isLoading) {
-    return <SkeletonFeedMainList />;
+    return <SkeletonFeedMainList count={10} />;
   }
 
   if (isError && !feeds) {
@@ -48,7 +48,7 @@ export const FeedMainList = () => {
             <Feed key={feed.id} feed={feed} />
           ));
         })}
-        {isFetching && <SkeletonFeedMainList />}
+        {isFetching && <SkeletonFeedMainList count={3} />}
       </InfiniteScroll>
       <NetworkToastError />
     </section>
