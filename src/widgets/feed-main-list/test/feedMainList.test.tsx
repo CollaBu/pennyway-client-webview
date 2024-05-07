@@ -24,7 +24,7 @@ const mockingFeedData = [
   },
 ];
 
-describe('피드 메인 페이지 성공 시나리오', () => {
+describe('피드 메인 페이지에서', () => {
   it('스켈레톤 UI가 화면에 먼저 렌더링된다.', async () => {
     // given
     render(<FeedMainList />);
