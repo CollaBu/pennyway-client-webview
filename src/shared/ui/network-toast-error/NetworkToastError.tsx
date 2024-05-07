@@ -19,11 +19,13 @@ export const NetworkToastError: React.FC<NetworkToastErrorProps> = ({
   useEffect(() => {
     if (isVisible && toastId.current === -1) {
       toastId.current = toast(errorMessage);
+      return;
     }
 
     if (!isVisible && toastId.current !== -1) {
       toast.dismiss(toastId.current);
       toastId.current = -1;
+      return;
     }
   }, [isVisible, errorMessage]);
 
