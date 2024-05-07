@@ -48,6 +48,7 @@ export const FeedMainList = () => {
             <Feed key={feed.id} feed={feed} />
           ));
         })}
+        {isFetching && <SkeletonFeedMainList />}
       </InfiniteScroll>
       <NetworkToastError />
     </section>
