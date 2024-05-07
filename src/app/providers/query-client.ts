@@ -6,6 +6,7 @@ const queryClientOptions: QueryClientConfig = {
       staleTime: 10 * 60 * 1000, // 10 minutes
       gcTime: 15 * 60 * 1000, // 15 minutes
       refetchOnWindowFocus: false,
+      retry: false,
     },
   },
 };

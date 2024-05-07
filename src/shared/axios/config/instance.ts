@@ -4,7 +4,7 @@ import { onError, onRequest, onResponse } from './interceptors';
 
 export const axiosInstance = axios.create({
   baseURL: '',
-  timeout: 5000,
+  timeout: 3000,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
