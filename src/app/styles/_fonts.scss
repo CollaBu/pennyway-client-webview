@@ -10,7 +10,6 @@
     src:
       url('/assets/font/pretendard-#{$weight}-subset.woff2') format('woff2'),
       url('/assets/font/pretendard-#{$weight}-subset.woff') format('woff');
-    font-weight: $weight;
     font-style: normal;
   }
 }
