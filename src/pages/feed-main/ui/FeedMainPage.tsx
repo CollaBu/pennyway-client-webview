@@ -1,4 +1,5 @@
 import { FeedMainHeader, FeedMainList } from '@/widgets';
+import './FeedMainPage.scss';
 
 export const FeedMainPage = () => {
   return (

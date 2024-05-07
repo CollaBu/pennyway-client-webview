@@ -1,9 +1,5 @@
 .skeleton-feed-section {
-  width: 320px;
-  height: 508px;
-  margin: 16px 0 24px;
-
-  overflow: hidden;
+  margin-top: 16px;
 
   .skeleton-feed-wrapper:not(:last-child)::after {
     content: '';
