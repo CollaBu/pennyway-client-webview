@@ -34,7 +34,7 @@ export const FeedMainList = () => {
             <Feed key={feed.id} feed={feed} />
           ));
         })}
-        {hasNextFeeds && <SkeletonFeedMainList key={0} count={3} />}
+        {hasNextFeeds && <SkeletonFeedMainList count={3} />}
         <Observer
           isReadyForNextPage={!isFetching && hasNextFeeds}
           fetch={fetchNextFeeds}
