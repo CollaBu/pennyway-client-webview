@@ -12,10 +12,13 @@ const WEEK = DAY * 7;
 export function getCurrentDate() {
   const today = new Date();
 
-  // 대한민국 시간 = UTC + 09:00
-  today.setHours(today.getHours() + 9);
+  const offset = 9; // 대한민국 시간 = UTC + 09:00
+  today.setHours(today.getHours() + offset);
 
-  return today.toISOString().replace('T', ' ').substring(0, 19);
+  const date = today.toISOString().split('T')[0];
+  const time = today.toISOString().split('T')[1].substring(0, 8);
+
+  return `${date} ${time}`;
 }
 
 /**
