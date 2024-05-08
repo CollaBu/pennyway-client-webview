@@ -24,7 +24,7 @@
 
       /* 아이폰 이미지의 비율 설정 */
       aspect-ratio: 256 / 538;
-      height: 60%;
+      height: var(--iphone-size);
 
       .iPhone-status {
         /* children의 크기를 아이폰 화면 크기에 맞게 설정 */
@@ -79,5 +79,12 @@
         }
       }
     }
+  }
+
+  .Toastify__toast-container {
+    padding: 0;
+    margin-bottom: 0;
+
+    bottom: calc(26% - (var(--iphone-size) - 60%) * 0.4);
   }
 }

@@ -11,7 +11,7 @@ import iPhoneStatus from '/assets/image/iPhone_status.png';
 import './IPhoneLayout.scss';
 
 export const IPhoneLayout = () => {
-  const { iPhoneLayoutRef, handleSizeDown, handleSizeUp } = useDynamicSize(60);
+  const { iPhoneLayoutRef, handleSizeDown, handleSizeUp } = useDynamicSize();
 
   return (
     <div className='root-layout'>
