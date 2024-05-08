@@ -1,6 +1,6 @@
 import InfiniteScroll from 'react-infinite-scroller';
 
-import { NetworkError, NetworkToastError } from '@/shared/ui';
+import { NetworkError, NetworkErrorToast } from '@/shared/ui';
 
 import { useInfinityFeeds } from '../api/useInfinityFeeds';
 
@@ -44,7 +44,7 @@ export const FeedMainList = () => {
         })}
         {isFetching && <SkeletonFeedMainList count={3} />}
       </InfiniteScroll>
-      <NetworkToastError
+      <NetworkErrorToast
         isVisible={isError && !!feeds}
         errorMessage='인터넷 연결이 불안정해요'
       />

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import './NetworkToastError.scss';
+import './NetworkErrorToast.scss';
 import { Icon } from '..';
 
 interface NetworkToastErrorProps {
@@ -10,7 +10,7 @@ interface NetworkToastErrorProps {
   errorMessage: string;
 }
 
-export const NetworkToastError: React.FC<NetworkToastErrorProps> = ({
+export const NetworkErrorToast: React.FC<NetworkToastErrorProps> = ({
   isVisible,
   errorMessage,
 }) => {

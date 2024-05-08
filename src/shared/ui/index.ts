@@ -4,4 +4,4 @@ export { ConfirmModal, ConfirmReportModal, BottomSheetModal } from './modal';
 export { Profile, SkeletonProfile } from './profile';
 export { Icon } from './icon';
 export { NetworkError } from './network-error';
-export { NetworkToastError } from './network-toast-error';
+export { NetworkErrorToast } from './network-error-toast';
