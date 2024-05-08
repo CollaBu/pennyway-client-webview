@@ -47,7 +47,7 @@ export const feedHandlers = [
     const endOfPageRange = formattedPage * pageCount;
     const hasNextPage = endOfPageRange < totalFeeds;
 
-    await delay(Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000);
+    await delay(Math.floor(Math.random() * 4000));
 
     return createHttpSuccessResponse({
       feeds: feedsData,
