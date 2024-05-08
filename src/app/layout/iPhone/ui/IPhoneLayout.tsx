@@ -5,22 +5,30 @@
 
 import { Outlet } from 'react-router-dom';
 
+import { useDynamicSize } from '../hooks/useDynamicSize';
+
 import iPhoneStatus from '/assets/image/iPhone_status.png';
 import './IPhoneLayout.scss';
 
 export const IPhoneLayout = () => {
+  const { iPhoneLayoutRef, handleSizeDown, handleSizeUp } = useDynamicSize(60);
+
   return (
     <div className='root-layout'>
-      <div className='iPhone-layout'>
+      <div ref={iPhoneLayoutRef} className='iPhone-layout'>
         <div className='client-area'>
           <img className='iPhone-status' src={iPhoneStatus} />
           <Outlet />
         </div>
 
         <div className='iPhone-utility-container'>
-          <button className='size-down-btn'>-</button>
+          <button className='size-down-btn' onClick={handleSizeDown}>
+            -
+          </button>
           <button className='retry-btn' onClick={() => location.reload()} />
-          <button className='size-up-btn'>+</button>
+          <button className='size-up-btn' onClick={handleSizeUp}>
+            +
+          </button>
         </div>
       </div>
     </div>
