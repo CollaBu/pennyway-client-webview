@@ -1,5 +1,5 @@
 import { HttpResponse, http } from 'msw';
-import { describe, expect, it } from 'vitest';
+import { vi, describe, expect, it } from 'vitest';
 
 import { server } from '@/setupTest';
 import { render, screen } from '@/shared/tests/setup';
@@ -38,6 +38,30 @@ describe('피드 메인 페이지에서', () => {
 
   it('스켈레톤 UI 이후 콘텐츠가 정상적으로 렌더링된다.', async () => {
     // given
+
+    // IntersectionObserver를 mock으로 대체
+    const originalIntersectionObserver = global.IntersectionObserver;
+    global.IntersectionObserver = class IntersectionObserver {
+      constructor() {}
+
+      observe() {
+        return vi.fn();
+      }
+
+      unobserve() {
+        return vi.fn();
+      }
+
+      disconnect() {
+        return vi.fn();
+      }
+
+      root = null;
+      rootMargin = '';
+      thresholds = [0];
+      takeRecords = () => [];
+    };
+
     server.use(
       http.get('/feeds', async () => {
         return HttpResponse.json(
@@ -61,5 +85,8 @@ describe('피드 메인 페이지에서', () => {
 
     // then
     expect(content).toBeInTheDocument();
+
+    // IntersectionObserver 복구
+    global.IntersectionObserver = originalIntersectionObserver;
   });
 });
