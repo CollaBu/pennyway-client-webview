@@ -24,7 +24,7 @@ export function getCurrentDate() {
 /**
  * 경과 시간 계산 함수
  * @param feedUploadedAt 피드의 최종 수정 시간
- * @returns 현재 시간 기준 경과 시간
+ * @returns 경과 시간 ex) 1일 전
  */
 export function calculateElapsedTime(feedUploadedAt: string) {
   const feedUploadedDate = new Date(feedUploadedAt);
@@ -32,19 +32,18 @@ export function calculateElapsedTime(feedUploadedAt: string) {
 
   const elapsedTime = today.getTime() - feedUploadedDate.getTime();
 
-  if (elapsedTime < HOUR) return formatElapsedTime(elapsedTime / MINUTE, '분');
-  if (elapsedTime < DAY) return formatElapsedTime(elapsedTime / HOUR, '시간');
-  if (elapsedTime < WEEK) return formatElapsedTime(elapsedTime / DAY, '일');
-
-  return `${feedUploadedDate.toLocaleDateString()}`;
+  return formatElapsedTime(elapsedTime);
 }
 
 /**
  * 경과 시간 포맷팅 함수
  * @param elapsedTime 경과 시간
- * @param unit 단위
  * @returns 경과 시간 포맷팅 결과 ex) 1일 전
  */
-function formatElapsedTime(elapsedTime: number, unit: string) {
-  return `${Math.floor(elapsedTime)}${unit} 전`;
+function formatElapsedTime(elapsedTime: number) {
+  if (elapsedTime < HOUR) return `${Math.floor(elapsedTime / MINUTE)}분 전`;
+  if (elapsedTime < DAY) return `${Math.floor(elapsedTime / HOUR)}시간 전`;
+  if (elapsedTime < WEEK) return `${Math.floor(elapsedTime / DAY)}일 전`;
+
+  return new Date(elapsedTime).toLocaleDateString();
 }
