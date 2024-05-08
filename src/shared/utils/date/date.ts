@@ -1,3 +1,9 @@
+const SECOND = 1000;
+const MINUTE = SECOND * 60;
+const HOUR = MINUTE * 60;
+const DAY = HOUR * 24;
+const WEEK = DAY * 7;
+
 /**
  * 대한민국을 기준으로 현재 시간 반환
  * ex) 2024-04-30 01:32:00
@@ -21,18 +27,21 @@ export function calculateElapsedTime(feedUploadedAt: string) {
   const feedUploadedDate = new Date(feedUploadedAt);
   const today = new Date();
 
-  const seconds = Math.floor(
-    (today.getTime() - feedUploadedDate.getTime()) / 1000,
-  );
-  const minutes = seconds / 60;
+  const elapsedTime = today.getTime() - feedUploadedDate.getTime();
 
-  if (minutes < 60) return `${Math.floor(minutes)}분 전`;
-
-  const hours = minutes / 60;
-  if (hours < 24) return `${Math.floor(hours)}시간 전`;
-
-  const days = hours / 24;
-  if (days < 7) return `${Math.floor(days)}일 전`;
+  if (elapsedTime < HOUR) return formatElapsedTime(elapsedTime / MINUTE, '분');
+  if (elapsedTime < DAY) return formatElapsedTime(elapsedTime / HOUR, '시간');
+  if (elapsedTime < WEEK) return formatElapsedTime(elapsedTime / DAY, '일');
 
   return `${feedUploadedDate.toLocaleDateString()}`;
+}
+
+/**
+ * 경과 시간 포맷팅 함수
+ * @param elapsedTime 경과 시간
+ * @param unit 단위
+ * @returns 경과 시간 포맷팅 결과 ex) 1일 전
+ */
+function formatElapsedTime(elapsedTime: number, unit: string) {
+  return `${Math.floor(elapsedTime)}${unit} 전`;
 }
