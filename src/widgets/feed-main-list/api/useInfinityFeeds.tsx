@@ -14,8 +14,13 @@ interface FetchFeeds {
   };
 }
 
-async function fetchFeeds(page: number): Promise<FetchFeeds> {
-  const { data } = await axiosInstance.get(`/feeds?page=${page}`);
+async function fetchFeeds(
+  page: number,
+  count: number = 10,
+): Promise<FetchFeeds> {
+  const { data } = await axiosInstance.get(
+    `/feeds?page=${page}&count=${count}`,
+  );
 
   return data;
 }

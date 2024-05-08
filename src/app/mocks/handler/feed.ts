@@ -31,13 +31,14 @@ export const feedHandlers = [
   http.get('/feeds', async ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page') || 1;
+    const count = url.searchParams.get('count') || 10;
 
     if (isNaN(Number(page)) || page === '0') {
       return createHttpErrorResponse('4220');
     }
 
     const formattedPage = Number(page);
-    const pageCount = 10;
+    const pageCount = Number(count);
 
     const feedsData = Object.values(feeds)
       .slice((formattedPage - 1) * pageCount, formattedPage * pageCount)
@@ -47,7 +48,7 @@ export const feedHandlers = [
     const endOfPageRange = formattedPage * pageCount;
     const hasNextPage = endOfPageRange < totalFeeds;
 
-    await delay(Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000);
+    await delay(Math.floor(Math.random() * 4000));
 
     return createHttpSuccessResponse({
       feeds: feedsData,
