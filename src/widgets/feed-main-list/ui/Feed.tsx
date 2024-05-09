@@ -6,7 +6,8 @@ import { calculateElapsedTime } from '@/shared/utils';
 import './Feed.scss';
 
 export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
-  const { user, content, likeCount, commentCount, updatedAt, isLiked } = feed;
+  const { id, user, content, likeCount, commentCount, updatedAt, isLiked } =
+    feed;
 
   return (
     <div className='feed-wrapper'>
@@ -32,7 +33,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
         </div>
         <footer className='feed-footer'>
           <div className='footer-left'>
-            <LikeButton isLiked={isLiked} />
+            <LikeButton feedId={id} isLiked={isLiked} />
             <button className='icon icon-btn'>
               <Icon name='chat' width='20' height='20' />
             </button>
