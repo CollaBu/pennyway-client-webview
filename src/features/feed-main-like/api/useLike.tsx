@@ -47,7 +47,7 @@ export const useLike = (feedId: number, isLiked: boolean) => {
       return { previousQueryData };
     },
     onError: (_, __, context) => {
-      // Network Errord일 경우 이전 쿼리값으로 롤백
+      // Network Error일 경우 이전 쿼리값으로 롤백
       queryClient.setQueryData([QUERY_KEYS.feeds], context?.previousQueryData);
     },
     onSuccess: (response, _, context) => {
