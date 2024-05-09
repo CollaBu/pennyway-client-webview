@@ -41,12 +41,15 @@ export const likeHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    if (!likeInfo.isLiked) {
-      likeInfo.isLiked = true;
-      likeInfo.totalCount += 1;
-      feeds[formattedFeedId].isLiked = true;
-      feeds[formattedFeedId].likeCount += 1;
+    // 이미 좋아요 누른 경우
+    if (likeInfo.isLiked) {
+      return createHttpErrorResponse('0000');
     }
+
+    likeInfo.isLiked = true;
+    likeInfo.totalCount += 1;
+    feeds[formattedFeedId].isLiked = true;
+    feeds[formattedFeedId].likeCount += 1;
 
     return createHttpSuccessResponse({ isLiked: true });
   }),
@@ -66,12 +69,15 @@ export const likeHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    if (likeInfo.isLiked) {
-      likeInfo.isLiked = false;
-      likeInfo.totalCount -= 1;
-      feeds[formattedFeedId].isLiked = false;
-      feeds[formattedFeedId].likeCount -= 1;
+    // 이미 좋아요 취소를 누른 경우
+    if (!likeInfo.isLiked) {
+      return createHttpErrorResponse('0000');
     }
+
+    likeInfo.isLiked = false;
+    likeInfo.totalCount -= 1;
+    feeds[formattedFeedId].isLiked = false;
+    feeds[formattedFeedId].likeCount -= 1;
 
     return createHttpSuccessResponse({ isLiked: false });
   }),
