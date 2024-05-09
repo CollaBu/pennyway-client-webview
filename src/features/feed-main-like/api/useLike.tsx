@@ -51,7 +51,7 @@ export const useLike = (feedId: number, isLiked: boolean) => {
         return;
       }
 
-      // 성공 시 feed와 feedId를 가진 쿼리를 다시 불러온다.
+      // 성공 시 피드 아이디에 해당하는 피드를 무효화한다.
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
     },
   });
