@@ -1,26 +1,18 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import { axiosInstance } from '@/shared/axios';
+import { requestLikeFeed, requestUnlikeFeed } from '@/shared/axios';
 import { QUERY_KEYS } from '@/shared/consts';
 import { isErrorResponse } from '@/shared/utils';
 
 import { FeedsQueryData } from '../consts';
 import { updateLikeStatusInFeeds } from '../lib';
 
-async function requestLikeFeed(feedId: number, isLiked: boolean) {
-  const { data } = await axiosInstance({
-    method: isLiked ? 'DELETE' : 'PUT',
-    url: `/feeds/${feedId}/likes`,
-  });
-
-  return data;
-}
-
 export const useLike = (feedId: number, isLiked: boolean) => {
   const queryClient = useQueryClient();
 
   const { mutate: handleLikeFeed, isPending } = useMutation({
-    mutationFn: () => requestLikeFeed(feedId, isLiked),
+    mutationFn: () =>
+      isLiked ? requestUnlikeFeed(feedId) : requestLikeFeed(feedId),
     // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
     onMutate: async () => {
       // 진행중인 refetch가 있다면 취소시킨다.
