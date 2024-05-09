@@ -9,12 +9,12 @@ interface LikeButtonProps {
 }
 
 export const LikeButton: React.FC<LikeButtonProps> = ({ feedId, isLiked }) => {
-  const { handleFeedLike, isPending } = useLike();
+  const { handleLikeFeed, isPending } = useLike(feedId);
 
   return (
     <button
       className='icon icon-btn'
-      onClick={() => handleFeedLike(feedId)}
+      onClick={() => handleLikeFeed()}
       disabled={isPending}
     >
       <Icon
