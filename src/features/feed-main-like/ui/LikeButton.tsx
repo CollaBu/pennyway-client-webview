@@ -1,7 +1,7 @@
 import { ICON_ACTIVE_COLOR } from '@/shared/consts';
 import { Icon } from '@/shared/ui';
 
-import { useLike } from '../api/useLike';
+import { useLike } from '../api';
 
 interface LikeButtonProps {
   feedId: number;

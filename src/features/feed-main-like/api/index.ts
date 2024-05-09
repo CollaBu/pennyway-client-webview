@@ -1,0 +1,1 @@
+export { useLike } from './useLike';
