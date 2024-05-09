@@ -1,18 +1,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { axiosInstance } from '@/shared/axios';
-import { Feed, QUERY_KEYS } from '@/shared/consts';
-
-interface FetchFeeds {
-  code: string;
-  data: {
-    currentPageNumber: number;
-    feeds: Feed[];
-    hasNextPage: boolean;
-    numberOfElements: number;
-    pageSize: number;
-  };
-}
+import { FetchFeeds, QUERY_KEYS } from '@/shared/consts';
 
 async function fetchFeeds(
   page: number,

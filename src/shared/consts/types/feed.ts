@@ -1,5 +1,16 @@
 import { User } from '.';
 
+export interface FetchFeeds {
+  code: string;
+  data: {
+    currentPageNumber: number;
+    feeds: Feed[];
+    hasNextPage: boolean;
+    numberOfElements: number;
+    pageSize: number;
+  };
+}
+
 export interface Feed {
   id: number;
   user: Pick<User, 'id' | 'profileImage' | 'name'>;
