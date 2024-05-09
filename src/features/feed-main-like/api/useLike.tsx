@@ -1,13 +1,11 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { axiosInstance } from '@/shared/axios';
-import { FetchFeeds, QUERY_KEYS } from '@/shared/consts';
+import { QUERY_KEYS } from '@/shared/consts';
 import { isErrorResponse } from '@/shared/utils';
 
-interface FeedsQueryData {
-  queryParams: number[];
-  pages: FetchFeeds[];
-}
+import { FeedsQueryData } from '../consts';
+import { updateLikeStatusInFeeds } from '../lib';
 
 async function requestLikeFeed(feedId: number, isLiked: boolean) {
   const { data } = await axiosInstance({
@@ -37,27 +35,11 @@ export const useLike = (feedId: number, isLiked: boolean) => {
 
       if (!previousQueryData) return;
 
-      const { pages: previousPages } = previousQueryData;
-
       // 업데이트 될 쿼리값
-      const updatedQueryData = {
-        ...previousQueryData,
-        pages: previousPages.map((pageData) => {
-          const { data } = pageData;
-          const updateFeeds = data.feeds.map((feed) =>
-            feed.id === feedId
-              ? {
-                  ...feed,
-                  likeCount: isLiked ? feed.likeCount - 1 : feed.likeCount + 1,
-                  isLiked: !isLiked,
-                }
-              : feed,
-          );
-          const updatedData = { ...data, feeds: updateFeeds };
-
-          return { ...pageData, data: updatedData };
-        }),
-      };
+      const updatedQueryData = updateLikeStatusInFeeds(
+        previousQueryData,
+        feedId,
+      );
 
       // setQueryData 함수를 사용해 newTodo로 Optimistic Update를 실시한다.
       await queryClient.setQueryData([QUERY_KEYS.feeds], updatedQueryData);
