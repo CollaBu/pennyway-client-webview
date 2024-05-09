@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { axiosInstance } from '@/shared/axios';
 import { FetchFeeds, QUERY_KEYS } from '@/shared/consts';
-import { isSuccessResponse } from '@/shared/utils';
+import { isErrorResponse } from '@/shared/utils';
 
 interface FeedsQueryData {
   queryParams: number[];
@@ -61,13 +61,17 @@ export const useLike = (feedId: number) => {
       // Network Errord일 경우 이전 쿼리값으로 롤백
       queryClient.setQueryData([QUERY_KEYS.feeds], context?.previousQueryData);
     },
-    onSuccess: (response) => {
+    onSuccess: (response, _, context) => {
       // Nextwork Success일 경우 실행
-      if (isSuccessResponse(response)) {
-        // 성공 시 feed와 feedId를 가진 쿼리를 다시 불러온다.
-        queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
+
+      if (isErrorResponse(response)) {
+        // 실패 시 이전 쿼리값으로 롤백
+        queryClient.setQueryData([QUERY_KEYS.feeds], context.previousQueryData);
         return;
       }
+
+      // 성공 시 feed와 feedId를 가진 쿼리를 다시 불러온다.
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
     },
   });
 
