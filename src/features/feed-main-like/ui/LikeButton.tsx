@@ -9,7 +9,7 @@ interface LikeButtonProps {
 }
 
 export const LikeButton: React.FC<LikeButtonProps> = ({ feedId, isLiked }) => {
-  const { handleLikeFeed, isPending } = useLike(feedId);
+  const { handleLikeFeed, isPending } = useLike(feedId, isLiked);
 
   return (
     <button

@@ -9,17 +9,20 @@ interface FeedsQueryData {
   pages: FetchFeeds[];
 }
 
-async function requestLikeFeed(feedId: number) {
-  const { data } = await axiosInstance.put(`/feeds/${feedId}/likes`);
+async function requestLikeFeed(feedId: number, isLiked: boolean) {
+  const { data } = await axiosInstance({
+    method: isLiked ? 'DELETE' : 'PUT',
+    url: `/feeds/${feedId}/likes`,
+  });
 
   return data;
 }
 
-export const useLike = (feedId: number) => {
+export const useLike = (feedId: number, isLiked: boolean) => {
   const queryClient = useQueryClient();
 
   const { mutate: handleLikeFeed, isPending } = useMutation({
-    mutationFn: () => requestLikeFeed(feedId),
+    mutationFn: () => requestLikeFeed(feedId, isLiked),
     // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
     onMutate: async () => {
       // 진행중인 refetch가 있다면 취소시킨다.
@@ -43,7 +46,11 @@ export const useLike = (feedId: number) => {
           const { data } = pageData;
           const updateFeeds = data.feeds.map((feed) =>
             feed.id === feedId
-              ? { ...feed, likeCount: feed.likeCount + 1, isLiked: true }
+              ? {
+                  ...feed,
+                  likeCount: isLiked ? feed.likeCount - 1 : feed.likeCount + 1,
+                  isLiked: !isLiked,
+                }
               : feed,
           );
           const updatedData = { ...data, feeds: updateFeeds };
