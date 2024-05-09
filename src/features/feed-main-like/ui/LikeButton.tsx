@@ -1,7 +1,7 @@
 import { ICON_ACTIVE_COLOR } from '@/shared/consts';
 import { Icon } from '@/shared/ui';
 
-import { useLike } from '../api';
+import { useLikes } from '../api';
 
 interface LikeButtonProps {
   feedId: number;
@@ -9,7 +9,7 @@ interface LikeButtonProps {
 }
 
 export const LikeButton: React.FC<LikeButtonProps> = ({ feedId, isLiked }) => {
-  const { handleLikeFeed, isPending } = useLike(feedId, isLiked);
+  const { handleLikeFeed, isPending } = useLikes(feedId, isLiked);
 
   return (
     <button

@@ -7,7 +7,7 @@ import { isErrorResponse } from '@/shared/utils';
 import { FeedsQueryData } from '../consts';
 import { updateLikeStatusInFeeds } from '../lib';
 
-export const useLike = (feedId: number, isLiked: boolean) => {
+export const useLikes = (feedId: number, isLiked: boolean) => {
   const queryClient = useQueryClient();
 
   const { mutate: handleLikeFeed, isPending } = useMutation({

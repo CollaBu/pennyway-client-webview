@@ -4,13 +4,13 @@ import { expect, test, vi } from 'vitest';
 import * as likeModule from '@/shared/axios/like';
 import { createQueryClientWrapper } from '@/shared/tests/setup';
 
-import { useLike } from '../api';
+import { useLikes } from '../api';
 
 test('좋아요 상태가 아닐 때, 좋아요 버튼을 클릭하면 좋아요 요청이 발생한다.', async () => {
   // given
   // requestLikeFeed 함수를 스파이한다.
   const spy = vi.spyOn(likeModule, 'requestLikeFeed');
-  const { result } = renderHook(() => useLike(1, false), {
+  const { result } = renderHook(() => useLikes(1, false), {
     wrapper: createQueryClientWrapper(),
   });
 
@@ -29,7 +29,7 @@ test('좋아요 상태가 아닐 때, 좋아요 버튼을 클릭하면 좋아요
 test('좋아요 상태일 때, 좋아요 버튼을 클릭하면 좋아요 취소 요청이 발생한다.', async () => {
   // given
   const spy = vi.spyOn(likeModule, 'requestUnlikeFeed');
-  const { result } = renderHook(() => useLike(1, true), {
+  const { result } = renderHook(() => useLikes(1, true), {
     wrapper: createQueryClientWrapper(),
   });
 

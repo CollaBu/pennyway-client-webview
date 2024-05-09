@@ -1,1 +1,1 @@
-export { useLike } from './useLike';
+export { useLikes } from './useLikes';
