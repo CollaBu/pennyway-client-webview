@@ -3,6 +3,6 @@ interface Response {
   data: unknown;
 }
 
-export function isSuccessResponse(response: Response) {
-  return response.code === '2000';
+export function isErrorResponse(response: Response) {
+  return response.code !== '2000';
 }

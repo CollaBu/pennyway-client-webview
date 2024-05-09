@@ -1,1 +1,1 @@
-export { isSuccessResponse } from './response';
+export * from './response';
