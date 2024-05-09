@@ -38,29 +38,16 @@ describe('피드 메인 페이지에서', () => {
 
   it('스켈레톤 UI 이후 콘텐츠가 정상적으로 렌더링된다.', async () => {
     // given
-
     // IntersectionObserver를 mock으로 대체
-    const originalIntersectionObserver = global.IntersectionObserver;
-    global.IntersectionObserver = class IntersectionObserver {
-      constructor() {}
+    const IntersectionObserverMock = vi.fn(() => ({
+      disconnect: vi.fn(),
+      observe: vi.fn(),
+      takeRecords: vi.fn(),
+      unobserve: vi.fn(),
+    }));
 
-      observe() {
-        return vi.fn();
-      }
-
-      unobserve() {
-        return vi.fn();
-      }
-
-      disconnect() {
-        return vi.fn();
-      }
-
-      root = null;
-      rootMargin = '';
-      thresholds = [0];
-      takeRecords = () => [];
-    };
+    // IntersectionObserver 글로벌 객체에 추가
+    vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 
     server.use(
       http.get('/feeds', async () => {
@@ -85,8 +72,6 @@ describe('피드 메인 페이지에서', () => {
 
     // then
     expect(content).toBeInTheDocument();
-
-    // IntersectionObserver 복구
-    global.IntersectionObserver = originalIntersectionObserver;
+    vi.unstubAllGlobals(); // IntersectionObserver 복원
   });
 });
