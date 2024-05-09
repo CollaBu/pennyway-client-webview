@@ -1,3 +1,4 @@
+import { ICON_ACTIVE_COLOR } from '@/shared/consts';
 import { Icon } from '@/shared/ui';
 
 interface LikeButtonProps {
@@ -11,7 +12,7 @@ export const LikeButton: React.FC<LikeButtonProps> = ({ isLiked }) => {
         name='like'
         width='20'
         height='20'
-        color={isLiked ? '#00D5E1' : 'none'}
+        color={isLiked ? ICON_ACTIVE_COLOR : 'none'}
       />
     </button>
   );
