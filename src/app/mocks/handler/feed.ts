@@ -1,4 +1,4 @@
-import { delay, http } from 'msw';
+import { http } from 'msw';
 
 import { feeds } from '../consts/feed';
 import { reports } from '../consts/report';
@@ -28,7 +28,7 @@ export const feedHandlers = [
   /**
    * @todo pageCount를 쿼리 파라미터로 받도록 수정
    */
-  http.get('/feeds', async ({ request }) => {
+  http.get('/feeds', ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page') || 1;
     const count = url.searchParams.get('count') || 10;
@@ -47,8 +47,6 @@ export const feedHandlers = [
     const totalFeeds = Object.values(feeds).length;
     const endOfPageRange = formattedPage * pageCount;
     const hasNextPage = endOfPageRange < totalFeeds;
-
-    await delay(Math.floor(Math.random() * 4000));
 
     return createHttpSuccessResponse({
       feeds: feedsData,
