@@ -12,12 +12,8 @@ export function handleQueryError(
 ) {
   const { queryKey, state } = query;
 
-  // feeds 쿼리에서 데이터가 없을 경우 에러 토스트를 띄우지 않습니다.
-  if (queryKey[0] === 'feeds' && state.data === undefined) {
-    return;
-  }
-
-  showErrorHandler();
+  // feeds 쿼리에서 2 페이지부터 에러가 발생하면 네트워크 에러 토스트를 띄웁니다.
+  if (queryKey[0] === 'feeds' && state.data) showErrorHandler();
 }
 
 export function handleMutationError() {
