@@ -10,9 +10,9 @@ export function handleQuerySuccess() {
 }
 
 /**
- * 쿼리 에러 핸들러
+ * 쿼리 에러 핸들러 함수
  * @param query 쿼리
- * @returns
+ * @if 피드 메인 페이지 2 페이지부터 에러가 발생하면 네트워크 에러 토스트를 띄웁니다.
  */
 export function handleQueryError(
   query: Query<unknown, unknown, unknown, QueryKey>,
@@ -23,6 +23,9 @@ export function handleQueryError(
   if (queryKey[0] === 'feeds' && state.data) showErrorHandler();
 }
 
+/**
+ * 뮤테이션 에러 핸들러
+ */
 export function handleMutationError() {
   return;
 }
