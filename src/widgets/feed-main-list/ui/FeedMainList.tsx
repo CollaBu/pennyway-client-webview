@@ -34,11 +34,13 @@ export const FeedMainList = () => {
             <Feed key={feed.id} feed={feed} />
           ));
         })}
+        {!isFetching && (
+          <Observer
+            isReadyForNextPage={!isFetching && hasNextFeeds}
+            fetch={fetchNextFeeds}
+          />
+        )}
         {hasNextFeeds && <SkeletonFeedMainList count={3} />}
-        <Observer
-          isReadyForNextPage={!isFetching && hasNextFeeds}
-          fetch={fetchNextFeeds}
-        />
       </div>
       <NetworkErrorToast
         isVisible={isError && !!feeds}

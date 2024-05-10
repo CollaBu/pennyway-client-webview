@@ -1,3 +1,4 @@
+import { LikeButton } from '@/features';
 import { Feed as FeedProps } from '@/shared/consts';
 import { Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
@@ -5,7 +6,8 @@ import { calculateElapsedTime } from '@/shared/utils';
 import './Feed.scss';
 
 export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
-  const { user, content, likeCount, commentCount, updatedAt } = feed;
+  const { id, user, content, likeCount, commentCount, updatedAt, isLiked } =
+    feed;
 
   return (
     <div className='feed-wrapper'>
@@ -31,9 +33,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
         </div>
         <footer className='feed-footer'>
           <div className='footer-left'>
-            <button className='icon icon-btn'>
-              <Icon name='like' width='20' height='20' />
-            </button>
+            <LikeButton feedId={id} isLiked={isLiked} />
             <button className='icon icon-btn'>
               <Icon name='chat' width='20' height='20' />
             </button>
