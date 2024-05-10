@@ -5,7 +5,11 @@ import {
   QueryClientConfig,
 } from '@tanstack/react-query';
 
-import { handleMutationError, handleQueryError } from '../dir';
+import {
+  handleMutationError,
+  handleQueryError,
+  handleQuerySuccess,
+} from '../dir';
 
 const queryClientOptions: QueryClientConfig = {
   defaultOptions: {
@@ -17,6 +21,7 @@ const queryClientOptions: QueryClientConfig = {
     },
   },
   queryCache: new QueryCache({
+    onSuccess: () => handleQuerySuccess(),
     onError: (_, query) => handleQueryError(query),
   }),
   mutationCache: new MutationCache({
