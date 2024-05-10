@@ -126,6 +126,10 @@ button {
   background-color: transparent;
   border: none;
   padding: 0;
+
+  &:disabled {
+    color: inherit;
+  }
 }
 
 .icon {
