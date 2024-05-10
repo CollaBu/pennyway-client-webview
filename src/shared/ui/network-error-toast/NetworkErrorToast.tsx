@@ -9,9 +9,9 @@ export const NetworkErrorToast = () => {
     <ToastContainer
       className='network-error-toast b1semi'
       icon={<Icon name='caution' width='20' height='20' />}
-      hideProgressBar={true}
-      rtl={false}
       limit={1}
+      pauseOnHover={false}
+      pauseOnFocusLoss={false}
       theme='colored'
     />
   );
