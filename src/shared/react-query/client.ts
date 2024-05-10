@@ -32,7 +32,16 @@ const queryClientOptions: QueryClientConfig = {
     },
   },
   queryCache: new QueryCache({
-    onError: () => showErrorHandler(),
+    onError: (_, query) => {
+      const { queryKey, state } = query;
+
+      // feeds 쿼리에서 데이터가 없을 경우 에러 토스트를 띄우지 않습니다.
+      if (queryKey[0] === 'feeds' && state.data === undefined) {
+        return;
+      }
+
+      showErrorHandler();
+    },
   }),
   mutationCache: new MutationCache({
     onError: () => showErrorHandler(),
