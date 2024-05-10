@@ -1,6 +1,13 @@
 import { Query, QueryKey } from '@tanstack/react-query';
 
-import { showErrorHandler } from './toastHandlers';
+import { removeErrorHandler, showErrorHandler } from './toastHandlers';
+
+/**
+ * 쿼리 성공 핸들러
+ */
+export function handleQuerySuccess() {
+  removeErrorHandler();
+}
 
 /**
  * 쿼리 에러 핸들러

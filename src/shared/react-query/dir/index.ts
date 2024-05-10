@@ -1,2 +1,2 @@
-export * from './handleQueryError';
+export * from './handleQuery';
 export * from './toastHandlers';
