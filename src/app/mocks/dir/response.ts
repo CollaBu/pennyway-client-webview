@@ -6,7 +6,7 @@ import { errorMessage } from '../consts/error';
 const delayTime = Math.random() * 4001;
 
 export async function createHttpSuccessResponse<T>(data: T) {
-  await delay(delayTime);
+  // await delay(delayTime);
 
   return HttpResponse.json(
     {
@@ -18,7 +18,7 @@ export async function createHttpSuccessResponse<T>(data: T) {
 }
 
 export async function createHttpErrorResponse(code: keyof typeof errorMessage) {
-  await delay(delayTime);
+  // await delay(delayTime);
 
   return HttpResponse.json(
     {
