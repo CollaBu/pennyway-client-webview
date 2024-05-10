@@ -1,4 +1,26 @@
-import { QueryClient, QueryClientConfig } from '@tanstack/react-query';
+import {
+  MutationCache,
+  QueryCache,
+  QueryClient,
+  QueryClientConfig,
+} from '@tanstack/react-query';
+import { toast } from 'react-toastify';
+
+/**
+ * 에러 메시지를 토스트 메시지로 변환합니다.
+ */
+function showErrorHandler() {
+  // reference: https://fkhadra.github.io/react-toastify/api/toast
+  const id = 'react-query-toast';
+
+  if (!toast.isActive(id)) {
+    toast('인터넷 연결이 불안정해요', {
+      toastId: id,
+      autoClose: 3000,
+      position: 'bottom-center',
+    });
+  }
+}
 
 const queryClientOptions: QueryClientConfig = {
   defaultOptions: {
@@ -9,5 +31,11 @@ const queryClientOptions: QueryClientConfig = {
       retry: false,
     },
   },
+  queryCache: new QueryCache({
+    onError: () => showErrorHandler(),
+  }),
+  mutationCache: new MutationCache({
+    onError: () => showErrorHandler(),
+  }),
 };
 export const queryClient = new QueryClient(queryClientOptions);
