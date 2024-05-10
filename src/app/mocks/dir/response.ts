@@ -1,8 +1,10 @@
-import { HttpResponse } from 'msw';
+import { HttpResponse, delay } from 'msw';
 
 import { errorMessage } from '../consts/error';
 
-export function createHttpSuccessResponse<T>(data: T) {
+export async function createHttpSuccessResponse<T>(data: T) {
+  await delay();
+
   return HttpResponse.json(
     {
       code: '2000',
@@ -12,7 +14,9 @@ export function createHttpSuccessResponse<T>(data: T) {
   );
 }
 
-export function createHttpErrorResponse(code: keyof typeof errorMessage) {
+export async function createHttpErrorResponse(code: keyof typeof errorMessage) {
+  await delay();
+
   return HttpResponse.json(
     {
       code,
