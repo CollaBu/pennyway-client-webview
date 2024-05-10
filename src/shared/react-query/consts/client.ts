@@ -16,7 +16,6 @@ function showErrorHandler() {
   if (!toast.isActive(id)) {
     toast('인터넷 연결이 불안정해요', {
       toastId: id,
-      autoClose: 3000,
       position: 'bottom-center',
     });
   }
