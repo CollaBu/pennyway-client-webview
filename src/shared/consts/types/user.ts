@@ -3,6 +3,7 @@ export interface User {
   profileImage: string;
   name: string;
   content: string;
+  locked: boolean;
 
   feedCount: number;
   followingCount: number;

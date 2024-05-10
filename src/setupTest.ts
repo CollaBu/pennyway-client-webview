@@ -4,11 +4,12 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 import { setupServer } from 'msw/node';
 import { beforeAll, afterAll, afterEach, expect } from 'vitest';
 
+import { followHandler } from './app/mocks/handler/follow';
 import { likeHandlers } from './app/mocks/handler/like';
 
 expect.extend(matchers);
 
-export const server = setupServer(...likeHandlers);
+export const server = setupServer(...likeHandlers, ...followHandler);
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 afterAll(() => server.close());
