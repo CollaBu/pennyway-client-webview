@@ -6,10 +6,17 @@ import { beforeAll, afterAll, afterEach, expect } from 'vitest';
 
 import { followHandler } from './app/mocks/handler/follow';
 import { likeHandlers } from './app/mocks/handler/like';
+import { profileHandler } from './app/mocks/handler/profile';
+import { searchHandler } from './app/mocks/handler/search';
 
 expect.extend(matchers);
 
-export const server = setupServer(...likeHandlers, ...followHandler);
+export const server = setupServer(
+  ...likeHandlers,
+  ...followHandler,
+  ...searchHandler,
+  ...profileHandler,
+);
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 afterAll(() => server.close());
