@@ -17,5 +17,5 @@ export function handleQueryError(
 }
 
 export function handleMutationError() {
-  showErrorHandler();
+  return;
 }
