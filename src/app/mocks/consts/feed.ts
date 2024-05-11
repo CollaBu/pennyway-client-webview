@@ -17,7 +17,7 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -37,15 +37,15 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 2,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 3,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -65,7 +65,7 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -85,11 +85,11 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 2,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -109,15 +109,15 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 2,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 3,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -137,15 +137,15 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 2,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 3,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -165,11 +165,11 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 2,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -189,7 +189,7 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
@@ -209,11 +209,11 @@ export const feeds: Feeds = {
     images: [
       {
         id: 1,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
       {
         id: 2,
-        imageUrl: 'https://picsum.photos/200/200',
+        imageUrl: 'https://picsum.photos/320/400',
       },
     ],
 
