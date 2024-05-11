@@ -1,6 +1,6 @@
 import { NetworkError, Observer } from '@/shared/ui';
 
-import { useInfinityFeeds } from '../api/useInfinityFeeds';
+import { useInfinityFeeds } from '../api';
 
 import { Feed } from './Feed';
 import { SkeletonFeedMainList } from './SkeletonFeedMainList';

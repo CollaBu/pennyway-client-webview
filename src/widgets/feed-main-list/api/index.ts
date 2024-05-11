@@ -1,0 +1,1 @@
+export { useInfinityFeeds } from './useInfinityFeeds';
