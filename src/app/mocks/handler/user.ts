@@ -9,8 +9,8 @@ import { users } from '../consts/user';
 import { profileFeeds } from '../consts/profileFeed';
 import { reports } from '../consts/report';
 
-export const profileHandler = [
-  // 1️⃣ 사용자 프로필 조회
+export const userHandler = [
+  // 1️⃣ 사용자 조회
   http.get('/users/:user_id', ({ params }) => {
     const { user_id } = params;
 
@@ -27,8 +27,8 @@ export const profileHandler = [
 
     return createHttpSuccessResponse({ user: user });
   }),
-  // 2️⃣ 사용자 프로필 피드
-  http.get('/users/:user_id', ({ request, params }) => {
+  // 2️⃣ 사용자 프로필 피드 조회
+  http.get('/profile/:user_id', ({ request, params }) => {
     const { user_id } = params;
 
     const url = new URL(request.url);
@@ -54,7 +54,7 @@ export const profileHandler = [
     const hasNextPage = endOfPageRange < totalFeeds;
 
     return createHttpSuccessResponse({
-      feeds: profileFeeds,
+      feeds: profileFeedsData,
       currentPageNumber: pageCount,
       pageSize: formattedPage,
       numberOfElements: profileFeedsData.length,
