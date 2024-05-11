@@ -20,7 +20,7 @@ describe('팔로우가 되어있지 않은 상태에서', () => {
     const { relationshipStatus: relationshipStatus } =
       await getUserById(userId);
 
-    expect(relationshipStatus).toEqual('following');
+    expect(relationshipStatus).toBe('following');
   });
 
   it('비공개 계정에 팔로우 신청을 클릭하면, 요청됨으로 상태가 변경된다.', async () => {
