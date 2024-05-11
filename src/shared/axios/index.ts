@@ -1,2 +1,2 @@
-export { axiosInstance } from './config/instance';
+export { axiosInstance } from './config';
 export * from './like';

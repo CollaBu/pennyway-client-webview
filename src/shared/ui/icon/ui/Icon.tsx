@@ -1,4 +1,4 @@
-import { IconName } from '../consts/sprite';
+import { IconName } from '../consts';
 
 interface IconProps {
   name: IconName;

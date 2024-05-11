@@ -1,1 +1,1 @@
-export { IPhoneLayout } from './ui/IPhoneLayout';
+export { IPhoneLayout } from './ui';

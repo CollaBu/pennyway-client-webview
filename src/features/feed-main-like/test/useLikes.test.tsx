@@ -2,7 +2,7 @@ import { renderHook, act, waitFor } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 
 import * as likeModule from '@/shared/axios/like';
-import { createQueryClientWrapper } from '@/shared/tests/setup';
+import { createQueryClientWrapper } from '@/shared/tests';
 
 import { useLikes } from '../api';
 

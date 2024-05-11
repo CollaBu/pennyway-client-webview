@@ -2,7 +2,7 @@ import { HttpResponse, http } from 'msw';
 import { expect, test } from 'vitest';
 
 import { server } from '@/setupTest';
-import { render, screen } from '@/shared/tests/setup';
+import { render, screen } from '@/shared/tests';
 
 import { FeedMainList } from '..';
 
