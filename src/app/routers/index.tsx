@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
-import { FeedMainPage } from '@/pages/index.ts';
+import { FeedMainPage } from '@/pages/feed-main';
 
 import { IPhoneLayout } from '../layout';
 
