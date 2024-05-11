@@ -9,7 +9,7 @@ import {
   logApiErrorOnDev,
   logApiRequestOnDev,
   logApiResponseOnDev,
-} from '../dir/log';
+} from '../dir';
 
 export function onRequest(
   config: InternalAxiosRequestConfig,
