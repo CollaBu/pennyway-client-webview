@@ -1,0 +1,1 @@
+export { FeedMainHeader } from './FeedMainHeader';
