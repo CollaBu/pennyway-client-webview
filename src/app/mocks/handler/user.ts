@@ -38,6 +38,13 @@ export const userHandler = [
       return createHttpErrorResponse('4220');
     }
 
+    const formattedUserId = Number(user_id);
+    const user = users[formattedUserId];
+
+    if (!user) {
+      return createHttpErrorResponse('4040');
+    }
+
     if (isNaN(Number(page)) || page === '0') {
       return createHttpErrorResponse('4220');
     }
