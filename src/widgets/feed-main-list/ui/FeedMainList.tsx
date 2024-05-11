@@ -1,4 +1,4 @@
-import { NetworkError, NetworkErrorToast, Observer } from '@/shared/ui';
+import { NetworkError, Observer } from '@/shared/ui';
 
 import { useInfinityFeeds } from '../api/useInfinityFeeds';
 
@@ -42,10 +42,6 @@ export const FeedMainList = () => {
         )}
         {hasNextFeeds && <SkeletonFeedMainList count={3} />}
       </div>
-      <NetworkErrorToast
-        isVisible={isError && !!feeds}
-        errorMessage='인터넷 연결이 불안정해요'
-      />
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { requestLikeFeed, requestUnlikeFeed } from '@/shared/axios';
-import { QUERY_KEYS } from '@/shared/consts';
+import { QUERY_KEYS } from '@/shared/react-query';
 import { isErrorResponse } from '@/shared/utils';
 
 import { FeedsQueryData } from '../consts';
