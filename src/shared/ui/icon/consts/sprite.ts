@@ -9,4 +9,5 @@ export type IconName =
   | 'like'
   | 'chat'
   | 'search'
-  | 'caution';
+  | 'caution'
+  | 'no-profile';

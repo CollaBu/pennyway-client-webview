@@ -1,0 +1,49 @@
+.carousel-container {
+  overflow-x: unset;
+
+  .carousel {
+    overflow: unset;
+  }
+}
+
+.carousel {
+  .slider {
+    display: flex;
+
+    .slide {
+      .carousel-item {
+        width: inherit;
+        height: inherit;
+      }
+
+      img {
+        aspect-ratio: 4 / 5;
+      }
+    }
+  }
+
+  .control-dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+
+    margin: 0;
+    bottom: -10px;
+
+    .dot {
+      width: 4px;
+      height: 4px;
+
+      margin: 0;
+
+      background-color: $gray3;
+      box-shadow: unset;
+
+      opacity: 1;
+
+      &.selected {
+        background-color: $mint3;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ interface Users {
 export const users: Users = {
   1: {
     id: 1,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: '',
     name: '강병준',
     content: 'bangdori',
     feedCount: 100,
@@ -16,7 +16,7 @@ export const users: Users = {
   },
   2: {
     id: 2,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: '',
     name: '이의찬',
     content: 'Legitgoons',
     feedCount: 124,
@@ -25,7 +25,7 @@ export const users: Users = {
   },
   3: {
     id: 3,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: '',
     name: '양재서',
     content: 'psychology50',
     feedCount: 6,
@@ -34,7 +34,7 @@ export const users: Users = {
   },
   4: {
     id: 4,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: 'https://picsum.photos/32/32',
     name: '이수민',
     content: 'SSXXMM22',
     feedCount: 24,
@@ -43,7 +43,7 @@ export const users: Users = {
   },
   5: {
     id: 5,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: 'https://picsum.photos/32/32',
     name: '신얀',
     content: 'yanni13',
     feedCount: 51,
@@ -52,7 +52,7 @@ export const users: Users = {
   },
   6: {
     id: 6,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: 'https://picsum.photos/32/32',
     name: '이주원',
     content: '2weeksone',
     feedCount: 97,
@@ -61,7 +61,7 @@ export const users: Users = {
   },
   7: {
     id: 7,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: 'https://picsum.photos/32/32',
     name: '안성윤',
     content: 'asn6878',
     feedCount: 87,
@@ -70,7 +70,7 @@ export const users: Users = {
   },
   8: {
     id: 8,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: 'https://picsum.photos/32/32',
     name: '이진우',
     content: 'jinlee1703',
     feedCount: 32,
@@ -79,7 +79,7 @@ export const users: Users = {
   },
   9: {
     id: 9,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: 'https://picsum.photos/32/32',
     name: '최희진',
     content: 'heejinnn',
     feedCount: 66,
