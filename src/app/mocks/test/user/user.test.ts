@@ -11,7 +11,6 @@ async function getUserById(userId: number) {
 async function getProfileFeedById(userId: number, page: number) {
   const profileFeed = await axios.get(`/profile/${userId}?page=${page}`);
   const profileFeedData = profileFeed.data.data;
-  console.log(profileFeedData);
   return { profileFeedData };
 }
 
