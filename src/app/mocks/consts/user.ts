@@ -7,7 +7,7 @@ interface Users {
 export const users: Users = {
   1: {
     id: 1,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: '',
     name: '강병준',
     content: 'bangdori',
     feedCount: 100,
@@ -16,7 +16,7 @@ export const users: Users = {
   },
   2: {
     id: 2,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: '',
     name: '이의찬',
     content: 'Legitgoons',
     feedCount: 124,
@@ -25,7 +25,7 @@ export const users: Users = {
   },
   3: {
     id: 3,
-    profileImage: 'https://picsum.photos/200/200',
+    profileImage: '',
     name: '양재서',
     content: 'psychology50',
     feedCount: 6,
