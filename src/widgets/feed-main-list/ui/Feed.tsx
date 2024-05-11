@@ -1,13 +1,21 @@
 import { LikeButton } from '@/features/feed-main-like';
 import { Feed as FeedProps } from '@/shared/consts';
-import { Icon, Profile } from '@/shared/ui';
+import { Carousel, Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
 
 import './Feed.scss';
 
 export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
-  const { id, user, content, likeCount, commentCount, updatedAt, isLiked } =
-    feed;
+  const {
+    id,
+    user,
+    content,
+    images,
+    likeCount,
+    commentCount,
+    updatedAt,
+    isLiked,
+  } = feed;
 
   return (
     <div className='feed-wrapper'>
@@ -25,6 +33,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
         </header>
         <div className='feed-content'>
           <p className='feed-text b1reg'>{content}</p>
+          <Carousel images={images} />
         </div>
         <div className='feed-count-container'>
           <p className='count-text b3md'>좋아요 {likeCount}</p>
