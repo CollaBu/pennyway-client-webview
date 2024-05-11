@@ -2,7 +2,7 @@ import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 import { FeedMainPage } from '@/pages/index.ts';
 
-import { IPhoneLayout } from '../layout/iPhone/index.ts';
+import { IPhoneLayout } from '../layout';
 
 /**
  * 🚨 현재 iPhone Layout은 DEV 모드에서만 활성화되는 부분이지만,

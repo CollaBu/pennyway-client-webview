@@ -1,0 +1,1 @@
+export { IPhoneLayout } from './IPhoneLayout';
