@@ -1,1 +1,1 @@
-export { setAccessToken, getAccessToken } from './auth/auth-store';
+export { setAccessToken, getAccessToken } from './auth';
