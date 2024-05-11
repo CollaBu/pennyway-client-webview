@@ -1,4 +1,4 @@
-import { LikeButton } from '@/features';
+import { LikeButton } from '@/features/feed-main-like';
 import { Feed as FeedProps } from '@/shared/consts';
 import { Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
