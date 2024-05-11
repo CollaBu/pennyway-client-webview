@@ -9,8 +9,7 @@ interface ProfileFeeds {
 export const profileFeeds: ProfileFeeds = {
   1: {
     id: 1,
-    title: 'Feed Title 1',
-    content: 'Feed Content 1',
+    content: 'Profile Feed Content 1',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[1].totalCount,
@@ -18,8 +17,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   2: {
     id: 2,
-    title: 'Feed Title 2',
-    content: 'Feed Content 2',
+    content: 'Profile Feed Content 2',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[2].totalCount,
@@ -27,7 +25,6 @@ export const profileFeeds: ProfileFeeds = {
   },
   3: {
     id: 3,
-    title: 'Feed Title 3',
     content: 'Feed Content 3',
     thubnailImage: 'https://picsum.photos/200/200',
 
@@ -36,8 +33,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   4: {
     id: 4,
-    title: 'Feed Title 4',
-    content: 'Feed Content 4',
+    content: 'Profile Feed Content 4',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[4].totalCount,
@@ -45,8 +41,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   5: {
     id: 5,
-    title: 'Feed Title 5',
-    content: 'Feed Content 5',
+    content: 'Profile Feed Content 5',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[5].totalCount,
@@ -54,8 +49,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   6: {
     id: 6,
-    title: 'Feed Title 5',
-    content: 'Feed Content 5',
+    content: 'Profile Feed Content 5',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[6].totalCount,
@@ -63,8 +57,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   7: {
     id: 7,
-    title: 'Feed Title 7',
-    content: 'Feed Content 7',
+    content: 'Profile Feed Content 7',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[7].totalCount,
@@ -72,8 +65,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   8: {
     id: 8,
-    title: 'Feed Title 8',
-    content: 'Feed Content 8',
+    content: 'Profile Feed Content 8',
     thubnailImage: 'https://picsum.photos/200/200',
 
     likeCount: likes[8].totalCount,
@@ -81,8 +73,7 @@ export const profileFeeds: ProfileFeeds = {
   },
   9: {
     id: 9,
-    title: 'Feed Title 9',
-    content: 'Feed Content 9',
+    content: 'Profile Feed Content 9',
     thubnailImage: '',
 
     likeCount: likes[9].totalCount,

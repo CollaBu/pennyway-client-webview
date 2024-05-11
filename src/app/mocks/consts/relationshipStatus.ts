@@ -14,5 +14,5 @@ export const relationshipStatus: Relationship = {
   6: 'pending',
   7: 'following',
   8: 'none',
-  9: 'pending',
+  9: 'none',
 };
