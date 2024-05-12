@@ -190,4 +190,25 @@ export const feedHandlers = [
 
     return createHttpSuccessResponse({});
   }),
+
+  // 7️⃣ 피드 북마크
+  http.put('/feeds/:feed_id/bookmarks', ({ params }) => {
+    const { feed_id } = params;
+
+    if (isNaN(Number(feed_id))) {
+      return createHttpErrorResponse('4220');
+    }
+
+    const formattedFeedId = Number(feed_id);
+
+    if (!feeds[formattedFeedId]) {
+      return createHttpErrorResponse('4040');
+    }
+
+    feeds[formattedFeedId].isBookmark = !feeds[formattedFeedId].isBookmark;
+
+    return createHttpSuccessResponse({
+      isBookmarked: feeds[formattedFeedId].isBookmark,
+    });
+  }),
 ];
