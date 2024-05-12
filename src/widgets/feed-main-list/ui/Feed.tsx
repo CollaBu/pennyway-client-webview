@@ -16,7 +16,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
     likeCount,
     commentCount,
     isLiked,
-    isBookmark,
+    isBookmarked,
   } = feed;
 
   return (
@@ -53,7 +53,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
             </button>
           </div>
           <div className='footer-right'>
-            <BookmarkButton feedId={id} isBookmark={isBookmark} />
+            <BookmarkButton feedId={id} isBookmarked={isBookmarked} />
           </div>
         </footer>
       </article>

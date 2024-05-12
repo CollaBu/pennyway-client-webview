@@ -61,7 +61,7 @@ export const feeds: Feeds = {
     commentCount: comments[1].length,
 
     isLiked: likes[1].isLiked,
-    isBookmark: true,
+    isBookmarked: true,
 
     createdAt: '2024-04-16 12:00:00',
     updatedAt: '2024-04-16 12:00:00',
@@ -76,7 +76,7 @@ export const feeds: Feeds = {
     commentCount: comments[2].length,
 
     isLiked: likes[2].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 12:10:00',
     updatedAt: '2024-04-16 12:10:00',
@@ -104,7 +104,7 @@ export const feeds: Feeds = {
     commentCount: comments[3].length,
 
     isLiked: likes[3].isLiked,
-    isBookmark: true,
+    isBookmarked: true,
 
     createdAt: '2024-04-16 12:20:00',
     updatedAt: '2024-04-16 12:20:00',
@@ -140,7 +140,7 @@ export const feeds: Feeds = {
     commentCount: comments[4].length,
 
     isLiked: likes[4].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 12:30:00',
     updatedAt: '2024-04-16 12:30:00',
@@ -168,7 +168,7 @@ export const feeds: Feeds = {
     commentCount: comments[5].length,
 
     isLiked: likes[5].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 12:40:00',
     updatedAt: '2024-04-16 12:40:00',
@@ -196,7 +196,7 @@ export const feeds: Feeds = {
     commentCount: comments[6].length,
 
     isLiked: likes[6].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 12:50:00',
     updatedAt: '2024-04-16 12:50:00',
@@ -220,7 +220,7 @@ export const feeds: Feeds = {
     commentCount: comments[7].length,
 
     isLiked: likes[7].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 13:00:00',
     updatedAt: '2024-04-16 13:00:00',
@@ -240,7 +240,7 @@ export const feeds: Feeds = {
     commentCount: comments[8].length,
 
     isLiked: likes[8].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 13:10:00',
     updatedAt: '2024-04-16 13:10:00',
@@ -264,7 +264,7 @@ export const feeds: Feeds = {
     commentCount: comments[9].length,
 
     isLiked: likes[9].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-04-16 13:20:00',
     updatedAt: '2024-04-16 13:20:00',
@@ -285,7 +285,7 @@ for (let i = 10; i < 100; i++) {
     commentCount: comments[i].length,
 
     isLiked: likes[i].isLiked,
-    isBookmark: false,
+    isBookmarked: false,
 
     createdAt: '2024-05-03 12:00:00',
     updatedAt: '2024-05-03 12:00:00',

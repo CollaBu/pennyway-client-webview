@@ -22,7 +22,7 @@ export interface Feed {
   commentCount: number;
 
   isLiked: boolean;
-  isBookmark: boolean;
+  isBookmarked: boolean;
 
   createdAt: string;
   updatedAt: string;

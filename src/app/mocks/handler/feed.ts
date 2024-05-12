@@ -77,7 +77,7 @@ export const feedHandlers = [
       commentCount: 0,
 
       isLiked: false,
-      isBookmark: false,
+      isBookmarked: false,
 
       createdAt: getCurrentDate(),
       updatedAt: getCurrentDate(),
@@ -205,10 +205,10 @@ export const feedHandlers = [
       return createHttpErrorResponse('4040');
     }
 
-    feeds[formattedFeedId].isBookmark = !feeds[formattedFeedId].isBookmark;
+    feeds[formattedFeedId].isBookmarked = !feeds[formattedFeedId].isBookmarked;
 
     return createHttpSuccessResponse({
-      isBookmarked: feeds[formattedFeedId].isBookmark,
+      isBookmarked: feeds[formattedFeedId].isBookmarked,
     });
   }),
 ];

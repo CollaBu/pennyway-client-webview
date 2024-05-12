@@ -3,11 +3,11 @@ import { Icon } from '@/shared/ui';
 
 interface BookmarkButtonProps {
   feedId: number;
-  isBookmark: boolean;
+  isBookmarked: boolean;
 }
 
 export const BookmarkButton: React.FC<BookmarkButtonProps> = ({
-  isBookmark,
+  isBookmarked,
 }) => {
   return (
     <button className='icon icon-btn'>
@@ -15,7 +15,7 @@ export const BookmarkButton: React.FC<BookmarkButtonProps> = ({
         name='bookmark'
         width='20'
         height='20'
-        color={isBookmark ? ICON_ACTIVE_COLOR : 'none'}
+        color={isBookmarked ? ICON_ACTIVE_COLOR : 'none'}
       />
     </button>
   );
