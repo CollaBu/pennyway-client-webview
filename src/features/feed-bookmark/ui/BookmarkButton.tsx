@@ -1,7 +1,7 @@
 import { ICON_ACTIVE_COLOR } from '@/shared/consts';
 import { Icon } from '@/shared/ui';
 
-import { useBookmark } from '../api/useBookmark';
+import { useBookmark } from '../api';
 
 interface BookmarkButtonProps {
   feedId: number;
