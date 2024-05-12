@@ -61,7 +61,7 @@ export const feeds: Feeds = {
     commentCount: comments[1].length,
 
     isLiked: likes[1].isLiked,
-    isBookmark: false,
+    isBookmark: true,
 
     createdAt: '2024-04-16 12:00:00',
     updatedAt: '2024-04-16 12:00:00',
@@ -104,7 +104,7 @@ export const feeds: Feeds = {
     commentCount: comments[3].length,
 
     isLiked: likes[3].isLiked,
-    isBookmark: false,
+    isBookmark: true,
 
     createdAt: '2024-04-16 12:20:00',
     updatedAt: '2024-04-16 12:20:00',
