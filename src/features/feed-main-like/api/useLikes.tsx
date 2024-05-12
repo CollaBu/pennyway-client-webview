@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { requestLikeFeed, requestUnlikeFeed } from '@/shared/axios';
+import { FeedsQueryData } from '@/shared/consts';
 import { QUERY_KEYS } from '@/shared/react-query';
 import { isErrorResponse } from '@/shared/utils';
 
-import { FeedsQueryData } from '../consts';
 import { updateLikeStatusInFeeds } from '../lib';
 
 export const useLikes = (feedId: number, isLiked: boolean) => {

@@ -1,4 +1,4 @@
-import { FeedsQueryData } from '../consts';
+import { FeedsQueryData } from '@/shared/consts';
 
 export function updateLikeStatusInFeeds(
   previousQueryData: FeedsQueryData,

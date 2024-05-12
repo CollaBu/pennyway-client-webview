@@ -1,5 +1,10 @@
 import { User } from '.';
 
+export interface FeedsQueryData {
+  queryParams: number[];
+  pages: FetchFeeds[];
+}
+
 export interface FetchFeeds {
   code: string;
   data: {
