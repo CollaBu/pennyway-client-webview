@@ -1,5 +1,10 @@
 import { User } from '.';
 
+export interface FeedsQueryData {
+  queryParams: number[];
+  pages: FetchFeeds[];
+}
+
 export interface FetchFeeds {
   code: string;
   data: {
@@ -22,7 +27,7 @@ export interface Feed {
   commentCount: number;
 
   isLiked: boolean;
-  isBookmark: boolean;
+  isBookmarked: boolean;
 
   createdAt: string;
   updatedAt: string;

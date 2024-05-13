@@ -1,6 +1,6 @@
 import { FeedsQueryData } from '@/shared/consts';
 
-export function updateLikeStatusInFeeds(
+export function updateBookmarkStatusInFeeds(
   previousQueryData: FeedsQueryData,
   feedId: number,
 ) {
@@ -14,8 +14,7 @@ export function updateLikeStatusInFeeds(
         feed.id === feedId
           ? {
               ...feed,
-              likeCount: feed.isLiked ? feed.likeCount - 1 : feed.likeCount + 1,
-              isLiked: !feed.isLiked,
+              isBookmarked: !feed.isBookmarked,
             }
           : feed,
       );

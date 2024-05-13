@@ -1,3 +1,4 @@
+import { BookmarkButton } from '@/features/feed-bookmark';
 import { LikeButton } from '@/features/feed-main-like';
 import { Feed as FeedProps } from '@/shared/consts';
 import { Carousel, Icon, Profile } from '@/shared/ui';
@@ -9,12 +10,13 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
   const {
     id,
     user,
+    updatedAt,
     content,
     images,
     likeCount,
     commentCount,
-    updatedAt,
     isLiked,
+    isBookmarked,
   } = feed;
 
   return (
@@ -51,9 +53,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
             </button>
           </div>
           <div className='footer-right'>
-            <button className='icon icon-btn'>
-              <Icon name='bookmark' width='20' height='20' />
-            </button>
+            <BookmarkButton feedId={id} isBookmarked={isBookmarked} />
           </div>
         </footer>
       </article>
