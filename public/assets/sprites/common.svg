@@ -113,4 +113,32 @@
       <circle cx='29.43' cy='26.05' r='11.61' />
     </g>
   </symbol>
+   <symbol id='checkoff-icon' viewBox='0 0 20 20'>
+    <circle cx='10' cy='10' r='6.88' stroke='#DDE0E5' stroke-width='1.25' />
+    <path
+      stroke='#DDE0E5'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      d='M13.21 8.215l-4.42 4.42-2.009-2.01'
+    />
+  </symbol>
+  <symbol id='checkon-icon' viewBox='0 0 20 20'>
+    <circle
+      cx='10'
+      cy='10'
+      r='6.88'
+      fill='#383E4A'
+      stroke='#383E4A'
+      stroke-width='1.25'
+    />
+    <path fill='#383E4A' d='M13.21 8.215l-4.42 4.42-2.009-2.01' />
+    <path
+      stroke='#fff'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      d='M13.21 8.215l-4.42 4.42-2.009-2.01'
+    />
+  </symbol>
 </svg>
