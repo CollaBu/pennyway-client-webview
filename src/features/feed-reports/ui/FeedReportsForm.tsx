@@ -4,6 +4,7 @@ import { REPORTS } from '../consts';
 import { useCheckbox } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
+import './FeedReportsForm.scss';
 
 interface FeedReportsFormProps {
   onClose: () => void;

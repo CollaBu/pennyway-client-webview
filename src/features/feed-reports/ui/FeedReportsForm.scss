@@ -1,0 +1,19 @@
+.reports-list {
+  margin-top: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  row-gap: 10px;
+
+  .report-item {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    .item-name {
+      color: $gray5;
+    }
+  }
+}
