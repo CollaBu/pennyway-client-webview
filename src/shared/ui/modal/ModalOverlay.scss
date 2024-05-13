@@ -1,6 +1,6 @@
 @mixin overlay($isModal: false) {
   position: absolute;
-  z-index: 10;
+  z-index: 100;
 
   @if $isModal {
     top: 50%;
