@@ -25,9 +25,6 @@ interface ReportForm {
 
 export const feedHandlers = [
   // 1️⃣ 피드 목록 조회
-  /**
-   * @todo pageCount를 쿼리 파라미터로 받도록 수정
-   */
   http.get('/feeds', ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page') || 1;
@@ -189,26 +186,5 @@ export const feedHandlers = [
     }
 
     return createHttpSuccessResponse({});
-  }),
-
-  // 7️⃣ 피드 북마크
-  http.put('/feeds/:feed_id/bookmarks', ({ params }) => {
-    const { feed_id } = params;
-
-    if (isNaN(Number(feed_id))) {
-      return createHttpErrorResponse('4220');
-    }
-
-    const formattedFeedId = Number(feed_id);
-
-    if (!feeds[formattedFeedId]) {
-      return createHttpErrorResponse('4040');
-    }
-
-    feeds[formattedFeedId].isBookmarked = !feeds[formattedFeedId].isBookmarked;
-
-    return createHttpSuccessResponse({
-      isBookmarked: feeds[formattedFeedId].isBookmarked,
-    });
   }),
 ];
