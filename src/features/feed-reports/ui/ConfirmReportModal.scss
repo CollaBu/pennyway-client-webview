@@ -1,0 +1,21 @@
+.confirm-report-modal {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+
+  width: 280px;
+  padding: 18px;
+
+  .title {
+    align-self: start;
+  }
+
+  .modal-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+}
