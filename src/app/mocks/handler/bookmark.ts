@@ -27,7 +27,7 @@ export const bookmarkHandlers = [
   }),
 
   // 2️⃣ 피드 북마크 취소
-  http.delete('/feeds/:feed_id/likes', ({ params }) => {
+  http.delete('/feeds/:feed_id/bookmarks', ({ params }) => {
     const { feed_id } = params;
 
     if (isNaN(Number(feed_id))) {
