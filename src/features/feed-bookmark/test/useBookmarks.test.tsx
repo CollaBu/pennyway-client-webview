@@ -8,13 +8,13 @@ import { useBookmarks } from '../api';
 
 test('북마크 상태가 아닐 때, 북마크 버튼을 클릭하면 북마크 요청이 발생한다.', async () => {
   // given
-  // requestLikeFeed 함수를 스파이한다.
+  // requestBookmarkFeed 함수를 스파이한다.
   const spy = vi.spyOn(bookmarkModule, 'requestBookmarkFeed');
   const { result } = renderHook(() => useBookmarks(1, false), {
     wrapper: createQueryClientWrapper(),
   });
 
-  // requestLikeFeed가 호출되지 않았는지 확인
+  // requestBookmarkFeed가 호출되지 않았는지 확인
   await waitFor(() => expect(spy).not.toHaveBeenCalled());
 
   // when
@@ -22,7 +22,7 @@ test('북마크 상태가 아닐 때, 북마크 버튼을 클릭하면 북마크
   await act(async () => result.current.handleBookmarkFeed());
 
   // then
-  // requestLikeFeed가 호출되었는지 확인
+  // requestBookmarkFeed가 호출되었는지 확인
   await waitFor(() => expect(spy).toHaveBeenCalled());
 });
 
