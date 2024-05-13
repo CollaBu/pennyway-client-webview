@@ -55,7 +55,7 @@
       .iPhone-utility-container {
         position: absolute;
         left: 50%;
-        bottom: 2%;
+        bottom: calc(2% + (var(--iphone-size) - 80%) * 0.025);
         transform: translateX(-50%);
 
         display: flex;
