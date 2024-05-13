@@ -12,7 +12,7 @@ export const BookmarkButton: React.FC<BookmarkButtonProps> = ({
   feedId,
   isBookmarked,
 }) => {
-  const { handleBookmarkFeed, isPending } = useBookmarks(feedId);
+  const { handleBookmarkFeed, isPending } = useBookmarks(feedId, isBookmarked);
 
   return (
     <button

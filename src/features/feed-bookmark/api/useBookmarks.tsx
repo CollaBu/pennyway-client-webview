@@ -1,17 +1,20 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import { requestBookmarkFeed } from '@/shared/axios';
+import { requestBookmarkFeed, requestUnBookmarkFeed } from '@/shared/axios';
 import { FeedsQueryData } from '@/shared/consts';
 import { QUERY_KEYS } from '@/shared/react-query';
 import { isErrorResponse } from '@/shared/utils';
 
 import { updateBookmarkStatusInFeeds } from '../lib';
 
-export const useBookmarks = (feedId: number) => {
+export const useBookmarks = (feedId: number, isBookmarked: boolean) => {
   const queryClient = useQueryClient();
 
   const { mutate: handleBookmarkFeed, isPending } = useMutation({
-    mutationFn: () => requestBookmarkFeed(feedId),
+    mutationFn: () =>
+      isBookmarked
+        ? requestUnBookmarkFeed(feedId)
+        : requestBookmarkFeed(feedId),
     onMutate: async () => {
       await queryClient.cancelQueries({
         queryKey: [QUERY_KEYS.feeds],
