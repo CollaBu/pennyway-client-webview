@@ -1,3 +1,4 @@
+import { FeedReportsForm } from '@/features/feed-reports';
 import { useToggle } from '@/shared/hooks';
 import './KebabMenu.scss';
 
@@ -24,7 +25,7 @@ export const KebabMenu: React.FC<KebabMenuProps> = ({ onClose }) => {
           </button>
         </li>
       </ul>
-      {isVisibilityReportsForm && <p onClick={onClose}>신고</p>}
+      {isVisibilityReportsForm && <FeedReportsForm onClose={onClose} />}
     </>
   );
 };
