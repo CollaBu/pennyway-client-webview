@@ -6,7 +6,7 @@
   .feed-wrapper:not(:last-child)::after {
     content: '';
     display: block;
-    height: 1px;
+    height: 0.5px;
     background-color: $gray2;
     margin: 15px 0 14px;
   }
