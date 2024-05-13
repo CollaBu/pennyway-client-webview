@@ -1,17 +1,11 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import { axiosInstance } from '@/shared/axios';
+import { requestBookmarkFeed } from '@/shared/axios';
 import { FeedsQueryData } from '@/shared/consts';
 import { QUERY_KEYS } from '@/shared/react-query';
 import { isErrorResponse } from '@/shared/utils';
 
 import { updateBookmarkStatusInFeeds } from '../lib';
-
-async function requestBookmarkFeed(feedId: number) {
-  const { data } = await axiosInstance.put(`/feeds/${feedId}/bookmarks`);
-
-  return data;
-}
 
 export const useBookmarks = (feedId: number) => {
   const queryClient = useQueryClient();
