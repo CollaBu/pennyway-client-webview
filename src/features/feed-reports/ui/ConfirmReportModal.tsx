@@ -1,7 +1,6 @@
-import { ActiveButton, BasicButton } from '../button/index';
-
-import { ModalOverlay } from './ModalOverlay';
-import { BaseModalProps as ConfirmReportModalProps } from './types';
+import { ActiveButton, BasicButton } from '@/shared/ui';
+import { ModalOverlay } from '@/shared/ui/modal/ModalOverlay';
+import { BaseModalProps as ConfirmReportModalProps } from '@/shared/ui/modal/types';
 
 export const ConfirmReportModal = ({
   title,
