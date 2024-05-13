@@ -13,7 +13,7 @@ async function requestBookmarkFeed(feedId: number) {
   return data;
 }
 
-export const useBookmark = (feedId: number) => {
+export const useBookmarks = (feedId: number) => {
   const queryClient = useQueryClient();
 
   const { mutate: handleBookmarkFeed, isPending } = useMutation({

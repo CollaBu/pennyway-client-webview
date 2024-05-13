@@ -1,7 +1,7 @@
 import { ICON_ACTIVE_COLOR } from '@/shared/consts';
 import { Icon } from '@/shared/ui';
 
-import { useBookmark } from '../api';
+import { useBookmarks } from '../api';
 
 interface BookmarkButtonProps {
   feedId: number;
@@ -12,7 +12,7 @@ export const BookmarkButton: React.FC<BookmarkButtonProps> = ({
   feedId,
   isBookmarked,
 }) => {
-  const { handleBookmarkFeed, isPending } = useBookmark(feedId);
+  const { handleBookmarkFeed, isPending } = useBookmarks(feedId);
 
   return (
     <button
