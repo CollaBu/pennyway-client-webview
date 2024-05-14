@@ -1,8 +1,8 @@
 import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
-import { MAX_REPORT_CONTENT_LENGTH, REPORT_CATEOGRIES } from '../consts';
-import { useCheckboxReportCategories } from '../model';
+import { MAX_REPORT_CONTENT_LENGTH } from '../consts';
+import { useReportCategories, getCategoryName } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
@@ -14,7 +14,7 @@ interface FeedReportsFormProps {
 export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   onClose,
 }) => {
-  const { categories, handleClickCategory } = useCheckboxReportCategories();
+  const { categories, handleClickCategory } = useReportCategories();
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
@@ -25,29 +25,27 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
       onClose={onClose}
     >
       <>
+        {/* 신고 카테고리 */}
         <ul className='reports-list'>
-          {REPORT_CATEOGRIES.map((item) => (
-            <li key={item.id} className='report-item'>
+          {[...categories].map(([id, checked]) => (
+            <li key={id} className='report-item'>
               <button
                 className='checkbox-btn'
                 type='button'
-                onClick={() => handleClickCategory(item.id)}
+                onClick={() => handleClickCategory(id)}
               >
                 <Icon
-                  name={
-                    categories.get(item.id)
-                      ? 'checkbox-circle_on'
-                      : 'checkbox-circle_off'
-                  }
+                  name={checked ? 'checkbox-circle_on' : 'checkbox-circle_off'}
                   width='20'
                   height='20'
                 />
               </button>
-              <p className='item-name b1md'>{item.name}</p>
+              <p className='item-name b1md'>{getCategoryName(id)}</p>
             </li>
           ))}
         </ul>
 
+        {/* 신고 사유 */}
         <div className='report-textarea-container'>
           <textarea
             className='report-textarea b1md'
@@ -56,9 +54,12 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
             onChange={handleInputContent}
             maxLength={MAX_REPORT_CONTENT_LENGTH}
           />
-          <span className='textarea-text-count b2md'>{content.length}/100</span>
+          <span className='textarea-text-count b2md'>
+            {content.length}/{MAX_REPORT_CONTENT_LENGTH}
+          </span>
         </div>
 
+        {/* 숨김 처리 체크박스 */}
         <div className='hide-checkbox-container'>
           <button className='checkbox-btn' type='button' onClick={toggleBlind}>
             <Icon
