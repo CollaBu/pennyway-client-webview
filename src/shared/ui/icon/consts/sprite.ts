@@ -10,4 +10,8 @@ export type IconName =
   | 'chat'
   | 'search'
   | 'caution'
-  | 'no-profile';
+  | 'no-profile'
+  | 'checkbox-circle_off'
+  | 'checkbox-circle_on'
+  | 'checkbox-square_on'
+  | 'checkbox-square_off';

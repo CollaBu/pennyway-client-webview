@@ -1,0 +1,68 @@
+.reports-list {
+  margin-top: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  row-gap: 10px;
+
+  .report-item {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    .checkbox-btn {
+      width: 20px;
+      height: 20px;
+    }
+
+    .item-name {
+      color: $gray5;
+    }
+  }
+}
+
+.report-textarea-container {
+  margin-top: 16px;
+  position: relative;
+
+  width: 244px;
+  height: 72px;
+
+  .report-textarea {
+    padding: 10px;
+
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+
+    background-color: $gray1;
+
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .textarea-text-count {
+    position: absolute;
+
+    right: 10px;
+    bottom: 8px;
+
+    color: $gray3;
+  }
+}
+
+.hide-checkbox-container {
+  margin: 12px 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .hide-checkbox-text {
+    color: $gray5;
+  }
+}

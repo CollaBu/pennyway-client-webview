@@ -32,10 +32,3 @@
 .confirm-modal {
   @include confirmModal(false);
 }
-
-.confirm-report-modal {
-  @include confirmModal(true);
-  .title {
-    align-self: start;
-  }
-}

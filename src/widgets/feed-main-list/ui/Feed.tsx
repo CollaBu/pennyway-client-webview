@@ -3,6 +3,7 @@ import { LikeButton } from '@/features/feed-main-like';
 import { Feed as FeedProps } from '@/shared/consts';
 import { Carousel, Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
+import { FeedKebabButton } from '@/widgets/feed-kebab';
 
 import './Feed.scss';
 
@@ -29,9 +30,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
             content={calculateElapsedTime(updatedAt)}
           />
 
-          <button className='icon kebab-icon-btn'>
-            <Icon name='kebab-menu' width='20' height='20' color='red' />
-          </button>
+          <FeedKebabButton />
         </header>
         <div className='feed-content'>
           <p className='feed-text b1reg'>{content}</p>

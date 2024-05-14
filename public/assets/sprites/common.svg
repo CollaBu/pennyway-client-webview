@@ -113,4 +113,68 @@
       <circle cx='29.43' cy='26.05' r='11.61' />
     </g>
   </symbol>
+  <symbol id='checkbox-circle_off-icon' viewBox='0 0 20 20'>
+    <circle cx='10' cy='10' r='6.88' stroke='#DDE0E5' stroke-width='1.25' />
+    <path
+      stroke='#DDE0E5'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      d='M13.21 8.215l-4.42 4.42-2.009-2.01'
+    />
+  </symbol>
+  <symbol id='checkbox-circle_on-icon' viewBox='0 0 20 20'>
+    <circle
+      cx='10'
+      cy='10'
+      r='6.88'
+      fill='#383E4A'
+      stroke='#383E4A'
+      stroke-width='1.25'
+    />
+    <path fill='#383E4A' d='M13.21 8.215l-4.42 4.42-2.009-2.01' />
+    <path
+      stroke='#fff'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      d='M13.21 8.215l-4.42 4.42-2.009-2.01'
+    />
+  </symbol>
+  <symbol id='checkbox-square_on-icon' viewBox='0 0 20 20'>
+    <rect
+      width='16.67'
+      height='16.67'
+      x='1.66'
+      y='1.67'
+      fill='#FF6767'
+      rx='2.5'
+    />
+    <path fill='#FF6767' d='M13.928 7.5l-5.402 5.402-2.456-2.456' />
+    <path
+      stroke='#fff'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      d='M13.928 7.5l-5.402 5.402-2.456-2.456'
+    />
+  </symbol>
+  <symbol id='checkbox-square_off-icon' viewBox='0 0 20 20'>
+    <rect
+      width='15.42'
+      height='15.42'
+      x='2.29'
+      y='2.29'
+      stroke='#DDE0E5'
+      stroke-width='1.25'
+      rx='1.88'
+    />
+    <path
+      stroke='#DDE0E5'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      d='M13.928 7.5l-5.402 5.402-2.456-2.456'
+    />
+  </symbol>
 </svg>
