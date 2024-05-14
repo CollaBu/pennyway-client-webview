@@ -11,5 +11,7 @@ export type IconName =
   | 'search'
   | 'caution'
   | 'no-profile'
-  | 'checkoff'
-  | 'checkon';
+  | 'checkbox-circle_off'
+  | 'checkbox-circle_on'
+  | 'checkbox-square_on'
+  | 'checkbox-square_off';
