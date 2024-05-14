@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-import type { Dispatch, SetStateAction } from 'react';
 
 /**
  * reference: https://usehooks-ts.com/react-hook/use-toggle
@@ -7,14 +6,12 @@ import type { Dispatch, SetStateAction } from 'react';
  * @param defaultValue 초기값
  * @returns [상태값, 토글 함수, 상태 설정 함수]
  */
-export function useToggle(
-  defaultValue?: boolean,
-): [boolean, () => void, Dispatch<SetStateAction<boolean>>] {
+export function useToggle(defaultValue?: boolean) {
   const [value, setValue] = useState(!!defaultValue);
 
   const toggle = useCallback(() => {
     setValue((x) => !x);
   }, []);
 
-  return [value, toggle, setValue];
+  return [value, toggle, setValue] as const;
 }
