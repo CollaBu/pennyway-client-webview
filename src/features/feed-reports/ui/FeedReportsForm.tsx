@@ -1,6 +1,6 @@
 import { Icon } from '@/shared/ui';
 
-import { REPORTS } from '../consts';
+import { MAX_REPORT_CONTENT_LENGTH, REPORTS } from '../consts';
 import { useCheckbox, useInputReports } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
@@ -48,6 +48,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
             spellCheck={false}
             value={content}
             onChange={handleInputContent}
+            maxLength={MAX_REPORT_CONTENT_LENGTH}
           />
           <span className='textarea-text-count b2md'>{contentLength}/100</span>
         </div>

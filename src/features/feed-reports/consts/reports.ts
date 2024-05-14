@@ -7,3 +7,5 @@ export const REPORTS = [
   { id: 6, name: '반복적인 내용' },
   { id: 7, name: '기타' },
 ];
+
+export const MAX_REPORT_CONTENT_LENGTH = 100;
