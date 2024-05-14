@@ -16,7 +16,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
 }) => {
   const { checkedItemMap, handleClickItem } = useCheckbox();
   const { content, contentLength, handleInputContent } = useInputReports();
-  const [isHiddenPost, setIsHiddenost] = useToggle(false);
+  const [isBlind, toggleBlind] = useToggle(false);
 
   return (
     <ConfirmReportModal
@@ -60,13 +60,9 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
         </div>
 
         <div className='hide-checkbox-container'>
-          <button
-            className='checkbox-btn'
-            type='button'
-            onClick={setIsHiddenost}
-          >
+          <button className='checkbox-btn' type='button' onClick={toggleBlind}>
             <Icon
-              name={isHiddenPost ? 'checkbox-square_on' : 'checkbox-square_off'}
+              name={isBlind ? 'checkbox-square_on' : 'checkbox-square_off'}
               width='20'
               height='20'
             />
