@@ -33,7 +33,7 @@ export const useBookmarks = (feedId: number, isBookmarked: boolean) => {
         feedId,
       );
 
-      // setQueryData 함수를 사용해 newTodo로 Optimistic Update를 실시한다.
+      // setQueryData 함수를 사용해 새로운 feeds Optimistic Update를 실시한다.
       await queryClient.setQueryData([QUERY_KEYS.feeds], updatedQueryData);
 
       return { previousQueryData };
@@ -44,10 +44,10 @@ export const useBookmarks = (feedId: number, isBookmarked: boolean) => {
     onSuccess: (response, _, context) => {
       if (isErrorResponse(response)) {
         queryClient.setQueryData([QUERY_KEYS.feeds], context.previousQueryData);
-        return;
       }
-
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feeds] });
     },
   });
 

@@ -33,7 +33,7 @@ export const useLikes = (feedId: number, isLiked: boolean) => {
         feedId,
       );
 
-      // setQueryData 함수를 사용해 newTodo로 Optimistic Update를 실시한다.
+      // setQueryData 함수를 사용해 새로운 feeds로 Optimistic Update를 실시한다.
       await queryClient.setQueryData([QUERY_KEYS.feeds], updatedQueryData);
 
       return { previousQueryData };
@@ -43,16 +43,13 @@ export const useLikes = (feedId: number, isLiked: boolean) => {
       queryClient.setQueryData([QUERY_KEYS.feeds], context?.previousQueryData);
     },
     onSuccess: (response, _, context) => {
-      // Nextwork Success일 경우 실행
-
       if (isErrorResponse(response)) {
-        // 실패 시 이전 쿼리값으로 롤백
+        // Server Error일 경우 이전 쿼리값으로 롤백
         queryClient.setQueryData([QUERY_KEYS.feeds], context.previousQueryData);
-        return;
       }
-
-      // 성공 시 피드 아이디에 해당하는 피드를 무효화한다.
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feeds] });
     },
   });
 
