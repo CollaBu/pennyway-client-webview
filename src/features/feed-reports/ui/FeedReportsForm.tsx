@@ -1,8 +1,8 @@
-import { useToggle } from '@/shared/hooks';
+import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
 import { MAX_REPORT_CONTENT_LENGTH, REPORTS } from '../consts';
-import { useCheckbox, useInputReports } from '../model';
+import { useCheckbox } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
@@ -15,7 +15,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   onClose,
 }) => {
   const { checkedItemMap, handleClickItem } = useCheckbox();
-  const { content, handleInputContent } = useInputReports();
+  const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
   return (
