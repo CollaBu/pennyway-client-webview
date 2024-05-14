@@ -54,3 +54,15 @@
     color: $gray3;
   }
 }
+
+.hide-checkbox-container {
+  margin: 12px 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .hide-checkbox-text {
+    color: $gray5;
+  }
+}
