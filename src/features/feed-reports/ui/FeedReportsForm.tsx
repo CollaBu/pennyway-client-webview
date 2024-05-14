@@ -1,8 +1,8 @@
 import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
-import { MAX_REPORT_CONTENT_LENGTH, REPORTS } from '../consts';
-import { useCheckbox } from '../model';
+import { MAX_REPORT_CONTENT_LENGTH, REPORT_CATEOGRIES } from '../consts';
+import { useCheckboxReportCategories } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
@@ -14,7 +14,7 @@ interface FeedReportsFormProps {
 export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   onClose,
 }) => {
-  const { checkedItemMap, handleClickItem } = useCheckbox();
+  const { categories, handleClickCategory } = useCheckboxReportCategories();
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
@@ -26,16 +26,16 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
     >
       <>
         <ul className='reports-list'>
-          {REPORTS.map((item) => (
+          {REPORT_CATEOGRIES.map((item) => (
             <li key={item.id} className='report-item'>
               <button
                 className='checkbox-btn'
                 type='button'
-                onClick={() => handleClickItem(item.id)}
+                onClick={() => handleClickCategory(item.id)}
               >
                 <Icon
                   name={
-                    checkedItemMap.get(item.id)
+                    categories.get(item.id)
                       ? 'checkbox-circle_on'
                       : 'checkbox-circle_off'
                   }

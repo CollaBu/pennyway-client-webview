@@ -1,4 +1,4 @@
-export const REPORTS = [
+export const REPORT_CATEOGRIES = [
   { id: 1, name: '상업적/홍보성' },
   { id: 2, name: '음란/선정성' },
   { id: 3, name: '저작권 침해' },

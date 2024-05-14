@@ -1,1 +1,1 @@
-export { useCheckbox } from './useCheckbox';
+export { useCheckboxReportCategories } from './useCheckboxReportCategories';
