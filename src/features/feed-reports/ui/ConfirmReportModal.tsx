@@ -7,7 +7,7 @@ interface ConfirmReportModalProps {
   onExecute: () => void;
   onExecuteIsDisabled: boolean;
   onClose: () => void;
-  children: JSX.Element;
+  children: JSX.Element[];
 }
 
 export const ConfirmReportModal: React.FC<ConfirmReportModalProps> = ({
