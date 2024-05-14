@@ -15,7 +15,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   onClose,
 }) => {
   const { checkedItemMap, handleClickItem } = useCheckbox();
-  const { content, contentLength, handleInputContent } = useInputReports();
+  const { content, handleInputContent } = useInputReports();
   const [isBlind, toggleBlind] = useToggle(false);
 
   return (
@@ -56,7 +56,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
             onChange={handleInputContent}
             maxLength={MAX_REPORT_CONTENT_LENGTH}
           />
-          <span className='textarea-text-count b2md'>{contentLength}/100</span>
+          <span className='textarea-text-count b2md'>{content.length}/100</span>
         </div>
 
         <div className='hide-checkbox-container'>
