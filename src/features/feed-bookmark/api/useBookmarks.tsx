@@ -48,7 +48,6 @@ export const useBookmarks = (feedId: number, isBookmarked: boolean) => {
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feeds] });
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
     },
   });
 

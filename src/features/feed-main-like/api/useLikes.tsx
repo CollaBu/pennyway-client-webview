@@ -43,14 +43,13 @@ export const useLikes = (feedId: number, isLiked: boolean) => {
       queryClient.setQueryData([QUERY_KEYS.feeds], context?.previousQueryData);
     },
     onSuccess: (response, _, context) => {
-      // Server Error일 경우 이전 쿼리값으로 롤백
       if (isErrorResponse(response)) {
+        // Server Error일 경우 이전 쿼리값으로 롤백
         queryClient.setQueryData([QUERY_KEYS.feeds], context.previousQueryData);
       }
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feeds] });
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.feed, feedId] });
     },
   });
 
