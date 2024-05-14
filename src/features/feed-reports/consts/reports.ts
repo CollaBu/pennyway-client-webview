@@ -1,4 +1,11 @@
-export const REPORT_CATEOGRIES = [
+export type ReportCategoryId = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+
+interface ReportCategory {
+  id: ReportCategoryId;
+  name: string;
+}
+
+export const REPORT_CATEOGRIES: ReportCategory[] = [
   { id: 1, name: '상업적/홍보성' },
   { id: 2, name: '음란/선정성' },
   { id: 3, name: '저작권 침해' },
@@ -6,6 +13,6 @@ export const REPORT_CATEOGRIES = [
   { id: 5, name: '욕설/인신공격' },
   { id: 6, name: '반복적인 내용' },
   { id: 7, name: '기타' },
-] as const;
+];
 
 export const MAX_REPORT_CONTENT_LENGTH = 100;

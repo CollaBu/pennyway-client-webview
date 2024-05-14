@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-import { REPORT_CATEOGRIES } from '../consts';
-
-type ReportCategoryId = (typeof REPORT_CATEOGRIES)[number]['id'];
+import { REPORT_CATEOGRIES, ReportCategoryId } from '../consts';
 
 export const useReportCategories = () => {
   const [categories, setCategories] = useState(
@@ -24,5 +22,5 @@ export const useReportCategories = () => {
 
 export function getCategoryName(id: ReportCategoryId) {
   const category = REPORT_CATEOGRIES.find((item) => item.id === id);
-  return category ? category.name : '';
+  return category?.name ?? '';
 }
