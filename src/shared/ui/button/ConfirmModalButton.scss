@@ -1,4 +1,4 @@
-@mixin ConfirmModalButton() {
+@mixin confirmModalButton() {
   width: 96px;
   height: 36px;
   border-radius: 4px;
@@ -7,10 +7,10 @@
 .confirm {
   color: white;
   background-color: $mint3;
-  @include confirmButton();
+  @include confirmModalButton();
 }
 .cancle {
   color: $gray4;
   background-color: $gray2;
-  @include confirmButton();
+  @include confirmModalButton();
 }
