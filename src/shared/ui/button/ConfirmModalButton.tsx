@@ -1,5 +1,5 @@
 import { ButtonProps } from './types';
-import './ActiveButton.scss';
+import './ConfirmModalButton.scss';
 
 export type ConfirmModalButtonStyle = 'confirm' | 'cancle';
 
