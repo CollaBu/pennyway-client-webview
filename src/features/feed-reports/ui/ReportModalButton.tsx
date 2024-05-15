@@ -1,3 +1,5 @@
+import './ReportModalButton.scss';
+
 export type ReportModalButtonStyle = 'confirm' | 'cancle';
 
 interface ConfirmModalButtonProps {
@@ -13,13 +15,13 @@ export const ReportModalButton = ({
   styleClass,
   isDisabled = false,
 }: ConfirmModalButtonProps) => {
-  const sytleClassName = isDisabled ? styleClass : `${styleClass}-disabled`;
+  const sytleClassName = isDisabled ? `${styleClass}-disabled` : styleClass;
 
   return (
     <button
       onClick={onClick}
       disabled={isDisabled}
-      className={`${sytleClassName} h3semi`}
+      className={`${sytleClassName} h4semi`}
     >
       {children}
     </button>
