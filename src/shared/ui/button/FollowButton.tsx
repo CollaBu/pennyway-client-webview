@@ -13,7 +13,7 @@ export const FollowButton = ({
   const sytleClass = isUnfollow ? 'follow' : 'follow-unfollow';
 
   return (
-    <button onClick={onClick} className={`${sytleClass} b2semi`}>
+    <button onClick={onClick} type='button' className={`${sytleClass} b2semi`}>
       {children}
     </button>
   );

@@ -13,7 +13,7 @@ export const ConfirmModalButton = ({
   styleClass,
 }: ConfirmModalButtonProps) => {
   return (
-    <button onClick={onClick} className={`${styleClass} h4semi`}>
+    <button onClick={onClick} type='button' className={`${styleClass} h4semi`}>
       {children}
     </button>
   );
