@@ -1,2 +1,2 @@
-export { ActiveButton } from './ActiveButton';
-export { BasicButton } from './BasicButton';
+export { ConfirmModalButton } from './ConfirmModalButton';
+export { FollowButton } from './FollowButton';
