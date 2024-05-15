@@ -2,8 +2,8 @@ import './ReportModalButton.scss';
 
 export type ReportModalButtonStyle = 'confirm' | 'cancle';
 
-interface ConfirmModalButtonProps {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+interface ReportModalButtonProps {
+  onClick: () => void;
   children: React.ReactNode;
   styleClass: ReportModalButtonStyle;
   type?: 'button' | 'submit' | 'reset';
@@ -16,7 +16,7 @@ export const ReportModalButton = ({
   styleClass,
   type = 'submit',
   isDisabled = false,
-}: ConfirmModalButtonProps) => {
+}: ReportModalButtonProps) => {
   const sytleClassName = isDisabled ? `${styleClass}-disabled` : styleClass;
 
   return (
