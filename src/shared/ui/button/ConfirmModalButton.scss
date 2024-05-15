@@ -1,0 +1,16 @@
+@mixin ConfirmModalButton() {
+  width: 96px;
+  height: 36px;
+  border-radius: 4px;
+}
+
+.confirm {
+  color: white;
+  background-color: $mint3;
+  @include confirmButton();
+}
+.cancle {
+  color: $gray4;
+  background-color: $gray2;
+  @include confirmButton();
+}
