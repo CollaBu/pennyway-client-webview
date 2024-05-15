@@ -22,13 +22,18 @@ export const ConfirmReportModal: React.FC<ConfirmReportModalProps> = ({
         <h3 className='title h3semi'>신고하기</h3>
         {children}
         <div className='modal-btn-container'>
-          <ReportModalButton onClick={onClose} styleClass='cancle'>
+          <ReportModalButton
+            onClick={onClose}
+            styleClass='cancle'
+            type='button'
+          >
             취소
           </ReportModalButton>
           <ReportModalButton
             onClick={onExecute}
             isDisabled={onExecuteIsDisabled}
             styleClass='confirm'
+            type='submit'
           >
             신고하기
           </ReportModalButton>
