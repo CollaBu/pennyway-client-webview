@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 const HIDDEN = true;
+const VISIBLE = false;
 
 interface HiddenFeedState {
   hiddenFeeds: Map<number, boolean>;
@@ -27,5 +28,15 @@ export function addHiddenFeed(feedId: number) {
     }),
     false,
     'feed/addHiddenFeed',
+  );
+}
+
+export function cancleHiddenFeed(feedId: number) {
+  useHiddenFeedStore.setState(
+    ({ hiddenFeeds: prevHiddenFeeds }) => ({
+      hiddenFeeds: new Map(prevHiddenFeeds).set(feedId, VISIBLE),
+    }),
+    false,
+    'feed/cancleHiddenFeed',
   );
 }
