@@ -35,7 +35,7 @@ export const FeedMainList = () => {
         {feeds?.pages.map((pageData) => {
           return pageData.data.feeds.map((feed) =>
             hiddenFeedId === feed.id ? (
-              <HiddenFeed />
+              <HiddenFeed message='게시물이 숨겨졌어요' />
             ) : (
               <Feed key={feed.id} feed={feed} />
             ),
