@@ -1,10 +1,10 @@
 import { useHiddenFeedStore } from '@/entitites/feed';
+import { HiddenFeed } from '@/features/feed-hides';
 import { NetworkError, Observer } from '@/shared/ui';
 
 import { useInfinityFeeds } from '../api';
 
 import { Feed } from './Feed';
-import HiddenFeed from './HiddenFeed';
 import { SkeletonFeedMainList } from './SkeletonFeedMainList';
 import './FeedMainList.scss';
 
