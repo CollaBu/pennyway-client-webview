@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Icon } from '@/shared/ui';
 import './HiddenFeed.scss';
 
