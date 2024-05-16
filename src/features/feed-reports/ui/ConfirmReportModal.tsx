@@ -1,7 +1,6 @@
 import { ModalOverlay } from '@/shared/ui/modal/ModalOverlay';
 
 import './ConfirmReportModal.scss';
-import { ReportModalButton } from './ReportModalButton';
 
 interface ConfirmReportModalProps {
   onExecute: () => void;
@@ -16,27 +15,27 @@ export const ConfirmReportModal: React.FC<ConfirmReportModalProps> = ({
   onClose,
   children,
 }) => {
+  const executeClassName = onExecuteIsDisabled
+    ? 'confirm-disabled-btn'
+    : 'confirm-btn';
+
   return (
     <ModalOverlay styleClass='modal' onClose={onClose}>
       <form className='confirm-report-modal'>
         <h3 className='title h3semi'>신고하기</h3>
         {children}
         <div className='modal-btn-container'>
-          <ReportModalButton
-            onClick={onClose}
-            styleClass='cancle'
-            type='button'
-          >
+          <button onClick={onClose} className='cancle-btn h4semi' type='button'>
             취소
-          </ReportModalButton>
-          <ReportModalButton
+          </button>
+          <button
             onClick={onExecute}
-            isDisabled={onExecuteIsDisabled}
-            styleClass='confirm'
+            disabled={onExecuteIsDisabled}
+            className={`${executeClassName} h4semi`}
             type='submit'
           >
             신고하기
-          </ReportModalButton>
+          </button>
         </div>
       </form>
     </ModalOverlay>
