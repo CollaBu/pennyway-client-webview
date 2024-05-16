@@ -28,11 +28,11 @@
       color: white;
       background-color: $red3;
       @include ReportModalButton();
-    }
-    .confirm-btn:disabled {
-      color: $gray4;
-      background-color: $gray3;
-      @include ReportModalButton();
+      
+      &:disabled {
+        color: $gray4;
+        background-color: $gray3;
+      }
     }
 
     .cancle-btn {
