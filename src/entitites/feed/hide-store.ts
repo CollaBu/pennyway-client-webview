@@ -1,14 +1,16 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+const HIDDEN = true;
+
 interface HiddenFeedState {
-  hiddenFeeds: number[];
+  hiddenFeeds: Map<number, boolean>;
 }
 
 export const useHiddenFeedStore = create<HiddenFeedState>()(
   devtools(
     (): HiddenFeedState => ({
-      hiddenFeeds: [],
+      hiddenFeeds: new Map<number, boolean>(),
     }),
     { name: 'feed-hidden-store' },
   ),
@@ -21,7 +23,7 @@ export const useHiddenFeedStore = create<HiddenFeedState>()(
 export function addHiddenFeed(feedId: number) {
   useHiddenFeedStore.setState(
     ({ hiddenFeeds: prevHiddenFeeds }) => ({
-      hiddenFeeds: [...prevHiddenFeeds, feedId],
+      hiddenFeeds: new Map(prevHiddenFeeds).set(feedId, HIDDEN),
     }),
     false,
     'feed/addHiddenFeed',
