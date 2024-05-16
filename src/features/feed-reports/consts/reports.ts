@@ -9,3 +9,4 @@ export const REPORT_CATEGORIES = [
 ];
 
 export const MAX_REPORT_CONTENT_LENGTH = 60;
+export const DEFAULT_CLICKED_ID = 0;
