@@ -1,24 +1,26 @@
 .feed-hidden-wrapper {
   margin-top: 30px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .feed-hidden-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .hidden-reason-msg {
-    margin-top: 8px;
-    color: $gray4;
-  }
+    .hidden-reason-msg {
+      margin-top: 8px;
+      color: $gray4;
+    }
 
-  .hidden-cancel-btn {
-    margin-top: 16px;
-    width: 39px;
-    height: 24px;
+    .hidden-cancel-btn {
+      margin-top: 16px;
+      width: 39px;
+      height: 24px;
 
-    border-radius: 30px;
+      border-radius: 30px;
 
-    background-color: $gray2;
-    color: $gray4;
+      background-color: $gray2;
+      color: $gray4;
+    }
   }
 
   &::after {
