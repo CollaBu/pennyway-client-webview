@@ -1,6 +1,7 @@
 import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
+import { useSubmitReports } from '../api';
 import { MAX_REPORT_CONTENT_LENGTH } from '../consts';
 import { useReportCategories, getCategoryName } from '../model';
 
@@ -8,12 +9,15 @@ import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
 
 interface FeedReportsFormProps {
+  feedId: number;
   onClose: () => void;
 }
 
 export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
+  feedId,
   onClose,
 }) => {
+  useSubmitReports(feedId);
   const { categories, handleClickCategory } = useReportCategories();
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);

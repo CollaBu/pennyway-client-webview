@@ -3,10 +3,11 @@ import { useToggle } from '@/shared/hooks';
 import './KebabMenu.scss';
 
 interface KebabMenuProps {
+  feedId: number;
   onClose: () => void;
 }
 
-export const KebabMenu: React.FC<KebabMenuProps> = ({ onClose }) => {
+export const KebabMenu: React.FC<KebabMenuProps> = ({ feedId, onClose }) => {
   const [isVisibilityReportsForm, toggleVisibilityReportsForm] =
     useToggle(false);
 
@@ -25,7 +26,9 @@ export const KebabMenu: React.FC<KebabMenuProps> = ({ onClose }) => {
           </button>
         </li>
       </ul>
-      {isVisibilityReportsForm && <FeedReportsForm onClose={onClose} />}
+      {isVisibilityReportsForm && (
+        <FeedReportsForm feedId={feedId} onClose={onClose} />
+      )}
     </>
   );
 };
