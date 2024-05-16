@@ -15,10 +15,6 @@ export const ConfirmReportModal: React.FC<ConfirmReportModalProps> = ({
   onClose,
   children,
 }) => {
-  const executeClassName = onExecuteIsDisabled
-    ? 'confirm-disabled-btn'
-    : 'confirm-btn';
-
   return (
     <ModalOverlay styleClass='modal' onClose={onClose}>
       <form className='confirm-report-modal'>
@@ -31,7 +27,7 @@ export const ConfirmReportModal: React.FC<ConfirmReportModalProps> = ({
           <button
             onClick={onExecute}
             disabled={onExecuteIsDisabled}
-            className={`${executeClassName} h4semi`}
+            className='confirm-btn h4semi'
             type='submit'
           >
             신고하기

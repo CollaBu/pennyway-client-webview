@@ -29,7 +29,7 @@
       background-color: $red3;
       @include ReportModalButton();
     }
-    .confirm-disabled-btn {
+    .confirm-btn:disabled {
       color: $gray4;
       background-color: $gray3;
       @include ReportModalButton();
