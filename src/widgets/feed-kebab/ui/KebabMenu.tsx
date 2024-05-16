@@ -17,7 +17,7 @@ export const KebabMenu: React.FC<KebabMenuProps> = ({ feedId, onClose }) => {
     <>
       <ul className='kebab-menu-list'>
         <li className='kebab-menu-item'>
-          <HideButton feedId={feedId} />
+          <HideButton feedId={feedId} onClose={onClose} />
         </li>
         <li className='kebab-menu-item'>
           <button
