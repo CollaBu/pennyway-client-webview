@@ -31,7 +31,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
             content={calculateElapsedTime(updatedAt)}
           />
 
-          <FeedKebabButton />
+          <FeedKebabButton feedId={id} />
         </header>
         <div className='feed-content'>
           <p className='feed-text b1reg'>{content}</p>

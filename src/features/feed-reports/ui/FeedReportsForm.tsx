@@ -1,32 +1,50 @@
 import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
-import { MAX_REPORT_CONTENT_LENGTH } from '../consts';
-import { useReportCategories, getCategoryName } from '../model';
+import { useSubmitReports } from '../api';
+import { MAX_REPORT_CONTENT_LENGTH, REPORT_CATEGORIES } from '../consts';
+import { useReportCategories } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
 
 interface FeedReportsFormProps {
+  feedId: number;
   onClose: () => void;
 }
 
 export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
+  feedId,
   onClose,
 }) => {
-  const { categories, handleClickCategory } = useReportCategories();
+  const { clickedId, handleClickCategory } = useReportCategories();
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
+  const { reportFeedAsync, isPending } = useSubmitReports(feedId);
+
+  const handleSubmitReports = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const body = {
+      category: REPORT_CATEGORIES[clickedId],
+      content,
+      isBlind,
+    };
+
+    await reportFeedAsync(body);
+    onClose();
+  };
+
   return (
     <ConfirmReportModal
-      onExecute={() => {}} // API 연동 후 수정
-      onExecuteIsDisabled={false} // API 연동 후 수정
+      onExecute={handleSubmitReports}
+      onExecuteIsDisabled={isPending}
       onClose={onClose}
     >
       {/* 신고 카테고리 */}
       <ul className='reports-list'>
-        {[...categories].map(([id, checked]) => (
+        {REPORT_CATEGORIES.map((category, id) => (
           <li key={id} className='report-item'>
             <button
               className='checkbox-btn'
@@ -34,12 +52,12 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
               onClick={() => handleClickCategory(id)}
             >
               <Icon
-                name={checked ? 'checkbox-circle_on' : 'checkbox-circle_off'}
+                name={`checkbox-circle_${id === clickedId ? 'on' : 'off'}`}
                 width='20'
                 height='20'
               />
             </button>
-            <p className='item-name b1md'>{getCategoryName(id)}</p>
+            <p className='item-name b1md'>{category}</p>
           </li>
         ))}
       </ul>
@@ -62,7 +80,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
       <div className='hide-checkbox-container'>
         <button className='checkbox-btn' type='button' onClick={toggleBlind}>
           <Icon
-            name={isBlind ? 'checkbox-square_on' : 'checkbox-square_off'}
+            name={`checkbox-square_${isBlind ? 'on' : 'off'}`}
             width='20'
             height='20'
           />

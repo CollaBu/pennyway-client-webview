@@ -1,18 +1,12 @@
-export type ReportCategoryId = 1 | 2 | 3 | 4 | 5 | 6 | 7;
-
-interface ReportCategory {
-  id: ReportCategoryId;
-  name: string;
-}
-
-export const REPORT_CATEOGRIES: ReportCategory[] = [
-  { id: 1, name: '상업적/홍보성' },
-  { id: 2, name: '음란/선정성' },
-  { id: 3, name: '저작권 침해' },
-  { id: 4, name: '개인정보 노출' },
-  { id: 5, name: '욕설/인신공격' },
-  { id: 6, name: '반복적인 내용' },
-  { id: 7, name: '기타' },
+export const REPORT_CATEGORIES = [
+  '상업적/홍보성',
+  '음란/선정성',
+  '저작권 침해',
+  '개인정보 노출',
+  '욕설/인신공격',
+  '반복적인 내용',
+  '기타',
 ];
 
-export const MAX_REPORT_CONTENT_LENGTH = 100;
+export const MAX_REPORT_CONTENT_LENGTH = 60;
+export const DEFAULT_CLICKED_ID = 0;

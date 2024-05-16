@@ -36,7 +36,12 @@ module.exports = {
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
     eqeqeq: 'error',
     'dot-notation': 'error',
-    'no-unused-vars': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '_',
+      },
+    ],
     'react/jsx-no-useless-fragment': 'error',
     'react/react-in-jsx-scope': 'off',
     'fsd-import/fsd-relative-path': 'error',

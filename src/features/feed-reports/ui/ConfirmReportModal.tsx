@@ -3,7 +3,7 @@ import { ModalOverlay } from '@/shared/ui/modal/ModalOverlay';
 import './ConfirmReportModal.scss';
 
 interface ConfirmReportModalProps {
-  onExecute: () => void;
+  onExecute: (_: React.FormEvent) => void;
   onExecuteIsDisabled: boolean;
   onClose: () => void;
   children: JSX.Element[];
