@@ -8,4 +8,4 @@ export const REPORT_CATEGORIES = [
   '기타',
 ];
 
-export const MAX_REPORT_CONTENT_LENGTH = 100;
+export const MAX_REPORT_CONTENT_LENGTH = 60;
