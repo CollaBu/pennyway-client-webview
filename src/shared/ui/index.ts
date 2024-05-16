@@ -5,4 +5,3 @@ export { Profile, SkeletonProfile } from './profile';
 export { Icon } from './icon';
 export { NetworkError } from './network-error';
 export { Observer } from './observer';
-export { Carousel } from './carousel';
