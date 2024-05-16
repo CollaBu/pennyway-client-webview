@@ -1,8 +1,9 @@
 import { BookmarkButton } from '@/features/feed-bookmark';
 import { LikeButton } from '@/features/feed-main-like';
 import { Feed as FeedProps } from '@/shared/consts';
-import { Carousel, Icon, Profile } from '@/shared/ui';
+import { Icon, Profile } from '@/shared/ui';
 import { calculateElapsedTime } from '@/shared/utils';
+import { Carousel } from '@/widgets/feed-carousel';
 import { FeedKebabButton } from '@/widgets/feed-kebab';
 
 import './Feed.scss';

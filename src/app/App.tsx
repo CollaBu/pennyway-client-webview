@@ -3,7 +3,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from 'react-router-dom';
 
 import { queryClient } from '@/shared/react-query';
-import { NetworkErrorToast } from '@/shared/ui';
+import { Toast } from '@/shared/toast';
 
 import { router } from './routers/index';
 import './styles/global.scss';
@@ -13,7 +13,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
 
-      <NetworkErrorToast />
+      <Toast />
       <ReactQueryDevtools />
     </QueryClientProvider>
   );

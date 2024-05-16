@@ -1,14 +1,12 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import './NetworkErrorToast.scss';
-import { Icon } from '..';
+import './Toast.scss';
 
-export const NetworkErrorToast = () => {
+export const Toast = () => {
   return (
     <ToastContainer
       className='network-error-toast b1semi'
-      icon={<Icon name='caution' width='20' height='20' />}
       limit={1}
       pauseOnHover={false}
       pauseOnFocusLoss={false}
