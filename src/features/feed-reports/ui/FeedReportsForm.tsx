@@ -52,11 +52,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
               onClick={() => handleClickCategory(id)}
             >
               <Icon
-                name={
-                  id === clickedId
-                    ? 'checkbox-circle_on'
-                    : 'checkbox-circle_off'
-                }
+                name={`checkbox-circle_${id === clickedId ? 'on' : 'off'}`}
                 width='20'
                 height='20'
               />
@@ -84,7 +80,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
       <div className='hide-checkbox-container'>
         <button className='checkbox-btn' type='button' onClick={toggleBlind}>
           <Icon
-            name={isBlind ? 'checkbox-square_on' : 'checkbox-square_off'}
+            name={`checkbox-square_${isBlind ? 'on' : 'off'}`}
             width='20'
             height='20'
           />
