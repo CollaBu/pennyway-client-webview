@@ -1,4 +1,4 @@
-import { http } from 'msw';
+import { delay, http } from 'msw';
 
 import { feeds } from '../consts/feed';
 import { reports } from '../consts/report';
@@ -25,7 +25,7 @@ interface ReportForm {
 
 export const feedHandlers = [
   // 1️⃣ 피드 목록 조회
-  http.get('/feeds', ({ request }) => {
+  http.get('/feeds', async ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page') || 1;
     const count = url.searchParams.get('count') || 10;
@@ -44,6 +44,8 @@ export const feedHandlers = [
     const totalFeeds = Object.values(feeds).length;
     const endOfPageRange = formattedPage * pageCount;
     const hasNextPage = endOfPageRange < totalFeeds;
+
+    await delay(Math.random() * 4000);
 
     return createHttpSuccessResponse({
       feeds: feedsData,

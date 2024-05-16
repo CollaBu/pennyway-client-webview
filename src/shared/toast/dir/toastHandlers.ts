@@ -5,7 +5,7 @@ const id = 'react-query-toast';
 /**
  * 에러 메시지를 토스트 메시지로 변환합니다.
  */
-export function showErrorHandler() {
+export function showToastHandler() {
   // reference: https://fkhadra.github.io/react-toastify/api/toast
   if (!toast.isActive(id)) {
     toast('인터넷 연결이 불안정해요', {
@@ -20,7 +20,7 @@ export function showErrorHandler() {
 /**
  * 에러 메시지 토스트를 제거합니다.
  */
-export function removeErrorHandler() {
+export function removeToastHandler() {
   if (toast.isActive(id)) {
     toast.dismiss(id);
   }

@@ -1,12 +1,12 @@
 import { Query, QueryKey } from '@tanstack/react-query';
 
-import { removeErrorHandler, showErrorHandler } from './toastHandlers';
+import { removeToastHandler, showToastHandler } from '@/shared/toast';
 
 /**
  * 쿼리 성공 핸들러
  */
 export function handleQuerySuccess() {
-  removeErrorHandler();
+  removeToastHandler();
 }
 
 /**
@@ -20,7 +20,7 @@ export function handleQueryError(
   const { queryKey, state } = query;
 
   // feeds 쿼리에서 2 페이지부터 에러가 발생하면 네트워크 에러 토스트를 띄웁니다.
-  if (queryKey[0] === 'feeds' && state.data) showErrorHandler();
+  if (queryKey[0] === 'feeds' && state.data) showToastHandler();
 }
 
 /**
