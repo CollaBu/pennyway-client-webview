@@ -1,26 +1,10 @@
 import { useState } from 'react';
 
-import { REPORT_CATEOGRIES, ReportCategoryId } from '../consts';
+const DEFAULT_CLICKED_ID = 0;
 
 export const useReportCategories = () => {
-  const [categories, setCategories] = useState(
-    new Map<ReportCategoryId, boolean>(
-      REPORT_CATEOGRIES.map((item) => [item.id, false]),
-    ),
-  );
+  const [clickedId, setClicked] = useState(DEFAULT_CLICKED_ID);
+  const handleClickCategory = (id: number) => setClicked(id);
 
-  const handleClickCategory = (id: ReportCategoryId) => {
-    setCategories((prev) => {
-      const newCheckedItem = new Map(prev);
-      newCheckedItem.set(id, !newCheckedItem.get(id));
-      return newCheckedItem;
-    });
-  };
-
-  return { categories, handleClickCategory };
+  return { clickedId, handleClickCategory };
 };
-
-export function getCategoryName(id: ReportCategoryId) {
-  const category = REPORT_CATEOGRIES.find((item) => item.id === id);
-  return category?.name ?? '';
-}
