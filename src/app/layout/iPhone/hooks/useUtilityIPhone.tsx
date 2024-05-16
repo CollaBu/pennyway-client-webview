@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-const IPHONE_MIN_SIZE = 60;
-const IPHONE_INIT_SIZE = 80;
+const IPHONE_MIN_SIZE = 75;
+const IPHONE_INIT_SIZE = 75;
 const IPHONE_MAX_SIZE = 100;
 
 const IPHONE_PROTRAIT_MODE = 0; // 세로 모드
