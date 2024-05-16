@@ -31,6 +31,10 @@ export function addHiddenFeed(feedId: number) {
   );
 }
 
+/**
+ * 숨김 피드 목록에서 피드를 제거합니다.
+ * @param feedId 피드 아이디
+ */
 export function cancleHiddenFeed(feedId: number) {
   useHiddenFeedStore.setState(
     ({ hiddenFeeds: prevHiddenFeeds }) => ({
