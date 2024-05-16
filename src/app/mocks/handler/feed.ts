@@ -40,7 +40,7 @@ export const feedHandlers = [
 
     const feedsData = Object.values(feeds)
       .slice((formattedPage - 1) * pageCount, formattedPage * pageCount)
-      .filter((feed) => !reports[feed.id]);
+      .filter((feed) => !reports[feed.id] && !hiddens[feed.id]);
 
     const totalFeeds = Object.values(feeds).length;
     const endOfPageRange = formattedPage * pageCount;
@@ -182,8 +182,9 @@ export const feedHandlers = [
       return createHttpErrorResponse('4003');
     }
 
+    reports[formattedFeedId] = true;
     if (isBlind) {
-      reports[formattedFeedId] = true;
+      hiddens[formattedFeedId] = true;
     }
 
     return createHttpSuccessResponse({});
