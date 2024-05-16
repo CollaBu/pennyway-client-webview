@@ -1,3 +1,4 @@
+import { useHiddenFeedStore } from '@/entitites/feed';
 import { NetworkError, Observer } from '@/shared/ui';
 
 import { useInfinityFeeds } from '../api';
@@ -6,8 +7,6 @@ import { Feed } from './Feed';
 import HiddenFeed from './HiddenFeed';
 import { SkeletonFeedMainList } from './SkeletonFeedMainList';
 import './FeedMainList.scss';
-
-const hiddenFeedId = 2;
 
 export const FeedMainList = () => {
   const {
@@ -19,6 +18,7 @@ export const FeedMainList = () => {
     isError,
     refetchFeeds,
   } = useInfinityFeeds();
+  const { hiddenFeeds } = useHiddenFeedStore();
 
   if (isLoading) {
     return <SkeletonFeedMainList count={10} />;
@@ -34,7 +34,7 @@ export const FeedMainList = () => {
       <div className='feed-list'>
         {feeds?.pages.map((pageData) => {
           return pageData.data.feeds.map((feed) =>
-            hiddenFeedId === feed.id ? (
+            hiddenFeeds.includes(feed.id) ? (
               <HiddenFeed key={feed.id} message='게시물이 숨겨졌어요' />
             ) : (
               <Feed key={feed.id} feed={feed} />
