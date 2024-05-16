@@ -1,4 +1,4 @@
-export { ActiveButton, BasicButton } from './button';
+export { FollowButton } from './button';
 export { PageHeader } from './header';
 export { ConfirmModal, BottomSheetModal } from './modal';
 export { Profile, SkeletonProfile } from './profile';

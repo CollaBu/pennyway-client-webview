@@ -11,11 +11,30 @@
     align-items: center;
     border-radius: 4px;
   }
+
   .option-divider {
     width: 244px;
     margin: 0 auto;
     border: none;
     height: 0.5px;
     background-color: $gray2;
+  }
+
+  .bsm-option {
+    width: 280px;
+    height: 46px;
+    color: $gray5;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .bsm-cancle {
+    width: 280px;
+    height: 47px;
+    text-align: center;
+    background-color: $gray5;
+    color: white;
+    border-radius: 4px;
+    margin-top: 8px;
   }
 }

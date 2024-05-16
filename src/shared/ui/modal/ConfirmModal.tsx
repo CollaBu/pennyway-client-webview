@@ -1,11 +1,15 @@
-import { ActiveButton, BasicButton } from '../button/index';
+import { ConfirmModalButton } from '../button/index';
 
 import './ConfirmModal.scss';
 import { ModalOverlay } from './ModalOverlay';
-import { BaseModalProps } from './types';
 
-interface ConfirmModalProps extends BaseModalProps {
+interface ConfirmModalProps {
+  title: string;
   content: string;
+  onExecute: () => void;
+  onExecuteMsg: string;
+  onClose: () => void;
+  onCloseMsg: string;
 }
 
 export const ConfirmModal = ({
@@ -13,7 +17,6 @@ export const ConfirmModal = ({
   content,
   onExecute,
   onExecuteMsg,
-  onExecuteIsDisabled,
   onClose,
   onCloseMsg,
 }: ConfirmModalProps) => {
@@ -22,17 +25,13 @@ export const ConfirmModal = ({
       <div className='confirm-modal'>
         <h3 className='title h3semi'>{title}</h3>
         <p className='content b1md'>{content}</p>
-        <div className='buttons'>
-          <BasicButton onClick={onClose} styleClass='confirm-cancle h4semi'>
+        <div className='modal-btn-container'>
+          <ConfirmModalButton onClick={onClose} styleClass='cancle'>
             {onCloseMsg}
-          </BasicButton>
-          <ActiveButton
-            onClick={onExecute}
-            isDisabled={onExecuteIsDisabled}
-            styleClass='confirm h4semi'
-          >
+          </ConfirmModalButton>
+          <ConfirmModalButton onClick={onExecute} styleClass='confirm'>
             {onExecuteMsg}
-          </ActiveButton>
+          </ConfirmModalButton>
         </div>
       </div>
     </ModalOverlay>

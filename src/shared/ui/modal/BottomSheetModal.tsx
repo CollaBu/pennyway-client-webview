@@ -1,7 +1,5 @@
 import { Fragment } from 'react/jsx-runtime';
 
-import { BasicButton } from '../button/index';
-
 import './BottomSheetModal.scss';
 import { ModalOverlay } from './ModalOverlay';
 
@@ -25,19 +23,20 @@ export const BottomSheetModal = ({
         <div className='modal-content'>
           {options.map((option, index) => (
             <Fragment key={index}>
-              <BasicButton
+              <button
                 onClick={option.onClick}
-                styleClass='bsm-option h4md'
+                type='button'
+                className='bsm-option h4md'
               >
                 {option.label}
-              </BasicButton>
+              </button>
               {index < options.length - 1 && <hr className='option-divider' />}
             </Fragment>
           ))}
         </div>
-        <BasicButton styleClass='bsm-cancle h4semi' onClick={onClose}>
+        <button className='bsm-cancle h4semi' type='button' onClick={onClose}>
           취소
-        </BasicButton>
+        </button>
       </div>
     </ModalOverlay>
   );
