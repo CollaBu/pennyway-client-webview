@@ -21,7 +21,7 @@ export function handleQueryError(
 
   // feeds 쿼리에서 2 페이지부터 에러가 발생하면 네트워크 에러 토스트를 띄웁니다.
   if (queryKey[0] === 'feeds' && state.data)
-    showToastHandler('인터넷 연결이 불안정해요');
+    showToastHandler('caution', '인터넷 연결이 불안정해요');
 }
 
 /**
