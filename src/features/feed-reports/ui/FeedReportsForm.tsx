@@ -17,15 +17,29 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   feedId,
   onClose,
 }) => {
-  useSubmitReports(feedId);
   const { clickedId, handleClickCategory } = useReportCategories();
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
+  const { reportFeed, isPending } = useSubmitReports(feedId);
+
+  const handleSubmitReports = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const body = {
+      category: REPORT_CATEGORIES[clickedId],
+      content,
+      isBlind,
+    };
+
+    reportFeed(body);
+    onClose();
+  };
+
   return (
     <ConfirmReportModal
-      onExecute={() => {}} // API 연동 후 수정
-      onExecuteIsDisabled={false} // API 연동 후 수정
+      onExecute={handleSubmitReports} // API 연동 후 수정
+      onExecuteIsDisabled={isPending} // API 연동 후 수정
       onClose={onClose}
     >
       {/* 신고 카테고리 */}
