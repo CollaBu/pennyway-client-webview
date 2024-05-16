@@ -1,5 +1,7 @@
+import { HideButton } from '@/features/feed-hides';
 import { FeedReportsForm } from '@/features/feed-reports';
 import { useToggle } from '@/shared/hooks';
+
 import './KebabMenu.scss';
 
 interface KebabMenuProps {
@@ -15,7 +17,7 @@ export const KebabMenu: React.FC<KebabMenuProps> = ({ feedId, onClose }) => {
     <>
       <ul className='kebab-menu-list'>
         <li className='kebab-menu-item'>
-          <button className='item-btn b2md'>게시물 숨기기</button>
+          <HideButton feedId={feedId} />
         </li>
         <li className='kebab-menu-item'>
           <button
