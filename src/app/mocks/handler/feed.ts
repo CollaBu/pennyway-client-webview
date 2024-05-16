@@ -5,6 +5,7 @@ import { reports } from '../consts/report';
 import { users } from '../consts/user';
 import { likes } from '../consts/like';
 import { comments } from '../consts/comment';
+import { hiddens } from '../consts/hidden';
 import { getCurrentDate } from '../dir/date';
 import {
   createHttpSuccessResponse,
@@ -186,5 +187,23 @@ export const feedHandlers = [
     }
 
     return createHttpSuccessResponse({});
+  }),
+
+  // 7️⃣ 피드 숨기기
+  http.put('/feeds/:feed_id/hides', ({ params }) => {
+    const { feed_id } = params;
+
+    if (isNaN(Number(feed_id))) {
+      return createHttpErrorResponse('4220');
+    }
+
+    const formattedFeedId = Number(feed_id);
+
+    if (!feeds[formattedFeedId]) {
+      return createHttpErrorResponse('4040');
+    }
+
+    hiddens[formattedFeedId] = true;
+    return createHttpSuccessResponse({ isHidden: true });
   }),
 ];
