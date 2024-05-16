@@ -38,8 +38,8 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
 
   return (
     <ConfirmReportModal
-      onExecute={handleSubmitReports} // API 연동 후 수정
-      onExecuteIsDisabled={isPending} // API 연동 후 수정
+      onExecute={handleSubmitReports}
+      onExecuteIsDisabled={isPending}
       onClose={onClose}
     >
       {/* 신고 카테고리 */}
