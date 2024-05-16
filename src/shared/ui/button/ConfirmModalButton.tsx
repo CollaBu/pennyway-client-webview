@@ -1,7 +1,7 @@
 import { ButtonProps } from './types';
 import './ConfirmModalButton.scss';
 
-export type ConfirmModalButtonStyle = 'confirm' | 'cancle';
+type ConfirmModalButtonStyle = 'confirm' | 'cancle';
 
 interface ConfirmModalButtonProps extends ButtonProps {
   styleClass: ConfirmModalButtonStyle;
