@@ -4,6 +4,7 @@ import { comments } from './comment';
 import { likes } from './like';
 import { users } from './user';
 import { reports } from './report';
+import { hiddens } from './hidden';
 
 interface Feeds {
   [feedId: number]: Feed;
@@ -273,6 +274,7 @@ export const feeds: Feeds = {
 
 for (let i = 10; i < 100; i++) {
   reports[i] = false;
+  hiddens[i] = false;
   comments[i] = [];
   likes[i] = { totalCount: i, isLiked: false };
   feeds[i] = {
