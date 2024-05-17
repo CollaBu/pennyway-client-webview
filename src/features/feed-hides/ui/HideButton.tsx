@@ -6,10 +6,10 @@ interface HideButtonProps {
 }
 
 export const HideButton: React.FC<HideButtonProps> = ({ feedId, onClose }) => {
-  const { hideFeedAsync, isPending } = useHides(feedId);
+  const { hideFeed, isPending } = useHides(feedId);
 
-  const handleClickHideBtn = async () => {
-    await hideFeedAsync();
+  const handleClickHideBtn = () => {
+    hideFeed();
     onClose();
   };
 

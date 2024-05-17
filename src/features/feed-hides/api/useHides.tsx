@@ -10,10 +10,10 @@ async function requestHideFeed(feedId: number) {
 }
 
 export const useHides = (feedId: number) => {
-  const { mutateAsync: hideFeedAsync, isPending } = useMutation({
+  const { mutate: hideFeed, isPending } = useMutation({
     mutationFn: () => requestHideFeed(feedId),
     onSuccess: () => addHiddenFeed(feedId, 'hidden'),
   });
 
-  return { hideFeedAsync, isPending };
+  return { hideFeed, isPending };
 };

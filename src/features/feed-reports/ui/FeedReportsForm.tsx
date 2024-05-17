@@ -21,9 +21,9 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
-  const { reportFeedAsync, isPending } = useSubmitReports(feedId);
+  const { reportFeed, isPending } = useSubmitReports(feedId);
 
-  const handleSubmitReports = async (event: React.FormEvent) => {
+  const handleSubmitReports = (event: React.FormEvent) => {
     event.preventDefault();
 
     const body = {
@@ -32,7 +32,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
       isBlind,
     };
 
-    await reportFeedAsync(body);
+    reportFeed(body);
     onClose();
   };
 
