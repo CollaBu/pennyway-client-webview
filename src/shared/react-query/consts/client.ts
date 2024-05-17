@@ -7,6 +7,7 @@ import {
 
 import {
   handleMutationError,
+  handleMutationSuccess,
   handleQueryError,
   handleQuerySuccess,
 } from '../dir';
@@ -25,6 +26,7 @@ const queryClientOptions: QueryClientConfig = {
     onError: (_, query) => handleQueryError(query),
   }),
   mutationCache: new MutationCache({
+    onSuccess: (_, __, ___, mutation) => handleMutationSuccess(mutation),
     onError: () => handleMutationError(),
   }),
 };

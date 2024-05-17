@@ -1,4 +1,4 @@
-import { Query, QueryKey } from '@tanstack/react-query';
+import { Mutation, Query, QueryKey } from '@tanstack/react-query';
 
 import { removeToastHandler, showToastHandler } from '@/shared/toast';
 
@@ -22,6 +22,15 @@ export function handleQueryError(
   // feeds 쿼리에서 2 페이지부터 에러가 발생하면 네트워크 에러 토스트를 띄웁니다.
   if (queryKey[0] === 'feeds' && state.data)
     showToastHandler('caution', '인터넷 연결이 불안정해요');
+}
+
+export function handleMutationSuccess(
+  mutation: Mutation<unknown, unknown, unknown, unknown>,
+) {
+  const { options } = mutation;
+
+  if (options.mutationKey?.includes('feed-report'))
+    showToastHandler('siren', '신고가 접수되었어요');
 }
 
 /**
