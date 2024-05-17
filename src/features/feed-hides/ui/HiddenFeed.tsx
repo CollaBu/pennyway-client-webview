@@ -1,3 +1,4 @@
+import { HiddenType, getHiddenMessageByType } from '@/entitites/feed';
 import { Icon } from '@/shared/ui';
 
 import './HiddenFeed.scss';
@@ -5,23 +6,24 @@ import { useHideCancel } from '../api';
 
 interface HiddenFeedProps {
   feedId: number;
-  message: string;
+  type: HiddenType;
 }
 
-export const HiddenFeed: React.FC<HiddenFeedProps> = ({ feedId, message }) => {
+export const HiddenFeed: React.FC<HiddenFeedProps> = ({ feedId, type }) => {
   const { hideCancelFeed, isPending } = useHideCancel(feedId);
+  const { reasonMsg, cancleMsg } = getHiddenMessageByType(type);
 
   return (
     <div className='feed-hidden-wrapper'>
       <div className='feed-hidden-container'>
         <Icon name='check_mint' width='24' height='24' />
-        <p className='hidden-reason-msg b2md'>{message}</p>
+        <p className='hidden-reason-msg b2md'>{reasonMsg}</p>
         <button
           className='hidden-cancel-btn b2md'
           onClick={() => hideCancelFeed()}
           disabled={isPending}
         >
-          취소
+          {cancleMsg}
         </button>
       </div>
     </div>
