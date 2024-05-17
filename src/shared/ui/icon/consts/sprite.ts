@@ -15,4 +15,5 @@ export type IconName =
   | 'checkbox-circle_on'
   | 'checkbox-square_on'
   | 'checkbox-square_off'
-  | 'check_mint';
+  | 'check_mint'
+  | 'siren';
