@@ -12,7 +12,7 @@ async function requestHideCancelFeed(feedId: number) {
 export const useHideCancel = (feedId: number) => {
   const { mutate: hideCancelFeed, isPending } = useMutation({
     mutationFn: () => requestHideCancelFeed(feedId),
-    onSuccess: () => cancleHiddenFeed(feedId),
+    onMutate: () => cancleHiddenFeed(feedId),
   });
 
   return { hideCancelFeed, isPending };
