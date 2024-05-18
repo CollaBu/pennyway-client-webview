@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 import * as bookmarkModule from '@/shared/axios';
@@ -16,10 +16,10 @@ describe('북마크 상태가 아닐 때 북마크 버튼을 클릭하면', () =
 
     // when
     expect(spy).not.toHaveBeenCalled();
-    await act(async () => result.current.handleBookmarkFeed());
+    act(() => result.current.handleBookmarkFeed());
 
     // then
-    expect(spy).toHaveBeenCalled();
+    await waitFor(() => expect(spy).toHaveBeenCalled());
   });
 
   it('북마크 상태가 변경된다.', async () => {
@@ -42,10 +42,10 @@ describe('북마크 상태일 때 북마크 버튼을 클릭하면', () => {
 
     // when
     expect(spy).not.toHaveBeenCalled();
-    await act(async () => result.current.handleBookmarkFeed());
+    act(() => result.current.handleBookmarkFeed());
 
     // then
-    expect(spy).toHaveBeenCalled();
+    await waitFor(() => expect(spy).toHaveBeenCalled());
   });
 
   it('북마크 상태가 변경된다.', async () => {
