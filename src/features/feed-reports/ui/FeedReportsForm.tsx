@@ -1,4 +1,3 @@
-import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
 import { useSubmitReports } from '../api';
@@ -7,7 +6,7 @@ import {
   REPORT_CATEGORIES,
   UNCLICKED_STATUS_ID,
 } from '../consts';
-import { useReportCategories } from '../model';
+import { useReportForm } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
@@ -21,11 +20,15 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   feedId,
   onClose,
 }) => {
-  const { clickedId, handleClickCategory } = useReportCategories();
-  const [content, handleInputContent] = useInput();
-  const [isBlind, toggleBlind] = useToggle(false);
-
   const { reportFeed, isPending } = useSubmitReports(feedId);
+  const {
+    clickedId,
+    content,
+    isBlind,
+    handleClickCategory,
+    handleInputContent,
+    toggleBlind,
+  } = useReportForm();
 
   const handleSubmitReports = (event: React.FormEvent) => {
     event.preventDefault();
