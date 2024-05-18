@@ -25,18 +25,14 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
     handleClickCategory,
     handleInputContent,
     toggleBlind,
+    createReportBody,
   } = useReportForm();
 
   const handleSubmitReports = (event: React.FormEvent) => {
     event.preventDefault();
     if (isDisabledReportForm || isPending) return;
 
-    const body = {
-      category: REPORT_CATEGORIES[clickedId],
-      content,
-      isBlind,
-    };
-
+    const body = createReportBody();
     reportFeed(body);
     onClose();
   };
