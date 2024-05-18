@@ -26,7 +26,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
     handleInputContent,
     toggleBlind,
     createReportBody,
-  } = useReportForm();
+  } = useReportForm(feedId);
 
   const handleSubmitReports = (event: React.FormEvent) => {
     event.preventDefault();

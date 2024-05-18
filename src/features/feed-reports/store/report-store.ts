@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { FeedReportForm } from '../consts';
+import { FeedReportForm, REPORT_CATEGORIES } from '../consts';
 
 interface FeedReportFailState {
   [feedId: number]: FeedReportForm;
@@ -45,4 +45,27 @@ export function removeFeedReportForm(feedId: number) {
     false,
     'feed/removeFeedReportForm',
   );
+}
+
+/**
+ * 사용자가 이전에 작성한 피드 신고 정보를 가져옵니다.
+ * @if 만약 없다면, 초기 상태를 반환합니다.
+ * @param feedId 피드 아이디
+ * @returns 피드 신고 양식
+ */
+export function getFeedReportForm(feedId: number) {
+  const body = useFeedReportFailStore.getState()[feedId];
+
+  if (!body) {
+    return {
+      clickedId: -1,
+      content: '',
+      isBlind: false,
+    };
+  }
+
+  return {
+    clickedId: REPORT_CATEGORIES.indexOf(body.category),
+    ...body,
+  };
 }
