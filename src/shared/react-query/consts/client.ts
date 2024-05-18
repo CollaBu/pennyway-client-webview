@@ -27,7 +27,7 @@ const queryClientOptions: QueryClientConfig = {
   }),
   mutationCache: new MutationCache({
     onSuccess: (_, __, ___, mutation) => handleMutationSuccess(mutation),
-    onError: () => handleMutationError(),
+    onError: (_, __, ___, mutation) => handleMutationError(mutation),
   }),
 };
 export const queryClient = new QueryClient(queryClientOptions);

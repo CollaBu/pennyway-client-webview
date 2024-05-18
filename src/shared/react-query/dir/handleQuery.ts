@@ -36,6 +36,11 @@ export function handleMutationSuccess(
 /**
  * 뮤테이션 에러 핸들러
  */
-export function handleMutationError() {
-  return;
+export function handleMutationError(
+  mutation: Mutation<unknown, unknown, unknown, unknown>,
+) {
+  const { options } = mutation;
+
+  if (options.mutationKey?.includes('feed-report'))
+    showToastHandler('caution', '다시 시도해 주세요');
 }
