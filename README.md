@@ -71,11 +71,8 @@
 
 ### 1️⃣ FSD Architecture
 
-> 💡 FSD Architecture를 커스텀하여 사용합니다.
-
-- features, entities 2단계를 통합해 features단계로 설정하였습니다.
 <div align="center">
-  <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/5ee680f1-77a6-494b-b0e9-24fe20ed55a9" width="600">
+  <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/0890b39c-eb37-412c-ad64-1af820f95300" width="600">
 </div>
 <br/>
 
