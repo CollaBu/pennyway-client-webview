@@ -1,3 +1,5 @@
+![Pennyway](https://github.com/CollaBu/pennyway-client-webview/assets/44726494/8236e9f0-6467-4a9e-8031-5e1e10c44cb8)
+
 ## 💰 Pennyway
 
 > 지출 관리 SNS 플랫폼
@@ -47,8 +49,8 @@ Pennyway는 소비를 측정하고 불필요한 부분을 줄일 수 있도록 �
 ### 2️⃣ CI/CD Pipeline
 
 <div align="center">
-    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/e236ae0b-66d1-48a3-ade7-4801fedd1285" alt="ci pipeline" width="400" />
-    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/37d03add-2956-466e-a100-549168860cad" alt="cd pipeline" width="572" />
+    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/e236ae0b-66d1-48a3-ade7-4801fedd1285" alt="ci pipeline" width="320" />
+    <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/37d03add-2956-466e-a100-549168860cad" alt="cd pipeline" width="458" />
 </div>
 
 <br/>
