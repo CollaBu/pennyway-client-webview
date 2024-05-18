@@ -51,6 +51,8 @@ Pennyway는 소비를 측정하고 불필요한 부분을 줄일 수 있도록 �
     <img src="https://github.com/CollaBu/pennyway-client-webview/assets/44726494/37d03add-2956-466e-a100-549168860cad" alt="cd pipeline" width="572" />
 </div>
 
+<br/>
+
 ## 📗 Gruond Rule
 
 - [Agile Process](https://github.com/CollaBu/pennyway-client-webview/wiki/Agile-Process)
