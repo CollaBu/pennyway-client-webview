@@ -3,13 +3,9 @@ import { useMutation } from '@tanstack/react-query';
 import { addHiddenFeed } from '@/entitites/feed';
 import { axiosInstance } from '@/shared/axios';
 
-interface ReportBody {
-  category: string;
-  content: string;
-  isBlind: boolean;
-}
+import { FeedReportForm } from '../consts';
 
-async function requestFeedReports(feedId: number, body: ReportBody) {
+async function requestFeedReports(feedId: number, body: FeedReportForm) {
   const { data } = await axiosInstance.post(`feeds/${feedId}/reports`, body);
 
   return data;
@@ -18,7 +14,7 @@ async function requestFeedReports(feedId: number, body: ReportBody) {
 export const useSubmitReports = (feedId: number) => {
   const { mutate: reportFeed, isPending } = useMutation({
     mutationKey: ['feed-report'],
-    mutationFn: (body: ReportBody) => requestFeedReports(feedId, body),
+    mutationFn: (body: FeedReportForm) => requestFeedReports(feedId, body),
     onError: () => {},
     onSuccess: (_, body) => {
       const { isBlind } = body;
