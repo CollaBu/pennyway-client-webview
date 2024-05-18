@@ -10,7 +10,11 @@ import { updateLikeStatusInFeeds } from '../lib';
 export const useLikes = (feedId: number, isLiked: boolean) => {
   const queryClient = useQueryClient();
 
-  const { mutate: handleLikeFeed, isPending } = useMutation({
+  const {
+    data,
+    mutate: handleLikeFeed,
+    isPending,
+  } = useMutation({
     mutationFn: () =>
       isLiked ? requestUnlikeFeed(feedId) : requestLikeFeed(feedId),
     // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
@@ -53,5 +57,5 @@ export const useLikes = (feedId: number, isLiked: boolean) => {
     },
   });
 
-  return { handleLikeFeed, isPending };
+  return { data, handleLikeFeed, isPending };
 };
