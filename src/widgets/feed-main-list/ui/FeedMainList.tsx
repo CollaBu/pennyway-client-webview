@@ -33,17 +33,15 @@ export const FeedMainList = () => {
     <section className='feed-list-section'>
       <div className='feed-list'>
         {feeds?.pages.map((pageData) => {
-          return pageData.data.feeds.map((feed) =>
-            hiddenFeeds.get(feed.id) ? (
-              <HiddenFeed
-                key={feed.id}
-                feedId={feed.id}
-                message='게시물이 숨겨졌어요'
-              />
+          return pageData.data.feeds.map((feed) => {
+            const hiddenType = hiddenFeeds.get(feed.id);
+
+            return hiddenType ? (
+              <HiddenFeed key={feed.id} feedId={feed.id} type={hiddenType} />
             ) : (
               <Feed key={feed.id} feed={feed} />
-            ),
-          );
+            );
+          });
         })}
         {!isFetching && (
           <Observer

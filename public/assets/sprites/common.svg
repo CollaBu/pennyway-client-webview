@@ -187,4 +187,23 @@
       d='M16.71 9.381l-6.482 6.482-2.947-2.946'
     />
   </symbol>
+  <symbol id='siren-icon' viewBox='0 0 20 20'>
+    <path
+      fill='#FF6767'
+      stroke='#FF6767'
+      stroke-width='1.25'
+      d='M4.164 11.667s0-5.417 5.833-5.417c5.834 0 5.834 5.417 5.834 5.417V15H4.164v-3.333z'
+    />
+    <rect
+      width='15'
+      height='3.33'
+      x='2.5'
+      y='15'
+      fill='#F0F2F4'
+      stroke='#F0F2F4'
+      stroke-linejoin='round'
+      stroke-width='1.25'
+      rx='1.2'
+    />
+  </symbol>
 </svg>

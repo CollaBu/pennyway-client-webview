@@ -1,4 +1,4 @@
-import { Query, QueryKey } from '@tanstack/react-query';
+import { Mutation, Query, QueryKey } from '@tanstack/react-query';
 
 import { removeToastHandler, showToastHandler } from '@/shared/toast';
 
@@ -24,9 +24,23 @@ export function handleQueryError(
     showToastHandler('caution', '인터넷 연결이 불안정해요');
 }
 
+export function handleMutationSuccess(
+  mutation: Mutation<unknown, unknown, unknown, unknown>,
+) {
+  const { options } = mutation;
+
+  if (options.mutationKey?.includes('feed-report'))
+    showToastHandler('siren', '신고가 접수되었어요');
+}
+
 /**
  * 뮤테이션 에러 핸들러
  */
-export function handleMutationError() {
-  return;
+export function handleMutationError(
+  mutation: Mutation<unknown, unknown, unknown, unknown>,
+) {
+  const { options } = mutation;
+
+  if (options.mutationKey?.includes('feed-report'))
+    showToastHandler('caution', '다시 시도해 주세요');
 }

@@ -1,9 +1,8 @@
-import { useInput, useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
 
 import { useSubmitReports } from '../api';
 import { MAX_REPORT_CONTENT_LENGTH, REPORT_CATEGORIES } from '../consts';
-import { useReportCategories } from '../model';
+import { useReportForm } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
 import './FeedReportsForm.scss';
@@ -17,29 +16,31 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   feedId,
   onClose,
 }) => {
-  const { clickedId, handleClickCategory } = useReportCategories();
-  const [content, handleInputContent] = useInput();
-  const [isBlind, toggleBlind] = useToggle(false);
+  const { reportFeed, isPending } = useSubmitReports(feedId);
+  const {
+    clickedId,
+    content,
+    isBlind,
+    isDisabledReportForm,
+    handleClickCategory,
+    handleInputContent,
+    toggleBlind,
+    createReportBody,
+  } = useReportForm(feedId);
 
-  const { reportFeedAsync, isPending } = useSubmitReports(feedId);
-
-  const handleSubmitReports = async (event: React.FormEvent) => {
+  const handleSubmitReports = (event: React.FormEvent) => {
     event.preventDefault();
+    if (isDisabledReportForm || isPending) return;
 
-    const body = {
-      category: REPORT_CATEGORIES[clickedId],
-      content,
-      isBlind,
-    };
-
-    await reportFeedAsync(body);
+    const body = createReportBody();
+    reportFeed(body);
     onClose();
   };
 
   return (
     <ConfirmReportModal
       onExecute={handleSubmitReports}
-      onExecuteIsDisabled={isPending}
+      onExecuteIsDisabled={isDisabledReportForm}
       onClose={onClose}
     >
       {/* 신고 카테고리 */}
