@@ -1,11 +1,7 @@
 import { Icon } from '@/shared/ui';
 
 import { useSubmitReports } from '../api';
-import {
-  MAX_REPORT_CONTENT_LENGTH,
-  REPORT_CATEGORIES,
-  UNCLICKED_STATUS_ID,
-} from '../consts';
+import { MAX_REPORT_CONTENT_LENGTH, REPORT_CATEGORIES } from '../consts';
 import { useReportForm } from '../model';
 
 import { ConfirmReportModal } from './ConfirmReportModal';
@@ -25,6 +21,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
     clickedId,
     content,
     isBlind,
+    isDisabledReportForm,
     handleClickCategory,
     handleInputContent,
     toggleBlind,
@@ -32,7 +29,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
 
   const handleSubmitReports = (event: React.FormEvent) => {
     event.preventDefault();
-    if (clickedId === UNCLICKED_STATUS_ID || isPending) return;
+    if (isDisabledReportForm || isPending) return;
 
     const body = {
       category: REPORT_CATEGORIES[clickedId],
@@ -47,7 +44,7 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
   return (
     <ConfirmReportModal
       onExecute={handleSubmitReports}
-      onExecuteIsDisabled={clickedId === UNCLICKED_STATUS_ID}
+      onExecuteIsDisabled={isDisabledReportForm}
       onClose={onClose}
     >
       {/* 신고 카테고리 */}

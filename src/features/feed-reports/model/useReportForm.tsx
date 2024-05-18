@@ -9,6 +9,9 @@ export const useReportForm = () => {
   const [content, handleInputContent] = useInput();
   const [isBlind, toggleBlind] = useToggle(false);
 
+  const isValidReportForm = clickedId !== UNCLICKED_STATUS_ID;
+  const isDisabledReportForm = !isValidReportForm;
+
   const handleClickCategory = (id: number) => setClickedId(id);
 
   return {
@@ -18,5 +21,6 @@ export const useReportForm = () => {
     handleClickCategory,
     handleInputContent,
     toggleBlind,
+    isDisabledReportForm,
   };
 };
