@@ -10,7 +10,11 @@ import { updateBookmarkStatusInFeeds } from '../lib';
 export const useBookmarks = (feedId: number, isBookmarked: boolean) => {
   const queryClient = useQueryClient();
 
-  const { mutate: handleBookmarkFeed, isPending } = useMutation({
+  const {
+    data,
+    mutate: handleBookmarkFeed,
+    isPending,
+  } = useMutation({
     mutationFn: () =>
       isBookmarked
         ? requestUnbookmarkFeed(feedId)
@@ -51,5 +55,5 @@ export const useBookmarks = (feedId: number, isBookmarked: boolean) => {
     },
   });
 
-  return { handleBookmarkFeed, isPending };
+  return { data, handleBookmarkFeed, isPending };
 };

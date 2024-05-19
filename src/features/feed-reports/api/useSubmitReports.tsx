@@ -13,7 +13,11 @@ async function requestFeedReports(feedId: number, body: FeedReportForm) {
 }
 
 export const useSubmitReports = (feedId: number) => {
-  const { mutate: reportFeed, isPending } = useMutation({
+  const {
+    data,
+    mutate: reportFeed,
+    isPending,
+  } = useMutation({
     mutationKey: ['feed-report'],
     mutationFn: (body: FeedReportForm) => requestFeedReports(feedId, body),
     onError: (_, body) => saveFeedReportForm(feedId, body),
@@ -29,5 +33,5 @@ export const useSubmitReports = (feedId: number) => {
     },
   });
 
-  return { reportFeed, isPending };
+  return { data, reportFeed, isPending };
 };

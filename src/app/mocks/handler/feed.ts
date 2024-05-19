@@ -187,6 +187,6 @@ export const feedHandlers = [
       hiddens[formattedFeedId] = true;
     }
 
-    return createHttpSuccessResponse({});
+    return createHttpSuccessResponse({ isReported: true });
   }),
 ];
