@@ -8,5 +8,5 @@ export const REPORT_CATEGORIES = [
   '기타',
 ];
 
-export const MAX_REPORT_CONTENT_LENGTH = 60;
+export const MAX_REPORT_CONTENT_LENGTH = 80;
 export const UNCLICKED_STATUS_ID = -1;
