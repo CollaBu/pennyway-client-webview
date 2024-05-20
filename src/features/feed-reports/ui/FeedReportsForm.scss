@@ -17,8 +17,12 @@
       height: 20px;
     }
 
-    .item-name {
+    .item-name_common {
       color: $gray5;
+    }
+
+    .item-name_clicked {
+      color: $gray6;
     }
   }
 }
