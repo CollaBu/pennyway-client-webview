@@ -58,7 +58,11 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
                 height='20'
               />
             </button>
-            <p className='item-name b1md'>{category}</p>
+            <p
+              className={`item-name_${id === clickedId ? 'clicked' : 'common'} b1md`}
+            >
+              {category}
+            </p>
           </li>
         ))}
       </ul>

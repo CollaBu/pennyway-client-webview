@@ -1,3 +1,14 @@
+@keyframes fadeInCompletion {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .feed-hidden-wrapper {
   margin-top: 30px;
 
@@ -6,13 +17,28 @@
     flex-direction: column;
     align-items: center;
 
+    .feed-hidden-checkmark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 24px;
+      height: 24px;
+
+      svg {
+        animation: fadeInCompletion 0.35s ease-in-out 0s forwards;
+      }
+    }
+
     .hidden-reason-msg {
-      margin-top: 8px;
+      margin: 8px 0 16px;
       color: $gray4;
     }
 
     .hidden-cancel-btn {
-      margin-top: 16px;
+      display: flex;
+      align-items: center;
+
       padding: 5px 10px;
 
       border-radius: 30px;

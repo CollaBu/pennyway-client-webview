@@ -147,10 +147,10 @@
       height='16.67'
       x='1.66'
       y='1.67'
-      fill='#FF6767'
+      fill='#00D5E1'
       rx='2.5'
     />
-    <path fill='#FF6767' d='M13.928 7.5l-5.402 5.402-2.456-2.456' />
+    <path fill='#00D5E1' d='M13.928 7.5l-5.402 5.402-2.456-2.456' />
     <path
       stroke='#fff'
       stroke-linecap='round'
