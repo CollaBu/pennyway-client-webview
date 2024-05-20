@@ -31,12 +31,14 @@
     }
 
     .hidden-reason-msg {
-      margin-top: 8px;
+      margin: 8px 0 16px;
       color: $gray4;
     }
 
     .hidden-cancel-btn {
-      margin-top: 16px;
+      display: flex;
+      align-items: center;
+
       padding: 5px 10px;
 
       border-radius: 30px;
