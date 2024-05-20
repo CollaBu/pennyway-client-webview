@@ -66,6 +66,11 @@
   align-items: center;
   gap: 4px;
 
+  .checkbox-btn {
+    width: 20px;
+    height: 20px;
+  }
+
   .hide-checkbox-text {
     color: $gray5;
   }
