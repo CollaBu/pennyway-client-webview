@@ -5,7 +5,7 @@ import { useFeedKebabStore, onClickFeedKebab } from '../store';
 import { KebabMenu } from './KebabMenu';
 
 export const FeedKebabButton: React.FC<{ feedId: number }> = ({ feedId }) => {
-  const { openedFeedId, isOpen, close } = useFeedKebabStore();
+  const { openedFeedId, isOpen, closeKebab } = useFeedKebabStore();
 
   return (
     <>
@@ -16,7 +16,7 @@ export const FeedKebabButton: React.FC<{ feedId: number }> = ({ feedId }) => {
         <Icon name='kebab-menu' width='20' height='20' />
       </button>
       {openedFeedId === feedId && isOpen && (
-        <KebabMenu feedId={feedId} onClose={() => close()} />
+        <KebabMenu feedId={feedId} onClose={closeKebab} />
       )}
     </>
   );

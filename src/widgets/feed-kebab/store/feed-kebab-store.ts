@@ -4,8 +4,8 @@ import { devtools } from 'zustand/middleware';
 type FeedKebabStore = {
   openedFeedId: number;
   isOpen: boolean;
-  open: (_: number) => void;
-  close: () => void;
+  openKebab: (_: number) => void;
+  closeKebab: () => void;
 };
 
 /**
@@ -16,9 +16,9 @@ export const useFeedKebabStore = create<FeedKebabStore>()(
     (set): FeedKebabStore => ({
       openedFeedId: 0,
       isOpen: false,
-      open: (clickedId: number) =>
+      openKebab: (clickedId: number) =>
         set({ openedFeedId: clickedId, isOpen: true }),
-      close: () => set({ openedFeedId: -1, isOpen: false }),
+      closeKebab: () => set({ openedFeedId: -1, isOpen: false }),
     }),
     { name: 'feed-kebab-store' },
   ),
@@ -31,9 +31,9 @@ export const useFeedKebabStore = create<FeedKebabStore>()(
  */
 export const onClickFeedKebab = (feedId: number) => {
   if (feedId === useFeedKebabStore.getState().openedFeedId) {
-    useFeedKebabStore.getState().close();
+    useFeedKebabStore.getState().closeKebab();
     return;
   }
 
-  useFeedKebabStore.getState().open(feedId);
+  useFeedKebabStore.getState().openKebab(feedId);
 };
