@@ -2,19 +2,16 @@ import './FollowButton.scss';
 import { ButtonProps } from './types';
 
 interface FollowButtonProps extends ButtonProps {
-  isUnfollow: boolean;
+  isFollow: boolean;
 }
 
-export const FollowButton = ({
-  onClick,
-  isUnfollow,
-  children,
-}: FollowButtonProps) => {
-  const sytleClass = isUnfollow ? 'follow' : 'follow-unfollow';
+export const FollowButton = ({ onClick, isFollow }: FollowButtonProps) => {
+  const sytleClass = isFollow ? 'follow' : 'follow-unfollow';
+  const content = isFollow ? '팔로잉' : '팔로우';
 
   return (
     <button onClick={onClick} type='button' className={`${sytleClass} b2semi`}>
-      {children}
+      {content}
     </button>
   );
 };
