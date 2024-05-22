@@ -25,25 +25,6 @@
       }
     }
 
-    .feed-count-container {
-      display: flex;
-      align-items: center;
-
-      padding-left: 20px;
-
-      .count-divider {
-        width: 2px;
-        height: 2px;
-
-        margin: 0 4px;
-        background-color: $gray4;
-      }
-
-      .count-text {
-        color: $gray4;
-      }
-    }
-
     .feed-footer {
       margin-top: 8px;
       padding: 0 15px 0 20px;
@@ -55,6 +36,19 @@
       .footer-left {
         display: flex;
         gap: 12px;
+
+        .footer-count {
+          width: 38px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .count-text {
+          width: 15px;
+          text-align: left;
+          color: $gray6;
+        }
       }
 
       .icon-btn {
