@@ -24,6 +24,16 @@ export const useFeedKebabStore = create<FeedKebabStore>()(
   ),
 );
 
-export const clickFeedKebab = (feedId: number) => {
+/**
+ * 피드의 kebab 메뉴를 열거나 닫습니다.
+ * @param feedId 피드 아이디
+ * @returns
+ */
+export const onClickFeedKebab = (feedId: number) => {
+  if (feedId === useFeedKebabStore.getState().openedFeedId) {
+    useFeedKebabStore.getState().close();
+    return;
+  }
+
   useFeedKebabStore.getState().open(feedId);
 };

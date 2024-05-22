@@ -1,1 +1,1 @@
-export { useFeedKebabStore } from './feed-kebab-store';
+export * from './feed-kebab-store';
