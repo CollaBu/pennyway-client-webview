@@ -1,18 +1,22 @@
-import { useToggle } from '@/shared/hooks';
 import { Icon } from '@/shared/ui';
+
+import { useFeedKebabStore, onClickFeedKebab } from '../store';
 
 import { KebabMenu } from './KebabMenu';
 
 export const FeedKebabButton: React.FC<{ feedId: number }> = ({ feedId }) => {
-  const [isVisibilityKebabMenu, toggleVisibility] = useToggle(false);
+  const { openedFeedId, isOpen, closeKebab } = useFeedKebabStore();
 
   return (
     <>
-      <button className='icon kebab-icon-btn' onClick={toggleVisibility}>
+      <button
+        className='icon kebab-icon-btn'
+        onClick={() => onClickFeedKebab(feedId)}
+      >
         <Icon name='kebab-menu' width='20' height='20' />
       </button>
-      {isVisibilityKebabMenu && (
-        <KebabMenu feedId={feedId} onClose={toggleVisibility} />
+      {openedFeedId === feedId && isOpen && (
+        <KebabMenu feedId={feedId} onClose={closeKebab} />
       )}
     </>
   );
