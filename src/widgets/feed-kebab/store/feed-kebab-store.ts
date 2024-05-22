@@ -1,12 +1,12 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-type FeedKebabStore = {
+interface FeedKebabStore {
   openedFeedId: number;
   isOpen: boolean;
   openKebab: (_: number) => void;
   closeKebab: () => void;
-};
+}
 
 /**
  * 피드의 kebab 메뉴를 관리하는 store
