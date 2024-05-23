@@ -11,11 +11,11 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ prevPageLink, page }: PageHeaderProps) => {
   return (
-    <div className='page-header'>
+    <header className='page-header h4md'>
       <Link to={prevPageLink}>
         <Icon name='back' width='44' height='44' />
       </Link>
       <p className='page'>{page}</p>
-    </div>
+    </header>
   );
 };
