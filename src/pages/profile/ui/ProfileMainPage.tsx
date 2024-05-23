@@ -1,5 +1,5 @@
-import { ProfileHeader } from '@/features/profile-header';
 import { ProfileFeedList } from '@/widgets/profile-feed-list';
+import { ProfileHeader } from '@/widgets/profile-header';
 import { ProfileUser } from '@/widgets/profile-user';
 
 export const ProfileMainPage = () => {
