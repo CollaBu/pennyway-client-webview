@@ -59,9 +59,9 @@ export const ProfileFeedList = () => {
     <section className='profile-feed-list-wrapper'>
       <h3 className='feed-list-title b1md'>내 게시글</h3>
       {dummyFeeds.map((dummyFeed) => (
-        <section className='profile-feed' key={dummyFeed.id}>
+        <div className='profile-feed' key={dummyFeed.id}>
           <Feed feed={dummyFeed} />
-        </section>
+        </div>
       ))}
     </section>
   );
