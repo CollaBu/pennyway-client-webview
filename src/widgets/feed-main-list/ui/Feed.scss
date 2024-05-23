@@ -27,7 +27,7 @@
 
     .feed-footer {
       margin-top: 8px;
-      padding: 0 15px 0 20px;
+      padding: 0 15px 3px 15px;
 
       display: flex;
       justify-content: space-between;
@@ -38,16 +38,14 @@
         gap: 12px;
 
         .footer-count {
-          width: 38px;
           display: flex;
-          justify-content: space-between;
           align-items: center;
-        }
 
-        .count-text {
-          width: 15px;
-          text-align: left;
-          color: $gray6;
+          .count-text {
+            padding-left: 4px;
+            text-align: left;
+            color: $gray6;
+          }
         }
       }
 
