@@ -6,7 +6,7 @@ interface FollowButtonProps extends ButtonProps {
 }
 
 export const FollowButton = ({ onClick, isFollow }: FollowButtonProps) => {
-  const sytleClass = isFollow ? 'follow' : 'follow-unfollow';
+  const sytleClass = isFollow ? 'follow' : 'unfollow';
   const content = isFollow ? '팔로잉' : '팔로우';
 
   return (
