@@ -9,7 +9,8 @@
   background-color: $gray5;
   @include followButton();
 }
-.follow-unfollow {
+
+.unfollow {
   color: white;
   background-color: $mint3;
   @include followButton();

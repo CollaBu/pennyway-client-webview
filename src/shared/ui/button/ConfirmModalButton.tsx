@@ -4,6 +4,7 @@ import './ConfirmModalButton.scss';
 type ConfirmModalButtonStyle = 'confirm' | 'cancle';
 
 interface ConfirmModalButtonProps extends ButtonProps {
+  children: React.ReactNode;
   styleClass: ConfirmModalButtonStyle;
 }
 

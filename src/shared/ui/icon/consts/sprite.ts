@@ -16,4 +16,5 @@ export type IconName =
   | 'checkbox-square_on'
   | 'checkbox-square_off'
   | 'check_mint'
-  | 'siren';
+  | 'siren'
+  | 'profile-change';

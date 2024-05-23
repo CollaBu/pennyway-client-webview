@@ -37,17 +37,18 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
           <p className='feed-text b1reg'>{content}</p>
           <Carousel images={images} />
         </div>
-        <div className='feed-count-container'>
-          <p className='count-text b3md'>좋아요 {likeCount}</p>
-          <span className='count-divider' />
-          <p className='count-text b3md'>댓글 {commentCount}</p>
-        </div>
         <footer className='feed-footer'>
           <div className='footer-left'>
-            <LikeButton feedId={id} isLiked={isLiked} />
-            <button className='icon icon-btn'>
-              <Icon name='chat' width='20' height='20' />
-            </button>
+            <span className='footer-count'>
+              <LikeButton feedId={id} isLiked={isLiked} />
+              <p className='count-text b2md'>{likeCount}</p>
+            </span>
+            <span className='footer-count'>
+              <button className='icon icon-btn'>
+                <Icon name='chat' width='20' height='20' />
+              </button>
+              <p className='count-text b2md'>{commentCount}</p>
+            </span>
             <button className='icon icon-btn'>
               <Icon name='share' width='20' height='20' />
             </button>
