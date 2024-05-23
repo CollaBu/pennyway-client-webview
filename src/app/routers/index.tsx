@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 import { FeedMainPage } from '@/pages/feed-main';
+import { ProfileMainPage } from '@/pages/profile';
 
 import { IPhoneLayout } from '../layout';
 
@@ -14,6 +15,11 @@ const root: RouteObject[] = [
     path: '/',
     element: <IPhoneLayout />,
     children: [{ index: true, element: <FeedMainPage /> }],
+  },
+  {
+    path: '/user',
+    element: <IPhoneLayout />,
+    children: [{ index: true, element: <ProfileMainPage /> }],
   },
 ];
 
