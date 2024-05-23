@@ -16,7 +16,7 @@ const root: RouteObject[] = [
     element: <IPhoneLayout />,
     children: [
       { index: true, element: <FeedMainPage /> },
-      { path: '/user', element: <ProfileMainPage /> },
+      { path: 'user', element: <ProfileMainPage /> },
     ],
   },
 ];
