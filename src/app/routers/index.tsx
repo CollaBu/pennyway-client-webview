@@ -14,12 +14,10 @@ const root: RouteObject[] = [
   {
     path: '/',
     element: <IPhoneLayout />,
-    children: [{ index: true, element: <FeedMainPage /> }],
-  },
-  {
-    path: '/user',
-    element: <IPhoneLayout />,
-    children: [{ index: true, element: <ProfileMainPage /> }],
+    children: [
+      { index: true, element: <FeedMainPage /> },
+      { path: '/user', element: <ProfileMainPage /> },
+    ],
   },
 ];
 
