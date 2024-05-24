@@ -7,16 +7,18 @@ interface ProfileProps {
   profileImage: string;
   name: string;
   content: string;
+  linkedUserId?: number;
 }
 
-/**
- * @todo 임시로 구현된 Link, 추후 적절한 user로 이동하도록 수정
- */
-
-export const Profile = ({ profileImage, name, content }: ProfileProps) => {
+export const Profile = ({
+  profileImage,
+  name,
+  content,
+  linkedUserId,
+}: ProfileProps) => {
   return (
     <div className='profile'>
-      <Link to={'/user'}>
+      <Link to={`/users/${linkedUserId}`}>
         {profileImage ? (
           <img
             className='profile-image'
