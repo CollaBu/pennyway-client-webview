@@ -3,7 +3,6 @@ import { Icon, NetworkError, PageHeader } from '@/shared/ui';
 import { useGetUser } from '../api';
 
 import { ProfileCount } from './ProfileCount';
-import { SkeletonProfileUser } from './SkeletonProfileUser';
 import './ProfileUser.scss';
 
 interface ProfileUserProps {
@@ -15,7 +14,7 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
   const { data, isLoading, isError, refetchUser } = useGetUser(userId);
 
   if (isLoading) {
-    return <SkeletonProfileUser />;
+    return <div>스켈레톤 들어갈곳</div>;
   }
 
   if (isError && !data) {
