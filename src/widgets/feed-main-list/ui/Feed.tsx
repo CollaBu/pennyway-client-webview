@@ -29,6 +29,7 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
             profileImage={user.profileImage}
             name={user.name}
             content={calculateElapsedTime(updatedAt)}
+            linkedUserId={user.id}
           />
 
           <FeedKebabButton feedId={id} />
