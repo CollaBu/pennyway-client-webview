@@ -27,8 +27,7 @@
     justify-content: center;
     gap: 4px;
 
-    margin: 0;
-    bottom: -10px;
+    margin-bottom: 16px;
 
     .dot {
       width: 4px;
@@ -36,7 +35,7 @@
 
       margin: 0;
 
-      background-color: $gray3;
+      background-color: #ffffff66;
       box-shadow: unset;
 
       opacity: 1;
