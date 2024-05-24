@@ -52,8 +52,16 @@
       text-align: center;
     }
 
-    .user-follow-btn {
+    .nickname-change-btn {
       width: 67px;
+      height: 26px;
+      border-radius: 5px;
+      color: white;
+      background-color: $mint3;
+    }
+
+    .user-follow-btn {
+      width: 46px;
       height: 26px;
       border-radius: 5px;
       color: white;
