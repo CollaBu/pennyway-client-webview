@@ -19,15 +19,13 @@
 
       .feed-text {
         padding: 0 20px;
-        margin-bottom: 16px;
 
         color: $gray6;
       }
     }
 
     .feed-footer {
-      margin-top: 8px;
-      padding: 0 15px 3px 15px;
+      padding: 0 15px 0 20px;
 
       display: flex;
       justify-content: space-between;
@@ -35,7 +33,7 @@
 
       .footer-left {
         display: flex;
-        gap: 12px;
+        gap: 9px;
 
         .footer-count {
           display: flex;
