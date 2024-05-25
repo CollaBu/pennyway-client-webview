@@ -76,9 +76,9 @@ export const FeedReportsForm: React.FC<FeedReportsFormProps> = ({
           onChange={handleInputContent}
           maxLength={MAX_REPORT_CONTENT_LENGTH}
         />
-        <span className='textarea-text-count b2md'>
+        <p className='textarea-text-count b2md'>
           {content.length}/{MAX_REPORT_CONTENT_LENGTH}
-        </span>
+        </p>
       </div>
 
       {/* 숨김 처리 체크박스 */}
