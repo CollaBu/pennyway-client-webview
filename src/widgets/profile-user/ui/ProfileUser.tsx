@@ -17,12 +17,8 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
     return <div>스켈레톤 들어갈곳</div>;
   }
 
-  if (isError && !data) {
+  if (isError || !data) {
     return <NetworkError refetch={refetchUser} />;
-  }
-
-  if (!data) {
-    return <div>데이터 없어용</div>;
   }
 
   const { profileImage, name, feedCount, followerCount, followingCount } =
