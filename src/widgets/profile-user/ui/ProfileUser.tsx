@@ -1,6 +1,7 @@
 import { Icon, NetworkError, PageHeader } from '@/shared/ui';
 
 import { useGetUser } from '../api';
+import ProfileChangeIcon from '../assets/profile-change-icon.svg?react';
 
 import { ProfileCount } from './ProfileCount';
 import './ProfileUser.scss';
@@ -43,7 +44,7 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
             )}
             {isOwner && (
               <button className='profile-change-btn'>
-                <Icon name='profile-change' height='24' width='24' />
+                <ProfileChangeIcon />
               </button>
             )}
           </div>
