@@ -17,7 +17,8 @@ export const HiddenFeed: React.FC<HiddenFeedProps> = ({ feedId, type }) => {
     <div className='feed-hidden-wrapper'>
       <div className='feed-hidden-container'>
         <div className='feed-hidden-checkmark'>
-          <Icon name='check_mint' width='24' height='24' />
+          <div className='cover' />
+          <Icon name='check_mint' width='12' height='9' />
         </div>
         <p className='hidden-reason-msg b2md'>{reasonMsg}</p>
         <button

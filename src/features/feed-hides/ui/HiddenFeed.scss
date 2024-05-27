@@ -1,3 +1,9 @@
+@keyframes revealCircle {
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 @keyframes fadeInCompletion {
   0% {
     opacity: 0;
@@ -18,15 +24,49 @@
     align-items: center;
 
     .feed-hidden-checkmark {
+      margin: 1px;
+
+      position: relative;
+
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
 
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
 
+      border-radius: 50%;
+
+      /** Circle  */
+      &::before {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1.5px #00d5e1;
+        content: '';
+      }
+
+      /** Circle screen */
+      .cover {
+        position: absolute;
+        width: 200%;
+        height: inherit;
+        transform-origin: 50% 0;
+        background: white;
+        animation: revealCircle 0.5s ease forwards;
+      }
+
+      /** Checkmark */
       svg {
-        animation: fadeInCompletion 0.35s ease-in-out 0s forwards;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        opacity: 0;
+        animation: fadeInCompletion 0.25s ease-in-out 0.5s forwards;
       }
     }
 
