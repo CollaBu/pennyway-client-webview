@@ -39,7 +39,7 @@ export const FeedMainList = () => {
             return hiddenType ? (
               <HiddenFeed key={feed.id} feedId={feed.id} type={hiddenType} />
             ) : (
-              <Feed key={feed.id} feed={feed} />
+              <Feed key={feed.id} feed={feed} isLink />
             );
           });
         })}

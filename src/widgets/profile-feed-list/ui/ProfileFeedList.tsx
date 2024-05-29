@@ -60,7 +60,7 @@ export const ProfileFeedList = () => {
       <h3 className='feed-list-title b1md'>내 게시글</h3>
       {dummyFeeds.map((dummyFeed) => (
         <div className='profile-feed' key={dummyFeed.id}>
-          <Feed feed={dummyFeed} />
+          <Feed feed={dummyFeed} isLink={false} />
         </div>
       ))}
     </section>
