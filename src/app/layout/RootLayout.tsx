@@ -1,6 +1,6 @@
 import { IPhoneLayout } from 'react-iphone-layout';
 import 'react-iphone-layout/dist/ReactIPhoneLayout.css';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 
 import './RootLayout.scss';
 
@@ -15,6 +15,11 @@ export const RootLayout = () => {
       <div className='wrap'>
         <Outlet />
       </div>
+      <ScrollRestoration
+        getKey={(location) => {
+          return location.pathname;
+        }}
+      />
     </IPhoneLayout>
   );
 };
