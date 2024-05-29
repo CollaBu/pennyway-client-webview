@@ -6,41 +6,6 @@
   align-items: center;
   box-shadow: 0px 20px 34.5px 0px #dddddd40;
 
-  .profile-image-box {
-    position: relative;
-
-    .profile-image {
-      width: 81px;
-      height: 81px;
-      border-radius: 50%;
-      overflow: hidden;
-      padding-bottom: 5px;
-    }
-
-    .no-proile-background {
-      position: relative;
-      width: 81px;
-      height: 81px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: $gray3;
-
-      svg {
-        z-index: 1;
-        position: absolute;
-        bottom: 0;
-      }
-    }
-
-    .profile-change-btn {
-      position: absolute;
-      bottom: 4px;
-      right: -8px;
-      width: 24px;
-      height: 24px;
-    }
-  }
-
   .profile-top-container {
     height: 148px;
     display: flex;

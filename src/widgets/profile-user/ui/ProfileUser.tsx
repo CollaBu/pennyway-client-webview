@@ -1,10 +1,10 @@
-import { Icon, NetworkError, PageHeader } from '@/shared/ui';
+import { NetworkError, PageHeader } from '@/shared/ui';
 
 import { useGetUser } from '../api';
-import ProfileChangeIcon from '../assets/profile-change-icon.svg?react';
 
 import { ProfileCount } from './ProfileCount';
 import './ProfileUser.scss';
+import { ProfileUserImage } from './ProfileUserImage';
 
 interface ProfileUserProps {
   userId: number;
@@ -30,24 +30,11 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
       <PageHeader page={name} prevPageLink='/' />
       <section className='profile-user-wrapper'>
         <section className='profile-top-container'>
-          <div className='profile-image-box'>
-            {profileImage ? (
-              <img
-                className='profile-image'
-                src={profileImage}
-                alt={`${name} profile image`}
-              />
-            ) : (
-              <div className='no-proile-background'>
-                <Icon name='no-profile' width='81' height='81' />
-              </div>
-            )}
-            {isOwner && (
-              <button className='profile-change-btn'>
-                <ProfileChangeIcon />
-              </button>
-            )}
-          </div>
+          <ProfileUserImage
+            profileImage={profileImage}
+            name={name}
+            isOwner={isOwner}
+          />
           <h3 className='user-name h3semi'>{name}</h3>
           {isOwner ? (
             <button className='nickname-change-btn b2md'>닉네임 수정</button>
