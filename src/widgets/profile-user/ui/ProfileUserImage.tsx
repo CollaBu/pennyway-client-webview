@@ -1,5 +1,4 @@
-import { Icon } from '@/shared/ui';
-
+import NoProfileIcon from '../assets/no-profile-icon.svg?react';
 import ProfileChangeIcon from '../assets/profile-change-icon.svg?react';
 import './ProfileUserImage.scss';
 
@@ -24,7 +23,7 @@ export const ProfileUserImage = ({
         />
       ) : (
         <div className='no-proile-background'>
-          <Icon name='no-profile' width='81' height='81' />
+          <NoProfileIcon />
         </div>
       )}
       {isOwner && (
