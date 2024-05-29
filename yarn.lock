@@ -3557,6 +3557,14 @@ react-intersection-observer@^9.10.2:
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.10.2.tgz#d5b14f80c9a6bed525becc228db7dccac5d0ec1c"
   integrity sha512-j2hGADK2hCbAlfaq6L3tVLb4iqngoN7B1fT16MwJ4J16YW/vWLcmAIinLsw0lgpZeMi4UDUWtHC9QDde0/P1yQ==
 
+react-iphone-layout@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-iphone-layout/-/react-iphone-layout-1.1.1.tgz#d1cc3e758ce61d33d210d45728f8ae36b4d2e9ac"
+  integrity sha512-Xg6bq7IzSf6tg8hNCKntjSF0s7Ao3+QlqYUEWDgMpHMBvZ209dz7Ezg6EKAErAn16HTxTI9s5dAefY6L8R0Mxg==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
