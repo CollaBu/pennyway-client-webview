@@ -3,7 +3,7 @@ import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import { FeedMainPage } from '@/pages/feed-main';
 import { ProfileMainPage } from '@/pages/profile';
 
-import { IPhoneLayout } from '../layout';
+import { RootLayout } from '../layout';
 
 /**
  * 🚨 현재 iPhone Layout은 DEV 모드에서만 활성화되는 부분이지만,
@@ -13,7 +13,7 @@ import { IPhoneLayout } from '../layout';
 const root: RouteObject[] = [
   {
     path: '/',
-    element: <IPhoneLayout />,
+    element: <RootLayout />,
     children: [
       { index: true, element: <FeedMainPage /> },
       { path: 'users/:userId', element: <ProfileMainPage /> },
