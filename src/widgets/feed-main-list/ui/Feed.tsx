@@ -8,7 +8,10 @@ import { FeedKebabButton } from '@/widgets/feed-kebab';
 
 import './Feed.scss';
 
-export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
+export const Feed: React.FC<{ isLink: boolean; feed: FeedProps }> = ({
+  feed,
+  isLink,
+}) => {
   const {
     id,
     user,
@@ -29,7 +32,8 @@ export const Feed: React.FC<{ feed: FeedProps }> = ({ feed }) => {
             profileImage={user.profileImage}
             name={user.name}
             content={calculateElapsedTime(updatedAt)}
-            linkedUserId={user.id}
+            userId={user.id}
+            isLink={isLink}
           />
 
           <FeedKebabButton feedId={id} />
