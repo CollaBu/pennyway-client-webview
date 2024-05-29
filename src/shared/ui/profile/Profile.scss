@@ -5,30 +5,6 @@
   border: none;
   background-color: white;
 
-  .profile-image {
-    width: 32px;
-    height: 32px;
-
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  .no-proile-background {
-    position: relative;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    overflow: hidden;
-
-    background: $gray3;
-
-    svg {
-      z-index: 1;
-      position: absolute;
-      bottom: 0;
-    }
-  }
-
   .name-section {
     margin-left: 8px;
 
