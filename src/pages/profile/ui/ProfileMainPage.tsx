@@ -11,18 +11,11 @@ export const ProfileMainPage = () => {
   const { userId } = useParams<{ userId: string }>();
   const formattedUserId = Number(userId);
 
-  if (formattedUserId === 1) {
-    return (
-      <main>
-        <ProfileUser userId={formattedUserId} isOwner />
-        <ProfileFeedList />
-      </main>
-    );
-  }
+  const owner = formattedUserId === 1 ? true : false;
 
   return (
     <main>
-      <ProfileUser userId={formattedUserId} isOwner={false} />
+      <ProfileUser userId={formattedUserId} isOwner={owner} />
       <ProfileFeedList />
     </main>
   );
