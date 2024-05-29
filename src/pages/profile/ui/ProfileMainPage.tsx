@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 
-import { ProfileFeedList } from '@/widgets/profile-feed-list';
 import { ProfileUser } from '@/widgets/profile-user';
 
 /**
- * @todo  userPK값 가져와서 본인인지 판별하도록 수정
+ * @todo userPK값 가져와서 판별하도록 구현
+ * @todo ProfileFeed Api 구현 후, ProfileFeedList 컴포넌트 연결
  */
 
 export const ProfileMainPage = () => {
@@ -16,7 +16,6 @@ export const ProfileMainPage = () => {
   return (
     <main>
       <ProfileUser userId={formattedUserId} isOwner={owner} />
-      <ProfileFeedList />
     </main>
   );
 };
