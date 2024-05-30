@@ -1,5 +1,6 @@
+import { Icon } from '@/shared/ui';
+
 import NoProfileIcon from '../assets/no-profile-icon.svg?react';
-import ProfileChangeIcon from '../assets/profile-change-icon.svg?react';
 import './ProfileUserImage.scss';
 
 interface ProfileUserImageProps {
@@ -28,7 +29,7 @@ export const ProfileUserImage = ({
       )}
       {isOwner && (
         <button className='profile-change-btn'>
-          <ProfileChangeIcon />
+          <Icon name='profile-change' width='24' height='24' />
         </button>
       )}
     </div>
