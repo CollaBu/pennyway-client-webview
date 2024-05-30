@@ -1,0 +1,1 @@
+export { GlobalSVGProvider } from './GlobalSVGProvider';

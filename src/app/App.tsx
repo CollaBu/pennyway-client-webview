@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom';
 import { queryClient } from '@/shared/react-query';
 import { Toast } from '@/shared/toast';
 
+import { GlobalSVGProvider } from './provider';
 import { router } from './routers/index';
 import './styles/global.scss';
 
@@ -15,6 +16,7 @@ function App() {
 
       <Toast />
       <ReactQueryDevtools />
+      <GlobalSVGProvider />
     </QueryClientProvider>
   );
 }
