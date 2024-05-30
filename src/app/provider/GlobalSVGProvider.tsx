@@ -5,9 +5,9 @@ const spliteSvgCode = (
     <symbol id='back-icon' viewBox='0 0 44 44'>
       <path
         stroke='#8691A2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2.33'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2.33'
         d='M25.5 15l-7 7 7 7'
       />
     </symbol>
@@ -20,9 +20,9 @@ const spliteSvgCode = (
     <symbol id='share-icon' viewBox='0 0 20 20'>
       <path
         stroke='#383E4A'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M10 12V2.5m0 0L13.5 6M10 2.5L6.5 6M4 11.5v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4'
       />
     </symbol>
@@ -40,8 +40,8 @@ const spliteSvgCode = (
     <symbol id='bookmark-icon' viewBox='0 0 20 20'>
       <path
         stroke='currentColor'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M9.755 14.425l-4.962 2.127V4.167c0-.576.466-1.042 1.042-1.042h8.333c.575 0 1.042.466 1.042 1.042v12.385l-4.963-2.127a.626.626 0 0 0-.492 0z'
       />
     </symbol>
@@ -62,9 +62,9 @@ const spliteSvgCode = (
     <symbol id='like-icon' viewBox='0 0 20 20'>
       <path
         stroke='currentColor'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M9.537 4.52a.625.625 0 0 0 .952.002c.562-.658 1.504-1.38 2.949-1.378 2.489.004 4.273 2.413 4.27 4.78-.002 1.156-.452 2.294-1.18 3.376-.727 1.081-1.71 2.072-2.716 2.918a23.945 23.945 0 0 1-2.784 2.004 18.677 18.677 0 0 1-1.035.596 18.823 18.823 0 0 1-1.033-.6 23.966 23.966 0 0 1-2.778-2.013C5.18 13.357 4.2 12.364 3.476 11.28S2.306 9.055 2.308 7.9c.003-2.367 1.796-4.77 4.285-4.766 1.445.002 2.385.728 2.944 1.388z'
       />
     </symbol>
@@ -106,7 +106,7 @@ const spliteSvgCode = (
           y='.33'
           fill='#DDE0E5'
           stroke='#DDE0E5'
-          stroke-width='.67'
+          strokeWidth='.67'
           rx='29.67'
         />
       </mask>
@@ -116,12 +116,12 @@ const spliteSvgCode = (
       </g>
     </symbol>
     <symbol id='checkbox-circle_off-icon' viewBox='0 0 20 20'>
-      <circle cx='10' cy='10' r='6.88' stroke='#DDE0E5' stroke-width='1.25' />
+      <circle cx='10' cy='10' r='6.88' stroke='#DDE0E5' strokeWidth='1.25' />
       <path
         stroke='#DDE0E5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M13.21 8.215l-4.42 4.42-2.009-2.01'
       />
     </symbol>
@@ -132,14 +132,14 @@ const spliteSvgCode = (
         r='6.88'
         fill='#383E4A'
         stroke='#383E4A'
-        stroke-width='1.25'
+        strokeWidth='1.25'
       />
       <path fill='#383E4A' d='M13.21 8.215l-4.42 4.42-2.009-2.01' />
       <path
         stroke='#fff'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M13.21 8.215l-4.42 4.42-2.009-2.01'
       />
     </symbol>
@@ -155,9 +155,9 @@ const spliteSvgCode = (
       <path fill='#00D5E1' d='M13.928 7.5l-5.402 5.402-2.456-2.456' />
       <path
         stroke='#fff'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M13.928 7.5l-5.402 5.402-2.456-2.456'
       />
     </symbol>
@@ -168,14 +168,14 @@ const spliteSvgCode = (
         x='2.29'
         y='2.29'
         stroke='#DDE0E5'
-        stroke-width='1.25'
+        strokeWidth='1.25'
         rx='1.88'
       />
       <path
         stroke='#DDE0E5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         d='M13.928 7.5l-5.402 5.402-2.456-2.456'
       />
     </symbol>
@@ -183,16 +183,16 @@ const spliteSvgCode = (
       <path
         d='M10.7098 1.38135L4.22768 7.86349L1.28125 4.91706'
         stroke='#00D5E1'
-        stroke-width='1.5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </symbol>
     <symbol id='siren-icon' viewBox='0 0 20 20'>
       <path
         fill='#FF6767'
         stroke='#FF6767'
-        stroke-width='1.25'
+        strokeWidth='1.25'
         d='M4.164 11.667s0-5.417 5.833-5.417c5.834 0 5.834 5.417 5.834 5.417V15H4.164v-3.333z'
       />
       <rect
@@ -202,24 +202,24 @@ const spliteSvgCode = (
         y='15'
         fill='#F0F2F4'
         stroke='#F0F2F4'
-        stroke-linejoin='round'
-        stroke-width='1.25'
+        strokeLinejoin='round'
+        strokeWidth='1.25'
         rx='1.2'
       />
     </symbol>
     <symbol id='profile-change-icon' viewBox='0 0 24 24'>
-      <g clip-path='url(#a)'>
+      <g clipPath='url(#a)'>
         <circle cx='12' cy='12' r='11.5' fill='#00D5E1' stroke='#00D5E1' />
         <path
           stroke='#fff'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
           d='M7 10.189c0-.175 0-.263.007-.337a1.5 1.5 0 0 1 1.345-1.345c.074-.007.166-.007.35-.007.072 0 .107 0 .138-.002a1 1 0 0 0 .867-.625c.011-.028.022-.06.043-.123.021-.063.032-.095.043-.123a1 1 0 0 1 .867-.625C10.69 7 10.724 7 10.79 7h2.42c.066 0 .1 0 .13.002a1 1 0 0 1 .867.625c.011.028.022.06.043.123a1 1 0 0 0 .91.748c.03.002.066.002.137.002.185 0 .277 0 .35.007a1.5 1.5 0 0 1 1.346 1.345c.007.074.007.162.007.337V14.1c0 .84 0 1.26-.163 1.581a1.5 1.5 0 0 1-.656.656c-.32.163-.74.163-1.581.163H9.4c-.84 0-1.26 0-1.581-.163a1.5 1.5 0 0 1-.656-.656C7 15.361 7 14.941 7 14.1v-3.911z'
         />
         <path
           stroke='#fff'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
           d='M12 14.25a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'
         />
       </g>
