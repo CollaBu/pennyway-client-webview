@@ -25,11 +25,13 @@
   }
 
   .profile-change-btn {
-    z-index: 10;
-    position: absolute;
-    top: 47px;
-    left: 62px;
     width: 24px;
     height: 24px;
+
+    z-index: 10;
+    position: absolute;
+
+    bottom: 8px;
+    right: -5px;
   }
 }
