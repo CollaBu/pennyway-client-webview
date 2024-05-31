@@ -1,0 +1,82 @@
+.skeleton-profile-user-wrapper {
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 20px 34.5px 0px #dddddd40;
+
+  .skeleton-profile-top-container {
+    height: 148px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .skeleton-proile {
+      @include skeletonAnimation();
+      background-color: $gray2;
+      position: relative;
+      width: 81px;
+      height: 81px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .skeleton-user-name {
+      @include skeletonAnimation();
+      background-color: $gray2;
+      width: 53px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    .skeleton-profile-btn {
+      @include skeletonAnimation();
+      background-color: $gray2;
+      width: 68px;
+      height: 26px;
+      border-radius: 6px;
+    }
+  }
+
+  .skeleton-profile-count-container {
+    width: 220px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 28px;
+
+    .skeleton-profile-count {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      .skeleton-count-number {
+        @include skeletonAnimation();
+        background-color: $gray2;
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+      }
+      .skeleton-count-text {
+        @include skeletonAnimation();
+        background-color: $gray2;
+        width: 33px;
+        height: 14px;
+        border-radius: 4px;
+      }
+    }
+
+    .count-divider {
+      width: 0.5px;
+      height: 36px;
+      background-color: $gray4;
+    }
+  }
+}

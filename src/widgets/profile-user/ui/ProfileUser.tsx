@@ -5,6 +5,7 @@ import { useGetUser } from '../api';
 import { ProfileCount } from './ProfileCount';
 import './ProfileUser.scss';
 import { ProfileUserImage } from './ProfileUserImage';
+import { SkeletonProfileUser } from './SkeletonProfileUser';
 
 interface ProfileUserProps {
   userId: number;
@@ -15,7 +16,12 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
   const { data, isLoading, isError, refetchUser } = useGetUser(userId);
 
   if (isLoading) {
-    return <div>스켈레톤 들어갈곳</div>;
+    return (
+      <>
+        <PageHeader page='' prevPageLink='/' />
+        <SkeletonProfileUser />
+      </>
+    );
   }
 
   if (isError || !data) {
