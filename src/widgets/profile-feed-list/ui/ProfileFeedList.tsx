@@ -8,7 +8,7 @@ const dummyFeeds: FeedProps[] = [
     id: 1,
     user: {
       id: 1,
-      name: '김붕어빵',
+      username: '김붕어빵',
       profileImage: '',
     },
     createdAt: '1분 전',
@@ -24,7 +24,7 @@ const dummyFeeds: FeedProps[] = [
     id: 2,
     user: {
       id: 1,
-      name: '김붕어빵',
+      username: '김붕어빵',
       profileImage: '',
     },
     createdAt: '1분 전',
@@ -40,7 +40,7 @@ const dummyFeeds: FeedProps[] = [
     id: 3,
     user: {
       id: 1,
-      name: '김붕어빵',
+      username: '김붕어빵',
       profileImage: '',
     },
     createdAt: '1분 전',
