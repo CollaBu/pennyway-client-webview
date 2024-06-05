@@ -2,6 +2,7 @@ export interface User {
   id: number;
   profileImage: string;
   name: string;
+  username: string;
   content: string;
   locked: boolean;
 
@@ -13,17 +14,7 @@ export interface User {
 export interface FetchUser {
   code: string;
   data: {
-    user: {
-      id: number;
-      profileImage: string;
-      name: string;
-      content: string;
-      locked: boolean;
-
-      feedCount: number;
-      followingCount: number;
-      followerCount: number;
-    };
+    user: User;
   };
 }
 
