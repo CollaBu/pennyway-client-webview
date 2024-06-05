@@ -28,8 +28,14 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
     return <NetworkError refetch={refetchUser} />;
   }
 
-  const { profileImage, name, feedCount, followerCount, followingCount } =
-    data.data.user;
+  const {
+    profileImage,
+    name,
+    username,
+    feedCount,
+    followerCount,
+    followingCount,
+  } = data.data.user;
 
   return (
     <>
@@ -38,10 +44,10 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
         <section className='profile-top-container'>
           <ProfileUserImage
             profileImage={profileImage}
-            name={name}
+            name={username}
             isOwner={isOwner}
           />
-          <h3 className='user-name h3semi'>{name}</h3>
+          <h3 className='user-name h3semi'>{username}</h3>
           {isOwner ? (
             <button className='nickname-change-btn b2md'>닉네임 수정</button>
           ) : (
