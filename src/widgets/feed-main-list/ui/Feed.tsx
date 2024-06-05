@@ -30,7 +30,7 @@ export const Feed: React.FC<{ isLink: boolean; feed: FeedProps }> = ({
         <header className='feed-header'>
           <Profile
             profileImage={user.profileImage}
-            name={user.name}
+            name={user.username}
             content={calculateElapsedTime(updatedAt)}
             userId={user.id}
             isLink={isLink}

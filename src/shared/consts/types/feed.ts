@@ -18,7 +18,7 @@ export interface FetchFeeds {
 
 export interface Feed {
   id: number;
-  user: Pick<User, 'id' | 'profileImage' | 'name'>;
+  user: Pick<User, 'id' | 'profileImage' | 'username'>;
 
   content: string;
   images: Image[];
