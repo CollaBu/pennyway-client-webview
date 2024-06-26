@@ -1,10 +1,10 @@
-import { RelationshipStatus } from '@/shared/consts';
+import { RelationshipStatus, FetchRelationshipStatus } from '@/shared/consts';
 
-export function updateRelationshipStatus(
-  previousRelationshipStatus: RelationshipStatus,
+const RelationshipStatusCalculate = (
+  relationshipStatus: RelationshipStatus,
   locked: boolean,
-) {
-  switch (previousRelationshipStatus) {
+) => {
+  switch (relationshipStatus) {
     case 'self':
       return 'self';
     case 'following':
@@ -14,6 +14,21 @@ export function updateRelationshipStatus(
     case 'pending':
       return 'none';
     default:
-      return previousRelationshipStatus;
+      return relationshipStatus;
   }
+};
+
+export function updateRelationshipStatus(
+  previousRelationshipStatusData: FetchRelationshipStatus,
+  locked: boolean,
+) {
+  return {
+    code: previousRelationshipStatusData.code,
+    data: {
+      relationshipStatus: RelationshipStatusCalculate(
+        previousRelationshipStatusData.data.relationshipStatus,
+        locked,
+      ),
+    },
+  };
 }
