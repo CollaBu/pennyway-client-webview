@@ -7,16 +7,18 @@ import { isErrorResponse } from '@/shared/utils';
 
 import { updateRelationshipStatus } from '../lib/updateRelationshipStatus';
 
-export const useFollow = (isPrivate: boolean, userId: number) => {
+export const useFollow = (userId: number, locked: boolean) => {
   const queryClient = useQueryClient();
 
   const {
     data,
     mutate: handleFollow,
-    isPending,
+    isPending: isPendingFollow,
   } = useMutation({
     mutationFn: () => requestFollow(userId),
+    // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
     onMutate: async () => {
+      // 진행중인 refetch가 있다면 취소
       await queryClient.cancelQueries({ queryKey: [QUERY_KEYS.follow] });
 
       // 이전 쿼리값의 스냅샷
@@ -29,7 +31,7 @@ export const useFollow = (isPrivate: boolean, userId: number) => {
       // 업데이트 될 쿼리값
       const updatedQueryData = updateRelationshipStatus(
         previousQueryData as RelationshipStatus,
-        isPrivate,
+        locked,
       );
 
       // setQueryData 함수를 사용해 Optimistic Update를 실시한다.
@@ -55,5 +57,5 @@ export const useFollow = (isPrivate: boolean, userId: number) => {
     },
   });
 
-  return { data, handleFollow, isPending };
+  return { data, handleFollow, isPendingFollow };
 };
