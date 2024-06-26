@@ -11,7 +11,7 @@ import './RootLayout.scss';
  */
 export const RootLayout = () => {
   return (
-    <IPhoneLayout>
+    <IPhoneLayout defaultSize={85}>
       <div className='wrap'>
         <Outlet />
       </div>
