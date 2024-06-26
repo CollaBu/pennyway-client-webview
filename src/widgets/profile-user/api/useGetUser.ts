@@ -1,13 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { axiosInstance } from '@/shared/axios';
-import { FetchUser } from '@/shared/consts';
+import { fetchUser } from '@/shared/axios';
 import { QUERY_KEYS } from '@/shared/react-query';
-
-async function fetchUser(userId: number): Promise<FetchUser> {
-  const { data } = await axiosInstance.get(`/users/${userId}`);
-  return data;
-}
 
 export const useGetUser = (userId: number) => {
   const {
