@@ -15,6 +15,7 @@ export const useUnfollow = (userId: number, locked: boolean) => {
     mutate: handleUnfollow,
     isPending: isPendingUnfollow,
   } = useMutation({
+    mutationKey: [QUERY_KEYS.follow],
     mutationFn: () => requestUnfollow(userId),
     // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
     onMutate: async () => {

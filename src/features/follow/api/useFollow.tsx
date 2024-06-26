@@ -15,6 +15,7 @@ export const useFollow = (userId: number, locked: boolean) => {
     mutate: handleFollow,
     isPending: isPendingFollow,
   } = useMutation({
+    mutationKey: [QUERY_KEYS.follow],
     mutationFn: () => requestFollow(userId),
     // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
     onMutate: async () => {
