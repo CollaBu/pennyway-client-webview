@@ -1,0 +1,7 @@
+.skeleton-profile-btn {
+  @include skeletonAnimation();
+  background-color: $gray2;
+  width: 68px;
+  height: 26px;
+  border-radius: 6px;
+}
