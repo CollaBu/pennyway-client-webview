@@ -1,10 +1,12 @@
 import { NetworkError, PageHeader } from '@/shared/ui';
 
-import { useGetUser } from '../api';
+import { useGetUser, useGetRelationshipStatus } from '../api';
 
 import { ProfileCount } from './ProfileCount';
 import './ProfileUser.scss';
+import { ProfileFollowButton } from './ProfileFollowButton';
 import { ProfileUserImage } from './ProfileUserImage';
+import { SkeletonProfileButton } from './SkeletonProfileButton';
 import { SkeletonProfileUser } from './SkeletonProfileUser';
 
 interface ProfileUserProps {
@@ -14,6 +16,12 @@ interface ProfileUserProps {
 
 export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
   const { data, isLoading, isError, refetchUser } = useGetUser(userId);
+  const {
+    relationshipStatusData,
+    relationshipLoading,
+    relationshipError,
+    refetchRelationshipStatus,
+  } = useGetRelationshipStatus(userId);
 
   if (isLoading) {
     return (
@@ -27,15 +35,21 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
   if (isError || !data) {
     return <NetworkError refetch={refetchUser} />;
   }
+  if (relationshipError) {
+    return <NetworkError refetch={refetchRelationshipStatus} />;
+  }
 
   const {
     profileImage,
     name,
     username,
+    locked,
     feedCount,
     followerCount,
     followingCount,
   } = data.data.user;
+
+  const relationshipStatus = relationshipStatusData?.data.relationshipStatus;
 
   return (
     <>
@@ -48,10 +62,16 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
             isOwner={isOwner}
           />
           <h3 className='user-name h3semi'>{username}</h3>
-          {isOwner ? (
+          {relationshipLoading ? (
+            <SkeletonProfileButton />
+          ) : relationshipStatus === 'self' ? (
             <button className='nickname-change-btn b2md'>닉네임 수정</button>
           ) : (
-            <button className='user-follow-btn b2md'>팔로우</button>
+            <ProfileFollowButton
+              userId={userId}
+              locked={locked}
+              relationshipStatus={relationshipStatus}
+            />
           )}
         </section>
         <section className='profile-count-container'>
