@@ -2,7 +2,7 @@ import { RelationshipStatus } from '@/shared/consts';
 
 export function updateRelationshipStatus(
   previousRelationshipStatus: RelationshipStatus,
-  isPrivate: boolean,
+  locked: boolean,
 ) {
   switch (previousRelationshipStatus) {
     case 'self':
@@ -10,7 +10,7 @@ export function updateRelationshipStatus(
     case 'following':
       return 'none';
     case 'none':
-      return isPrivate ? 'pending' : 'following';
+      return locked ? 'pending' : 'following';
     case 'pending':
       return 'none';
     default:
