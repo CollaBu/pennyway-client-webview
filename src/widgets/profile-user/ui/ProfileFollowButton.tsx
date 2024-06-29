@@ -29,15 +29,6 @@ export const ProfileFollowButton = ({
         </button>
       );
     case 'pending':
-      return (
-        <button
-          onClick={() => handleUnfollow()}
-          disabled={isPendingUnfollow}
-          className='profile-unfollow-btn b2md'
-        >
-          대기중
-        </button>
-      );
     case 'following':
       return (
         <button
@@ -45,7 +36,7 @@ export const ProfileFollowButton = ({
           disabled={isPendingUnfollow}
           className='profile-unfollow-btn b2md'
         >
-          팔로잉
+          {relationshipStatus === 'pending' ? '대기중' : '팔로잉'}
         </button>
       );
     default:
