@@ -5,7 +5,7 @@ import { FetchRelationshipStatus } from '@/shared/consts';
 import { QUERY_KEYS } from '@/shared/react-query';
 import { isErrorResponse } from '@/shared/utils';
 
-import { updateRelationshipStatus } from '../lib/updateRelationshipStatus';
+import { updateRelationshipStatus } from '../lib';
 
 export const useUnfollow = (userId: number, locked: boolean) => {
   const queryClient = useQueryClient();
@@ -17,14 +17,11 @@ export const useUnfollow = (userId: number, locked: boolean) => {
   } = useMutation({
     mutationKey: [QUERY_KEYS.follow],
     mutationFn: () => requestUnfollow(userId),
-    // mutate가 호출되면 ✨낙관적 업데이트를 위해 onMutate를 실행
     onMutate: async () => {
-      // 진행중인 refetch가 있다면 취소
       await queryClient.cancelQueries({
         queryKey: [QUERY_KEYS.follow, userId],
       });
 
-      // 이전 쿼리값의 스냅샷
       const previousQueryData =
         queryClient.getQueryData<FetchRelationshipStatus>([
           QUERY_KEYS.follow,
@@ -33,13 +30,11 @@ export const useUnfollow = (userId: number, locked: boolean) => {
 
       if (!previousQueryData) return;
 
-      // 업데이트 될 쿼리값
       const updatedQueryData = updateRelationshipStatus(
         previousQueryData,
         locked,
       );
 
-      // setQueryData 함수를 사용해 Optimistic Update를 실시한다.
       await queryClient.setQueryData(
         [QUERY_KEYS.follow, userId],
         updatedQueryData,
@@ -48,7 +43,6 @@ export const useUnfollow = (userId: number, locked: boolean) => {
       return { previousQueryData };
     },
     onError: (_, __, context) => {
-      // Network Error일 경우 이전 쿼리값으로 롤백
       queryClient.setQueryData(
         [QUERY_KEYS.follow, userId],
         context?.previousQueryData,
@@ -56,7 +50,6 @@ export const useUnfollow = (userId: number, locked: boolean) => {
     },
     onSuccess: (response, _, context) => {
       if (isErrorResponse(response)) {
-        // Server Error일 경우 이전 쿼리값으로 롤백
         queryClient.setQueryData(
           [QUERY_KEYS.follow, userId],
           context.previousQueryData,
@@ -65,6 +58,10 @@ export const useUnfollow = (userId: number, locked: boolean) => {
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.follow, userId] });
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.users, userId],
+      });
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.users, 1] });
     },
   });
 
