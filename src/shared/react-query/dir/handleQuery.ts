@@ -40,8 +40,10 @@ export function handleMutationError(
   mutation: Mutation<unknown, unknown, unknown, unknown>,
 ) {
   const { options } = mutation;
-  const mutationKeys = ['feed-report', 'follow'];
+  const mutationCautionToastKeys = ['feed-report', 'follow'];
 
-  if (mutationKeys.some((key) => options.mutationKey?.includes(key)))
+  if (
+    mutationCautionToastKeys.some((key) => options.mutationKey?.includes(key))
+  )
     showToastHandler('caution', '다시 시도해 주세요');
 }
