@@ -28,6 +28,8 @@ export const followHandler = [
           relationshipStatus[formattedUserId] = 'pending';
           return createHttpSuccessResponse({ relationshipStatus: 'pending' });
         } else {
+          users[formattedUserId].followerCount += 1;
+          users[1].followingCount += 1;
           relationshipStatus[formattedUserId] = 'following';
           return createHttpSuccessResponse({ relationshipStatus: 'following' });
         }
@@ -57,6 +59,8 @@ export const followHandler = [
         return createHttpErrorResponse('4220');
       case 'following':
         relationshipStatus[formattedUserId] = 'none';
+        users[formattedUserId].followerCount -= 1;
+        users[1].followingCount -= 1;
         return createHttpSuccessResponse({ relationshipStatus: 'none' });
       case 'pending':
         relationshipStatus[formattedUserId] = 'none';
