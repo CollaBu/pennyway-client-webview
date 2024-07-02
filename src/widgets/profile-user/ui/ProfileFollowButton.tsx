@@ -1,6 +1,6 @@
 import './ProfileFollowButton.scss';
 
-import { useFollow, useUnfollow } from '@/features/follow';
+import { useFollow } from '@/features/follow';
 import { RelationshipStatus } from '@/shared/consts';
 
 interface ProfileFollowButtonProps {
@@ -14,8 +14,8 @@ export const ProfileFollowButton = ({
   userId,
   locked,
 }: ProfileFollowButtonProps) => {
-  const { handleFollow, isPendingFollow } = useFollow(userId, locked);
-  const { handleUnfollow, isPendingUnfollow } = useUnfollow(userId, locked);
+  const isfollow = relationshipStatus === 'none' ? true : false;
+  const { handleFollow, isPendingFollow } = useFollow(userId, locked, isfollow);
 
   switch (relationshipStatus) {
     case 'none':
@@ -32,8 +32,8 @@ export const ProfileFollowButton = ({
     case 'following':
       return (
         <button
-          onClick={() => handleUnfollow()}
-          disabled={isPendingUnfollow}
+          onClick={() => handleFollow()}
+          disabled={isPendingFollow}
           className='profile-unfollow-btn b2md'
         >
           {relationshipStatus === 'pending' ? '대기중' : '팔로잉'}
