@@ -26,8 +26,13 @@ export const followHandler = [
       case 'none':
         if (users[formattedUserId].locked) {
           relationshipStatus[formattedUserId] = 'pending';
-        } else relationshipStatus[formattedUserId] = 'following';
-        break;
+          return createHttpSuccessResponse({ relationshipStatus: 'pending' });
+        } else {
+          users[formattedUserId].followerCount += 1;
+          users[1].followingCount += 1;
+          relationshipStatus[formattedUserId] = 'following';
+          return createHttpSuccessResponse({ relationshipStatus: 'following' });
+        }
       case 'following':
         return createHttpErrorResponse('4220');
       case 'pending':
@@ -35,8 +40,6 @@ export const followHandler = [
       default:
         return createHttpErrorResponse('4040');
     }
-
-    return createHttpSuccessResponse({});
   }),
   // 2️⃣ 언팔로우 & 팔로우 요청 취소
   http.delete('/users/:user_id/follow', ({ params }) => {
@@ -56,16 +59,15 @@ export const followHandler = [
         return createHttpErrorResponse('4220');
       case 'following':
         relationshipStatus[formattedUserId] = 'none';
-        break;
+        users[formattedUserId].followerCount -= 1;
+        users[1].followingCount -= 1;
+        return createHttpSuccessResponse({ relationshipStatus: 'none' });
       case 'pending':
         relationshipStatus[formattedUserId] = 'none';
-        break;
-
+        return createHttpSuccessResponse({ relationshipStatus: 'none' });
       default:
         return createHttpErrorResponse('4040');
     }
-
-    return createHttpSuccessResponse({});
   }),
   // 3️⃣ 팔로우 확인
   http.get('/users/:user_id/follow', ({ params }) => {

@@ -1,0 +1,25 @@
+@mixin profileFollowButton() {
+  width: 46px;
+  height: 26px;
+  border-radius: 5px;
+}
+
+.profile-follow-btn {
+  @include profileFollowButton();
+  color: white;
+  background-color: $mint3;
+
+  &:disabled {
+    color: white;
+  }
+}
+
+.profile-unfollow-btn {
+  @include profileFollowButton();
+  color: $gray4;
+  background-color: $gray1;
+
+  &:disabled {
+    color: $gray4;
+  }
+}

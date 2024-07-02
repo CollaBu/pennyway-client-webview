@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
 
-    .skeleton-proile {
+    .skeleton-profile {
       @include skeletonAnimation();
       background-color: $gray2;
       position: relative;
@@ -29,14 +29,6 @@
       width: 53px;
       height: 14px;
       border-radius: 4px;
-    }
-
-    .skeleton-profile-btn {
-      @include skeletonAnimation();
-      background-color: $gray2;
-      width: 68px;
-      height: 26px;
-      border-radius: 6px;
     }
   }
 

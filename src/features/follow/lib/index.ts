@@ -1,0 +1,1 @@
+export { updateRelationshipStatus } from './updateRelationshipStatus';
