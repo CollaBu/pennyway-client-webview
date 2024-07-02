@@ -1,13 +1,17 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import { requestFollow } from '@/shared/axios';
+import { requestFollow, requestUnfollow } from '@/shared/axios';
 import { FetchRelationshipStatus } from '@/shared/consts';
 import { QUERY_KEYS } from '@/shared/react-query';
 import { isErrorResponse } from '@/shared/utils';
 
 import { updateRelationshipStatus } from '../lib';
 
-export const useFollow = (userId: number, locked: boolean) => {
+export const useFollow = (
+  userId: number,
+  locked: boolean,
+  isFollow: boolean,
+) => {
   const queryClient = useQueryClient();
 
   const {
@@ -16,7 +20,8 @@ export const useFollow = (userId: number, locked: boolean) => {
     isPending: isPendingFollow,
   } = useMutation({
     mutationKey: [QUERY_KEYS.follow],
-    mutationFn: () => requestFollow(userId),
+    mutationFn: () =>
+      isFollow ? requestFollow(userId) : requestUnfollow(userId),
     onMutate: async () => {
       await queryClient.cancelQueries({
         queryKey: [QUERY_KEYS.follow, userId],

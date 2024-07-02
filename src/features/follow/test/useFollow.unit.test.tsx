@@ -9,7 +9,7 @@ describe('Follow 기능 테스트', () => {
   describe('none 상태일 때', () => {
     it('공개 계정이라면 following 상태로 변경된다.', async () => {
       //given
-      const { result } = renderHook(() => useFollow(9, false), {
+      const { result } = renderHook(() => useFollow(9, false, true), {
         wrapper: createQueryClientWrapper(),
       });
 
@@ -27,7 +27,7 @@ describe('Follow 기능 테스트', () => {
     });
 
     it('비공개 계정이라면 pending 상태로 변경된다.', async () => {
-      const { result } = renderHook(() => useFollow(4, true), {
+      const { result } = renderHook(() => useFollow(4, true, true), {
         wrapper: createQueryClientWrapper(),
       });
 
@@ -40,6 +40,46 @@ describe('Follow 기능 테스트', () => {
 
         expect(initialStatus).toBe('pending');
       });
+    });
+  });
+});
+
+describe('Unfollow 기능 테스트', () => {
+  it('following 상태일 때, none 상태로 변경된다.', async () => {
+    // given
+    const { result } = renderHook(() => useFollow(2, false, false), {
+      wrapper: createQueryClientWrapper(),
+    });
+
+    // when
+    act(() => result.current.handleFollow());
+
+    // then
+    await waitFor(() => {
+      const {
+        data: { relationshipStatus: initialStatus },
+      } = result.current.data;
+
+      expect(initialStatus).toBe('none');
+    });
+  });
+
+  it('pending 상태일 때, none 상태로 변경된다.', async () => {
+    // given
+    const { result } = renderHook(() => useFollow(3, true, false), {
+      wrapper: createQueryClientWrapper(),
+    });
+
+    //when
+    act(() => result.current.handleFollow());
+
+    //then
+    await waitFor(() => {
+      const {
+        data: { relationshipStatus: initialStatus },
+      } = result.current.data;
+
+      expect(initialStatus).toBe('none');
     });
   });
 });

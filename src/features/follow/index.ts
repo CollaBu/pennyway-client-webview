@@ -1,1 +1,1 @@
-export * from './api';
+export { useFollow } from './api';
