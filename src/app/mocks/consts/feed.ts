@@ -21,11 +21,11 @@ export const feeds: Feeds = {
         imageUrl: 'https://picsum.photos/320/320',
       },
       {
-        id: 1,
+        id: 2,
         imageUrl: 'https://picsum.photos/320/320',
       },
       {
-        id: 2,
+        id: 3,
         imageUrl: 'https://picsum.photos/320/320',
       },
       {

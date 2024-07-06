@@ -36,7 +36,7 @@ describe('[GET] 프로필 피드 조회 API', () => {
     for (const userId of userIds) {
       const response = await axios({
         method: 'GET',
-        url: `/profile/${userId}`,
+        url: `/users/${userId}`,
       });
       const { code } = response.data;
 
@@ -49,7 +49,7 @@ describe('[GET] 프로필 피드 조회 API', () => {
 
     const response = await axios({
       method: 'GET',
-      url: `/profile/${userId}`,
+      url: `/users/${userId}`,
     });
     const { code } = response.data;
 
@@ -62,7 +62,7 @@ describe('[GET] 프로필 피드 조회 API', () => {
     for (const page of pages) {
       const response = await axios({
         method: 'GET',
-        url: `/profile/${userId}&p=${page}`,
+        url: `/users/${userId}/feeds?page=${page}`,
       });
       const { code } = response.data;
 

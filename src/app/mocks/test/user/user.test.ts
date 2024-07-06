@@ -9,7 +9,8 @@ async function getUserById(userId: number) {
 }
 
 async function getProfileFeedById(userId: number, page: number) {
-  const profileFeed = await axios.get(`/profile/${userId}?page=${page}`);
+  const profileFeed = await axios.get(`/users/${userId}/feeds?page=${page}`);
+
   const profileFeedData = profileFeed.data.data;
   return { profileFeedData };
 }
@@ -24,7 +25,7 @@ it('유저 정보 조회 시, id에 일치하는 유저 정보를 반환한다.'
 });
 
 it('유저의 ProfileFeed 조회 시, 해당 유저의 ProfileFeed를 반환한다.', async () => {
-  const userId = 4;
+  const userId = 1;
   let page = 1;
 
   // ProfileFeed 가져오기
@@ -32,6 +33,5 @@ it('유저의 ProfileFeed 조회 시, 해당 유저의 ProfileFeed를 반환한�
     userId,
     page,
   );
-
-  expect(profileFeedData.currentPageNumber).toBe(5);
+  expect(profileFeedData.feeds[0].images.length).toBe(10);
 });
