@@ -6,8 +6,9 @@ import {
 } from '../dir/response';
 
 import { users } from '../consts/user';
-import { profileFeeds } from '../consts/profileFeed';
+import { feeds } from '../consts/feed';
 import { reports } from '../consts/report';
+import { hiddens } from '../consts/hidden';
 
 export const userHandler = [
   // 1️⃣ 사용자 조회
@@ -27,8 +28,8 @@ export const userHandler = [
 
     return createHttpSuccessResponse({ user: user });
   }),
-  // 2️⃣ 사용자 프로필 피드 조회
-  http.get('/profile/:user_id', ({ request, params }) => {
+  // 2️⃣ 사용자별 피드 조회
+  http.get('/users/:user_id/feeds', ({ request, params }) => {
     const { user_id } = params;
 
     const url = new URL(request.url);
@@ -52,11 +53,12 @@ export const userHandler = [
     const formattedPage = Number(page);
     const pageCount = 5;
 
-    const profileFeedsData = Object.values(profileFeeds)
+    const profileFeedsData = Object.values(feeds)
+      .filter((feed) => formattedUserId === feed.user.id)
       .slice((formattedPage - 1) * pageCount, formattedPage * pageCount)
-      .filter((feed) => !reports[feed.id]);
+      .filter((feed) => !reports[feed.id] && !hiddens[feed.id]);
 
-    const totalFeeds = Object.values(profileFeeds).length;
+    const totalFeeds = Object.values(profileFeedsData).length;
     const endOfPageRange = formattedPage * pageCount;
     const hasNextPage = endOfPageRange < totalFeeds;
 
