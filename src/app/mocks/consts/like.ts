@@ -7,8 +7,8 @@ interface Likes {
 }
 
 export const likes: Likes = {
-  1: { totalCount: 10, isLiked: false },
-  2: { totalCount: 2, isLiked: true },
+  1: { totalCount: 92345, isLiked: false },
+  2: { totalCount: 20, isLiked: true },
   3: { totalCount: 4, isLiked: false },
   4: { totalCount: 1, isLiked: true },
   5: { totalCount: 7, isLiked: true },

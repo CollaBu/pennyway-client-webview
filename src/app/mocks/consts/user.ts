@@ -12,8 +12,8 @@ export const users: Users = {
     username: 'bangdori',
     locked: false,
     feedCount: 100,
-    followingCount: 347,
-    followerCount: 25,
+    followingCount: 2347,
+    followerCount: 235315,
   },
   2: {
     id: 2,
