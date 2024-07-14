@@ -33,16 +33,18 @@
 
       .footer-left {
         display: flex;
-        gap: 9px;
+        gap: 4px;
 
         .footer-count {
           display: flex;
           align-items: center;
+          width: 38px;
 
           .count-text {
             padding-left: 4px;
             text-align: left;
             color: $gray6;
+            word-break: keep-all;
           }
         }
       }
