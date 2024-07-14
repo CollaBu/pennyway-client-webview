@@ -2,7 +2,7 @@ import { BookmarkButton } from '@/features/feed-bookmark';
 import { LikeButton } from '@/features/feed-main-like';
 import { Feed as FeedProps } from '@/shared/consts';
 import { Icon, Profile } from '@/shared/ui';
-import { calculateElapsedTime } from '@/shared/utils';
+import { calculateElapsedTime, formatCount } from '@/shared/utils';
 import { Carousel } from '@/widgets/feed-carousel';
 import { FeedKebabButton } from '@/widgets/feed-kebab';
 
@@ -46,13 +46,13 @@ export const Feed: React.FC<{ isLink: boolean; feed: FeedProps }> = ({
           <div className='footer-left'>
             <span className='footer-count'>
               <LikeButton feedId={id} isLiked={isLiked} />
-              <p className='count-text b2md'>{likeCount}</p>
+              <p className='count-text b2md'>{formatCount(likeCount)}</p>
             </span>
             <span className='footer-count'>
               <button className='icon icon-btn'>
                 <Icon name='chat' width='20' height='20' />
               </button>
-              <p className='count-text b2md'>{commentCount}</p>
+              <p className='count-text b2md'>{formatCount(commentCount)}</p>
             </span>
             <button className='icon icon-btn'>
               <Icon name='share' width='20' height='20' />

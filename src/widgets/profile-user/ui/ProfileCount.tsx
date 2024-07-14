@@ -1,7 +1,7 @@
 import './ProfileCount.scss';
 
 interface ProfileCountProps {
-  number: number;
+  number: string;
   text: string;
 }
 

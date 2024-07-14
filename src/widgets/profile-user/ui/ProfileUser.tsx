@@ -1,4 +1,5 @@
 import { NetworkError, PageHeader } from '@/shared/ui';
+import { formatCount } from '@/shared/utils';
 
 import { useGetUser, useGetRelationshipStatus } from '../api';
 
@@ -75,11 +76,11 @@ export const ProfileUser = ({ userId, isOwner }: ProfileUserProps) => {
           )}
         </section>
         <section className='profile-count-container'>
-          <ProfileCount number={feedCount} text='게시물' />
+          <ProfileCount number={formatCount(feedCount)} text='게시물' />
           <div className='count-divider' />
-          <ProfileCount number={followerCount} text='팔로워' />
+          <ProfileCount number={formatCount(followerCount)} text='팔로워' />
           <div className='count-divider' />
-          <ProfileCount number={followingCount} text='팔로잉' />
+          <ProfileCount number={formatCount(followingCount)} text='팔로잉' />
         </section>
       </section>
     </>
